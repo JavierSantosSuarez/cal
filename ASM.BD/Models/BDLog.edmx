@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDLogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BDLogModelStoreContainer">
+          <EntitySet Name="DiaLog" EntityType="BDLogModel.Store.DiaLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="wsLogLlamadas" EntityType="BDLogModel.Store.wsLogLlamadas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="wsPlaneta" EntityType="BDLogModel.Store.wsPlaneta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="wsProcesaFichero" EntityType="BDLogModel.Store.wsProcesaFichero" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="wsTarificador" EntityType="BDLogModel.Store.wsTarificador" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="DiaLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="datetime" Nullable="false" />
+          <Property Name="xmlIn" Type="xml" />
+          <Property Name="xmlOut" Type="xml" />
+          <Property Name="proceso" Type="varchar" MaxLength="50" />
+          <Property Name="observaciones" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="wsLogLlamadas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="datetime" Nullable="false" />
+          <Property Name="xmlin" Type="ntext" />
+          <Property Name="proceso" Type="varchar" MaxLength="50" />
+          <Property Name="cliente" Type="varchar" MaxLength="50" />
+          <Property Name="ip" Type="varchar" MaxLength="50" />
+          <Property Name="xmlout" Type="ntext" />
+        </EntityType>
+        <EntityType Name="wsPlaneta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="datetime" Nullable="false" />
+          <Property Name="xmlIn" Type="ntext" />
+          <Property Name="xmlOut" Type="ntext" />
+          <Property Name="tiempoProceso" Type="datetime" />
+        </EntityType>
+        <EntityType Name="wsProcesaFichero">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="datetime" Nullable="false" />
+          <Property Name="xmlIn" Type="ntext" />
+          <Property Name="xmlOut" Type="ntext" />
+          <Property Name="tiempoProceso" Type="datetime" />
+          <Property Name="EnviosOk" Type="int" />
+          <Property Name="EnviosKo" Type="int" />
+          <Property Name="RecogidasOk" Type="int" />
+          <Property Name="RecogidasKo" Type="int" />
+          <Property Name="Cliente" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="wsTarificador">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="datetime" Nullable="false" />
+          <Property Name="xmlIn" Type="ntext" />
+          <Property Name="xmlOut" Type="ntext" />
+          <Property Name="tiempoProceso" Type="datetime" />
+          <Property Name="Cliente" Type="varchar" MaxLength="150" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDLogModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BDLogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DiaLog" EntityType="BDLogModel.DiaLog" />
+          <EntitySet Name="wsLogLlamadas" EntityType="BDLogModel.wsLogLlamadas" />
+          <EntitySet Name="wsPlaneta" EntityType="BDLogModel.wsPlaneta" />
+          <EntitySet Name="wsProcesaFichero" EntityType="BDLogModel.wsProcesaFichero" />
+          <EntitySet Name="wsTarificador" EntityType="BDLogModel.wsTarificador" />
+        </EntityContainer>
+        <EntityType Name="DiaLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xmlIn" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="xmlOut" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="proceso" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="wsLogLlamadas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xmlin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="proceso" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="cliente" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="xmlout" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="wsPlaneta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xmlIn" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="xmlOut" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="tiempoProceso" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="wsProcesaFichero">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xmlIn" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="xmlOut" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="tiempoProceso" Type="DateTime" Precision="3" />
+          <Property Name="EnviosOk" Type="Int32" />
+          <Property Name="EnviosKo" Type="Int32" />
+          <Property Name="RecogidasOk" Type="Int32" />
+          <Property Name="RecogidasKo" Type="Int32" />
+          <Property Name="Cliente" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="wsTarificador">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ftick" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xmlIn" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="xmlOut" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="tiempoProceso" Type="DateTime" Precision="3" />
+          <Property Name="Cliente" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDLogModelStoreContainer" CdmEntityContainer="BDLogEntities">
+          <EntitySetMapping Name="DiaLog">
+            <EntityTypeMapping TypeName="BDLogModel.DiaLog">
+              <MappingFragment StoreEntitySet="DiaLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ftick" ColumnName="ftick" />
+                <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+                <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+                <ScalarProperty Name="proceso" ColumnName="proceso" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wsLogLlamadas">
+            <EntityTypeMapping TypeName="BDLogModel.wsLogLlamadas">
+              <MappingFragment StoreEntitySet="wsLogLlamadas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ftick" ColumnName="ftick" />
+                <ScalarProperty Name="xmlin" ColumnName="xmlin" />
+                <ScalarProperty Name="proceso" ColumnName="proceso" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="xmlout" ColumnName="xmlout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wsPlaneta">
+            <EntityTypeMapping TypeName="BDLogModel.wsPlaneta">
+              <MappingFragment StoreEntitySet="wsPlaneta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ftick" ColumnName="ftick" />
+                <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+                <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+                <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wsProcesaFichero">
+            <EntityTypeMapping TypeName="BDLogModel.wsProcesaFichero">
+              <MappingFragment StoreEntitySet="wsProcesaFichero">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ftick" ColumnName="ftick" />
+                <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+                <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+                <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+                <ScalarProperty Name="EnviosOk" ColumnName="EnviosOk" />
+                <ScalarProperty Name="EnviosKo" ColumnName="EnviosKo" />
+                <ScalarProperty Name="RecogidasOk" ColumnName="RecogidasOk" />
+                <ScalarProperty Name="RecogidasKo" ColumnName="RecogidasKo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wsTarificador">
+            <EntityTypeMapping TypeName="BDLogModel.wsTarificador">
+              <MappingFragment StoreEntitySet="wsTarificador">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ftick" ColumnName="ftick" />
+                <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+                <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+                <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

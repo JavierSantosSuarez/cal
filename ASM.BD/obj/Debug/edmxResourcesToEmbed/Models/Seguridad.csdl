@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SeguridadModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SeguridadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cnfCuentas" EntityType="SeguridadModel.cnfCuentas" />
+    <EntitySet Name="cnfModulos" EntityType="SeguridadModel.cnfModulos" />
+    <EntitySet Name="cnfModulosxCuenta" EntityType="SeguridadModel.cnfModulosxCuenta" />
+    <EntitySet Name="cnfPermisosxCuenta" EntityType="SeguridadModel.cnfPermisosxCuenta" />
+    <FunctionImport Name="secActivaCuenta">
+      <Parameter Name="cuenta" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="secDesactivaMe" />
+    <FunctionImport Name="tienePermiso" ReturnType="Collection(Int32)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="ejecutable" Mode="In" Type="String" />
+      <Parameter Name="form" Mode="In" Type="String" />
+      <Parameter Name="accion" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="cnfCuentas">
+    <Key>
+      <PropertyRef Name="codCuenta" />
+    </Key>
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="cuenta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="codPlaza" Type="Int16" Nullable="false" />
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="password" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="perfilSonido" Type="Int16" />
+    <Property Name="fechaCadPass" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="cnfModulos">
+    <Key>
+      <PropertyRef Name="codModulo" />
+    </Key>
+    <Property Name="codModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="pathCitrix" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codModuloPadre" Type="Int32" />
+    <Property Name="orden" Type="Int16" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nombreMenu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Version" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfModulosxCuenta">
+    <Key>
+      <PropertyRef Name="codModuloxCuenta" />
+    </Key>
+    <Property Name="codModuloxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codModulo" Type="Int32" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="FechaAlta" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="cnfPermisosxCuenta">
+    <Key>
+      <PropertyRef Name="codPermisoxCuenta" />
+    </Key>
+    <Property Name="codPermisoxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codPermiso" Type="Int16" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

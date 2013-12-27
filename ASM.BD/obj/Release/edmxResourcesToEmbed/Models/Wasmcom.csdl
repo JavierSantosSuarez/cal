@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WASMCOMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="WASMCOMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clReclamaciones" EntityType="WASMCOMModel.clReclamaciones" />
+    <EntitySet Name="clTiposReclamacion" EntityType="WASMCOMModel.clTiposReclamacion" />
+    <EntitySet Name="clTiposTrackingReclamacion" EntityType="WASMCOMModel.clTiposTrackingReclamacion" />
+    <EntitySet Name="clTrackingReclamacion" EntityType="WASMCOMModel.clTrackingReclamacion" />
+    <EntitySet Name="tplazas" EntityType="WASMCOMModel.tplazas" />
+    <EntitySet Name="texp_codbar_cli" EntityType="WASMCOMModel.texp_codbar_cli" />
+    <EntitySet Name="texpdetalle" EntityType="WASMCOMModel.texpdetalle" />
+    <EntitySet Name="TExpDetalle2" EntityType="WASMCOMModel.TExpDetalle2" />
+    <EntitySet Name="texpediciones" EntityType="WASMCOMModel.texpediciones" />
+    <EntitySet Name="expediciones" EntityType="WASMCOMModel.expediciones" />
+    <EntitySet Name="ExpedicionesResumen" EntityType="WASMCOMModel.ExpedicionesResumen" />
+    <EntitySet Name="texpestado" EntityType="WASMCOMModel.texpestado" />
+    <EntitySet Name="tslrEstados" EntityType="WASMCOMModel.tslrEstados" />
+    <EntitySet Name="tslrExpediciones" EntityType="WASMCOMModel.tslrExpediciones" />
+    <EntitySet Name="tslrRecogidas" EntityType="WASMCOMModel.tslrRecogidas" />
+    <EntitySet Name="tslrReferencias" EntityType="WASMCOMModel.tslrReferencias" />
+    <EntitySet Name="tslrSeguimiento" EntityType="WASMCOMModel.tslrSeguimiento" />
+    <EntitySet Name="treferencias" EntityType="WASMCOMModel.treferencias" />
+    <EntitySet Name="tclientes" EntityType="WASMCOMModel.tclientes" />
+    <EntitySet Name="tclientes_red" EntityType="WASMCOMModel.tclientes_red" />
+    <FunctionImport Name="stpExpInsertaEstado">
+      <Parameter Name="codplaza_org" Mode="In" Type="Int16" />
+      <Parameter Name="codexp" Mode="In" Type="Int32" />
+      <Parameter Name="codestado" Mode="In" Type="Int16" />
+      <Parameter Name="informacion" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="codplaza_ano" Mode="In" Type="Int16" />
+      <Parameter Name="codusuario_ano" Mode="In" Type="Int32" />
+      <Parameter Name="culpable" Mode="In" Type="String" />
+      <Parameter Name="parcial" Mode="In" Type="String" />
+      <Parameter Name="codincidencia" Mode="In" Type="Int16" />
+      <Parameter Name="fecha_inc" Mode="In" Type="DateTime" />
+      <Parameter Name="bultos" Mode="In" Type="Int16" />
+      <Parameter Name="cambiapor" Mode="In" Type="String" />
+      <Parameter Name="checkDev" Mode="In" Type="Boolean" />
+      <Parameter Name="sobreescribeUltimo" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="pnlBonificaciones" EntityType="WASMCOMModel.pnlBonificaciones" />
+    <EntitySet Name="pnlExpediciones" EntityType="WASMCOMModel.pnlExpediciones" />
+    <EntitySet Name="pnlSlRecogidas" EntityType="WASMCOMModel.pnlSlRecogidas" />
+    <EntitySet Name="pnlTipos" EntityType="WASMCOMModel.pnlTipos" />
+    <EntitySet Name="tPdaPosiciones" EntityType="WASMCOMModel.tPdaPosiciones" />
+    <EntitySet Name="webContactos" EntityType="WASMCOMModel.webContactos" />
+    <EntitySet Name="webContactosTracking" EntityType="WASMCOMModel.webContactosTracking" />
+    <EntitySet Name="trepartidores" EntityType="WASMCOMModel.trepartidores" />
+    <EntitySet Name="tReparto" EntityType="WASMCOMModel.tReparto" />
+    <EntitySet Name="tRepartoHojas" EntityType="WASMCOMModel.tRepartoHojas" />
+    <EntitySet Name="geoPlazas" EntityType="WASMCOMModel.geoPlazas" />
+  </EntityContainer>
+  <EntityType Name="clReclamaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoReclamacion" Type="Byte" />
+    <Property Name="codplazaReclama" Type="Int16" />
+    <Property Name="codplazaReclamada" Type="Int16" />
+    <Property Name="fechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Precision="3" />
+    <Property Name="codexp" Type="Int32" />
+    <Property Name="codrecogida" Type="Int64" />
+    <Property Name="importePenalizacion" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="importeIndemnizacion" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="codplazaPenalizada" Type="Int16" />
+    <Property Name="codplazaIndemnizada" Type="Int16" />
+    <Property Type="Boolean" Name="cerrada" Nullable="false" />
+    <Property Type="Boolean" Name="aceptada" />
+    <Property Type="Boolean" Name="invertirCargos" />
+  </EntityType>
+  <EntityType Name="clTiposReclamacion">
+    <Key>
+      <PropertyRef Name="tipoReclamacion" />
+    </Key>
+    <Property Name="tipoReclamacion" Type="Byte" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="clTiposTrackingReclamacion">
+    <Key>
+      <PropertyRef Name="tipoTracking" />
+    </Key>
+    <Property Name="tipoTracking" Type="Byte" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="clTrackingReclamacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idReclamacion" Type="Int64" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tipoTracking" Type="Byte" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Type="Int16" Name="codplaza_ano" />
+    <Property Type="String" Name="usuario" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tplazas">
+    <Key>
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Name="codplaza" Type="Int16" Nullable="false" />
+    <Property Name="plaza" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="nemonico" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="codcli_red" Type="Int32" Nullable="false" />
+    <Property Name="codprov_red" Type="Int32" Nullable="false" />
+    <Property Name="codplaza_old" Type="Int16" />
+    <Property Name="plz_internacional" Type="Int16" Nullable="false" />
+    <Property Name="operativa" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="reparto" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="codprovincia" Type="Int16" Nullable="false" />
+    <Property Name="codregion" Type="Int16" Nullable="false" />
+    <Property Name="bpack" Type="Int16" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codzona" Type="Int16" />
+    <Property Name="codpais" Type="Int16" />
+    <Property Name="CpNave" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="NombreWEB" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="NombreComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Poblacion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Provincia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Cp" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Gerente" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Responsable" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailOperativo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="hoficina" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="visibleWeb" Type="Int16" Nullable="false" />
+    <Property Name="Software" Type="Int16" Nullable="false" />
+    <Property Name="FSoftWare" Type="DateTime" Precision="0" />
+    <Property Name="codPunto" Type="Int64" />
+    <Property Name="logistica" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="DireccionWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codIsla" Type="Int16" />
+    <Property Type="Int16" Name="tipoplaza" />
+  </EntityType>
+  <EntityType Name="texp_codbar_cli">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="String" Name="codbar" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AlbAgrupacion" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AlbAgrupacionDst" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Guid" Name="UidExp" Nullable="false" />
+    <Property Type="String" Name="codbar_ENV" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="codbarras_retorno" MaxLength="14" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="texpdetalle">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="f_anota" />
+      <PropertyRef Name="sec" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="f_anota" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="sec" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_ano" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_dst" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_pag" Nullable="false" />
+    <Property Type="Int16" Name="codmotivo" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_cli" />
+    <Property Type="Int32" Name="codcli" />
+    <Property Type="Int32" Name="codcli_may" />
+    <Property Type="Int32" Name="codcli_red_pag" Nullable="false" />
+    <Property Type="Int32" Name="codprov_red_org" />
+    <Property Type="Int32" Name="codprov_red_dst" />
+    <Property Type="Int16" Name="nexp" Nullable="false" />
+    <Property Type="Decimal" Name="vol" Nullable="false" Precision="6" Scale="3" />
+    <Property Type="Decimal" Name="kgs" Precision="6" Scale="1" />
+    <Property Type="Int16" Name="bultos_ini" Nullable="false" />
+    <Property Type="Int16" Name="bultos" Nullable="false" />
+    <Property Type="Decimal" Name="kgsvol_prv_red_org" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_prv_red_dst" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_red_ini" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_red" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_ini" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_prv" Precision="6" Scale="1" />
+    <Property Type="String" Name="ultimo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="codcli_fac" />
+    <Property Type="DateTime" Name="fecha" Precision="0" />
+    <Property Type="Int16" Name="codplaza_prv" />
+    <Property Type="Int32" Name="codprov" />
+    <Property Type="String" Name="UsuarioAnota" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TExpDetalle2">
+    <Key>
+      <PropertyRef Name="Codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="f_anota" />
+    </Key>
+    <Property Type="Int16" Name="Codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="f_anota" Nullable="false" Precision="3" />
+    <Property Type="String" Name="ultimo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="AlbaranCliente" Nullable="false" />
+    <Property Type="String" Name="retorno" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tfno_cnt" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="pers_cnt" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FPEntrega" Precision="3" />
+    <Property Type="String" Name="att_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="movil_dst" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dmail_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="est_mail" />
+    <Property Type="DateTime" Name="fecha_mail" Precision="3" />
+    <Property Type="String" Name="email_remite" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CodDestinatario" />
+    <Property Type="Int16" Name="anulable" />
+    <Property Type="Int16" Name="est_movil" />
+    <Property Type="DateTime" Name="FPEntrega2" Precision="3" />
+    <Property Type="Byte" Name="dninom" />
+    <Property Type="String" Name="gestori" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="gestdes" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="texpediciones">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+    <Property Type="Byte" Name="codtipo_envio" Nullable="false" />
+    <Property Type="Int16" Name="codservicio" Nullable="false" />
+    <Property Type="Int16" Name="codtipodst" />
+    <Property Type="String" Name="nombre_org" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_org" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calle_org" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codlocalidad_org" />
+    <Property Type="String" Name="localidad_org" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_org" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tfno_org" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nif_org" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calle_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codlocalidad_dst" />
+    <Property Type="String" Name="localidad_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_dst" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tfno_dst" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nif_dst" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipo_portes" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="sabado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="reembolso" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Decimal" Name="valorDecl" Precision="19" Scale="4" />
+    <Property Type="String" Name="facturared_cli" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="facturared_prv" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="factura_cli" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="provisional" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cerrado_punteo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="codcli_fac" />
+    <Property Type="Int16" Name="codplaza_fac" />
+    <Property Type="Int16" Name="horario" />
+    <Property Type="String" Name="borrado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codpais_org" />
+    <Property Type="Int16" Name="codprovincia_org" />
+    <Property Type="Int16" Name="codpais_dst" />
+    <Property Type="Int16" Name="codprovincia_dst" />
+  </EntityType>
+  <EntityType Name="expediciones">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="codtipo_envio" />
+      <PropertyRef Name="codservicio" />
+      <PropertyRef Name="bultos" />
+      <PropertyRef Name="bultos_ini" />
+      <PropertyRef Name="vol" />
+      <PropertyRef Name="nexp" />
+      <PropertyRef Name="codcli_red_pag" />
+      <PropertyRef Name="codmotivo" />
+      <PropertyRef Name="codplaza_pag" />
+      <PropertyRef Name="codplaza_dst" />
+      <PropertyRef Name="codplaza_ano" />
+      <PropertyRef Name="sec" />
+      <PropertyRef Name="f_anota" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="fecha" Precision="0" />
+    <Property Type="Byte" Name="codtipo_envio" Nullable="false" />
+    <Property Type="Int16" Name="codservicio" Nullable="false" />
+    <Property Type="Int16" Name="codtipodst" />
+    <Property Type="String" Name="nombre_org" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_org" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calle_org" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codlocalidad_org" />
+    <Property Type="String" Name="localidad_org" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_org" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tfno_org" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nif_org" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calle_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codlocalidad_dst" />
+    <Property Type="String" Name="localidad_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_dst" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tfno_dst" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nif_dst" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipo_portes" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="sabado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="reembolso" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Decimal" Name="valorDecl" Precision="19" Scale="4" />
+    <Property Type="String" Name="provisional" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cerrado_punteo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="horario" />
+    <Property Type="String" Name="borrado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codpais_org" />
+    <Property Type="Int16" Name="codprovincia_org" />
+    <Property Type="Int16" Name="codpais_dst" />
+    <Property Type="Int16" Name="codprovincia_dst" />
+    <Property Type="Int16" Name="codplaza_prv" />
+    <Property Type="Decimal" Name="kgsvol_prv" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_ini" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_red" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_cli_red_ini" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_prv_red_dst" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="kgsvol_prv_red_org" Precision="6" Scale="1" />
+    <Property Type="Int16" Name="bultos" Nullable="false" />
+    <Property Type="Int16" Name="bultos_ini" Nullable="false" />
+    <Property Type="Decimal" Name="kgs" Precision="6" Scale="1" />
+    <Property Type="Decimal" Name="vol" Nullable="false" Precision="6" Scale="3" />
+    <Property Type="Int16" Name="nexp" Nullable="false" />
+    <Property Type="Int32" Name="codprov_red_dst" />
+    <Property Type="Int32" Name="codprov_red_org" />
+    <Property Type="Int32" Name="codcli_red_pag" Nullable="false" />
+    <Property Type="Int32" Name="codcli_may" />
+    <Property Type="Int32" Name="codcli" />
+    <Property Type="Int16" Name="codplaza_cli" />
+    <Property Type="Int16" Name="codmotivo" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_pag" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_dst" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_ano" Nullable="false" />
+    <Property Type="Int16" Name="sec" Nullable="false" />
+    <Property Type="DateTime" Name="f_anota" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="codprov" />
+  </EntityType>
+  <EntityType Name="ExpedicionesResumen">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="codservicio" />
+      <PropertyRef Name="codplaza_dst" />
+      <PropertyRef Name="codplaza_pag" />
+      <PropertyRef Name="nexp" />
+      <PropertyRef Name="vol" />
+      <PropertyRef Name="bultos" />
+      <PropertyRef Name="codestado" />
+      <PropertyRef Name="estado" />
+      <PropertyRef Name="EstadoFinal" />
+      <PropertyRef Name="Horario" />
+      <PropertyRef Name="servicio" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="String" Name="Expedicion" MaxLength="61" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="codservicio" Nullable="false" />
+    <Property Type="String" Name="nombre_org" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_org" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="departamento_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calle_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codlocalidad_dst" />
+    <Property Type="String" Name="localidad_dst" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_dst" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tfno_dst" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipo_portes" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="sabado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Decimal" Name="valorDecl" Precision="19" Scale="4" />
+    <Property Type="Int16" Name="codhorario" />
+    <Property Type="String" Name="borrado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codpais_org" />
+    <Property Type="Int16" Name="codprovincia_org" />
+    <Property Type="Int16" Name="codpais_dst" />
+    <Property Type="Int16" Name="codprovincia_dst" />
+    <Property Type="Int16" Name="codplaza_dst" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_pag" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_cli" />
+    <Property Type="Int32" Name="codcli" />
+    <Property Type="Int16" Name="nexp" Nullable="false" />
+    <Property Type="Decimal" Name="vol" Nullable="false" Precision="6" Scale="3" />
+    <Property Type="Decimal" Name="kgs" Precision="6" Scale="1" />
+    <Property Type="Int16" Name="bultos" Nullable="false" />
+    <Property Type="Boolean" Name="AlbaranCliente" />
+    <Property Type="String" Name="retorno" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tfno_cnt" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="pers_cnt" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FPEntrega" Precision="3" />
+    <Property Type="String" Name="att_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="movil_dst" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dmail_dst" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="est_mail" />
+    <Property Type="DateTime" Name="fecha_mail" Precision="3" />
+    <Property Type="String" Name="email_remite" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="est_movil" />
+    <Property Type="Byte" Name="dninom" />
+    <Property Type="Int16" Name="codestado" Nullable="false" />
+    <Property Type="String" Name="informacion" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Albaran" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Refcli" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="codbar" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Unidades" />
+    <Property Type="Int64" Name="codCalidad" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EstadoFinal" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Horario" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="servicio" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Incidencia" MaxLength="138" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Debidos" />
+    <Property Type="String" Name="PathPod" MaxLength="6000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="texpestado">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="sec" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="sec" Nullable="false" />
+    <Property Type="Int16" Name="codestado" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_ano" Nullable="false" />
+    <Property Type="Int32" Name="codusuario_ano" Nullable="false" />
+    <Property Type="String" Name="ultimo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="culpable" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="parcial" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="informacion" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codincidencia" />
+    <Property Type="DateTime" Name="fecha_inc" Precision="0" />
+    <Property Type="Int16" Name="bultos" />
+    <Property Type="String" Name="cambiapor" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="UsuarioAnota" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tslrEstados">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="CodRecogida" Nullable="false" />
+    <Property Type="DateTime" Name="f_tick" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Ultimo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="f_estado" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="CodEstado" Nullable="false" />
+    <Property Type="Int16" Name="CodPlaza_ano" />
+    <Property Type="Guid" Name="CodUsuario" />
+    <Property Type="String" Name="Observacion" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tslrExpediciones">
+    <Key>
+      <PropertyRef Name="Codplaza_Org" />
+      <PropertyRef Name="codexp" />
+    </Key>
+    <Property Type="Int16" Name="Codplaza_Org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="Int64" Name="CodRecogida" Nullable="false" />
+    <Property Type="DateTime" Name="f_tick" Precision="3" />
+    <Property Type="Int64" Name="sec_dst" />
+  </EntityType>
+  <EntityType Name="tslrRecogidas">
+    <Key>
+      <PropertyRef Name="CodRecogida" />
+    </Key>
+    <Property Type="Int64" Name="CodRecogida" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="CodPlaza_sol" Nullable="false" />
+    <Property Type="Int16" Name="CodPlaza_org" Nullable="false" />
+    <Property Type="DateTime" Name="FSolicitud" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FRecogida" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="HDesde1" Precision="0" />
+    <Property Type="DateTime" Name="HHasta1" Precision="0" />
+    <Property Type="DateTime" Name="HDesde2" Precision="0" />
+    <Property Type="DateTime" Name="HHasta2" Precision="0" />
+    <Property Type="Int32" Name="Codcli" Nullable="false" />
+    <Property Type="Int32" Name="CodcliRed" Nullable="false" />
+    <Property Type="String" Name="NombSol" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NombRec" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DirRec" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PoblRec" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cpRec" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContacRec" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TfnoRec" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DptoRec" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="vehiculo" />
+    <Property Type="String" Name="ObsRec" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CodSolicitud_ant" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Int16" Name="codpais_org" />
+    <Property Type="Int16" Name="codprovincia_org" />
+    <Property Type="Boolean" Name="transPDA" Nullable="false" />
+    <Property Type="Boolean" Name="Ayudante" Nullable="false" />
+    <Property Type="Boolean" Name="Klms" Nullable="false" />
+    <Property Type="String" Name="tipo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="via" />
+    <Property Type="Int32" Name="CodFija" />
+    <Property Type="String" Name="Pre_conf" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="movilRec" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dmailRec" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="est_mail" />
+    <Property Type="Boolean" Name="dac" />
+    <Property Type="Boolean" Name="PD" />
+    <Property Type="Boolean" Name="Reem" />
+    <Property Type="Int16" Name="Retorno" />
+    <Property Type="Byte" Name="dninom" />
+    <Property Type="String" Name="gestori" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tslrReferencias">
+    <Key>
+      <PropertyRef Name="CodRecogida" />
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="referencia" />
+    </Key>
+    <Property Type="Int64" Name="CodRecogida" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="referencia" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tslrSeguimiento">
+    <Key>
+      <PropertyRef Name="CodRecogida" />
+      <PropertyRef Name="f_tick" />
+    </Key>
+    <Property Type="Int64" Name="CodRecogida" Nullable="false" />
+    <Property Type="DateTime" Name="f_tick" Nullable="false" Precision="3" />
+    <Property Type="String" Name="ultimo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="CodPlaza_ano" />
+    <Property Type="String" Name="observacion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Guid" Name="CodUsuario" />
+  </EntityType>
+  <EntityType Name="treferencias">
+    <Key>
+      <PropertyRef Name="referencia" />
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Type="Int32" Name="sec" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="referencia" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tclientes">
+    <Key>
+      <PropertyRef Name="codcli" />
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Type="Int32" Name="codcli" Nullable="false" />
+    <Property Type="Int16" Name="codplaza" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_sit" Nullable="false" />
+    <Property Type="Int16" Name="estado" Nullable="false" />
+    <Property Type="String" Name="nombre" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="direc1" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="direc2" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="depto" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="codpos" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="poblac" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="provin" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="falta" Precision="3" />
+    <Property Type="String" Name="tlfno" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tlfno2" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="fax" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tarifa" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cif" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codpago" />
+    <Property Type="String" Name="contact" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="descuen" />
+    <Property Type="String" Name="banco" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="agencia" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dirbanco" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cuenta" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="vcto" />
+    <Property Type="String" Name="inab" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="ccfact" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="coanual" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="f_contr" Precision="3" />
+    <Property Type="Int16" Name="codcomer" />
+    <Property Type="String" Name="tipocuot" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtocuota" />
+    <Property Type="String" Name="tipocli" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tipocliv" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="faar" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="cfar" />
+    <Property Type="String" Name="dima" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="fmax" />
+    <Property Type="String" Name="incr" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="zona" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="zon2" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dele" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="geog" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="sect" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cman" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="indi" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="segu" />
+    <Property Type="String" Name="fpre" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="flre" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="d1re" />
+    <Property Type="Double" Name="d2re" />
+    <Property Type="String" Name="coba" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="coag" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dict" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="ctar" />
+    <Property Type="Double" Name="copr" />
+    <Property Type="String" Name="dest" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtme" />
+    <Property Type="String" Name="inrl" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="fecc" Precision="3" />
+    <Property Type="String" Name="mocc" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="indp" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="iniv" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="reca" />
+    <Property Type="String" Name="rpmo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="conf" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="setr" />
+    <Property Type="Double" Name="mist" />
+    <Property Type="Double" Name="sem1" />
+    <Property Type="Double" Name="sem2" />
+    <Property Type="Double" Name="mis1" />
+    <Property Type="Double" Name="mis2" />
+    <Property Type="String" Name="inmo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="lial" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="cfse" />
+    <Property Type="String" Name="attf" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="copu" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="faco" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtmf" />
+    <Property Type="Int16" Name="tise" />
+    <Property Type="Double" Name="rieg" />
+    <Property Type="Int32" Name="codcli_red" />
+    <Property Type="Byte" Name="dninom" />
+    <Property Type="Int16" Name="codpais" />
+    <Property Type="Int16" Name="coddiapago" />
+    <Property Type="DateTime" Name="riegfecha" Precision="0" />
+  </EntityType>
+  <EntityType Name="tclientes_red">
+    <Key>
+      <PropertyRef Name="codcli" />
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Type="Int32" Name="codcli" Nullable="false" />
+    <Property Type="Int16" Name="codplaza" Nullable="false" />
+    <Property Type="Int16" Name="estado" Nullable="false" />
+    <Property Type="String" Name="nombre" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="direc1" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="direc2" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="depto" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="codpos" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="poblac" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="provin" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="falta" Precision="3" />
+    <Property Type="String" Name="tlfno" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tlfno2" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="fax" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tarifa" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cif" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codpago" />
+    <Property Type="String" Name="contact" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="descuen" />
+    <Property Type="String" Name="banco" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="agencia" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dirbanco" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cuenta" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="vcto" />
+    <Property Type="String" Name="inab" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="ccfact" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="coanual" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="f_contr" Precision="3" />
+    <Property Type="Int16" Name="codcomer" />
+    <Property Type="String" Name="tipocuot" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtocuota" />
+    <Property Type="String" Name="tipocli" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="tipocliv" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="faar" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="cfar" />
+    <Property Type="String" Name="dima" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="fmax" />
+    <Property Type="String" Name="incr" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="zona" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="zon2" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dele" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="geog" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="sect" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cman" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="indi" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="segu" />
+    <Property Type="String" Name="fpre" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="flre" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="d1re" />
+    <Property Type="Double" Name="d2re" />
+    <Property Type="String" Name="coba" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="coag" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="dict" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="ctar" />
+    <Property Type="Double" Name="copr" />
+    <Property Type="String" Name="dest" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtme" />
+    <Property Type="String" Name="inrl" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="fecc" Precision="3" />
+    <Property Type="String" Name="mocc" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="indp" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="iniv" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="reca" />
+    <Property Type="String" Name="rpmo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="conf" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="setr" />
+    <Property Type="Double" Name="mist" />
+    <Property Type="Double" Name="sem1" />
+    <Property Type="Double" Name="sem2" />
+    <Property Type="Double" Name="mis1" />
+    <Property Type="Double" Name="mis2" />
+    <Property Type="String" Name="inmo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="lial" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="cfse" />
+    <Property Type="String" Name="attf" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="copu" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="faco" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Double" Name="dtmf" />
+    <Property Type="Int16" Name="tise" />
+    <Property Type="Double" Name="rieg" />
+    <Property Type="Int16" Name="codservicio" />
+    <Property Type="Int16" Name="coddiaPago" />
+    <Property Type="Int16" Name="codpais" />
+    <Property Type="String" Name="comentarios" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="mailfact" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Byte" Name="modofact" />
+  </EntityType>
+  <EntityType Name="pnlBonificaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="fechaBonifica" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FPEntrega" Precision="0" />
+    <Property Type="Byte" Name="codtipo" Nullable="false" />
+    <Property Type="Int16" Name="codconcepto" />
+    <Property Type="Decimal" Name="importe" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Byte" Name="estado" Nullable="false" />
+    <Property Type="Byte" Name="tipoBonificacion" />
+    <Property Type="String" Name="observaciones" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codplazaprov" />
+    <Property Type="Int32" Name="codprov" />
+  </EntityType>
+  <EntityType Name="pnlExpediciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="DateTime" Name="fechaPenaliza" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FPEntrega" Precision="3" />
+    <Property Type="Byte" Name="codtipo" Nullable="false" />
+    <Property Type="Int16" Name="codconcepto" />
+    <Property Type="Decimal" Name="importe" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Byte" Name="estado" Nullable="false" />
+    <Property Type="Byte" Name="tipoPenalizacion" />
+    <Property Type="String" Name="observaciones" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codplazaprov" />
+    <Property Type="Int32" Name="codprov" />
+  </EntityType>
+  <EntityType Name="pnlSlRecogidas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="codRecogida" Nullable="false" />
+    <Property Type="DateTime" Name="fechaPenaliza" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FRecogida" Precision="0" />
+    <Property Type="Byte" Name="codtipo" Nullable="false" />
+    <Property Type="Int16" Name="codconcepto" />
+    <Property Type="Decimal" Name="importe" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Byte" Name="estado" Nullable="false" />
+    <Property Type="Byte" Name="tipoPenalizacion" />
+    <Property Type="String" Name="observaciones" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codplazaprov" />
+    <Property Type="Int32" Name="codprov" />
+  </EntityType>
+  <EntityType Name="pnlTipos">
+    <Key>
+      <PropertyRef Name="codtipo" />
+    </Key>
+    <Property Type="Byte" Name="codtipo" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tPdaPosiciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="codplaza_rep" />
+    <Property Type="Int64" Name="codrepartidor" />
+    <Property Type="Int16" Name="tipo" />
+    <Property Type="Int64" Name="codplaza_org" />
+    <Property Type="Int64" Name="codexp" />
+    <Property Type="String" Name="latitud" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="longitud" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fpda" Precision="3" />
+    <Property Type="DateTime" Name="fabd" Nullable="false" Precision="3" />
+    <Property Type="String" Name="status" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="polyLine" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="boundSWLat" />
+    <Property Type="Double" Name="boundSWLng" />
+    <Property Type="Double" Name="boundNELat" />
+    <Property Type="Double" Name="boundNELng" />
+    <Property Type="Double" Name="distancia" />
+    <Property Type="Double" Name="duracion" />
+    <Property Type="Int64" Name="idorg" />
+    <Property Type="DateTime" Name="fstatus" Precision="3" />
+    <Property Type="DateTime" Name="fgps" Precision="3" />
+  </EntityType>
+  <EntityType Name="webContactos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="3" />
+    <Property Type="String" Name="empresa" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="contacto" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="direccion" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="poblacion" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="telefono" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="peticion" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="texto" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codplaza" />
+    <Property Type="Byte" Name="estado" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webContactosTracking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="idContacto" Nullable="false" />
+    <Property Type="Int16" Name="tipo" Nullable="false" />
+    <Property Type="String" Name="texto" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha" Precision="3" />
+    <Property Type="Int16" Name="codplaza_ano" />
+    <Property Type="String" Name="usuario" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="trepartidores">
+    <Key>
+      <PropertyRef Name="codplaza" />
+      <PropertyRef Name="codrepartidor" />
+    </Key>
+    <Property Type="Int16" Name="codplaza" Nullable="false" />
+    <Property Type="Int32" Name="codrepartidor" Nullable="false" />
+    <Property Type="String" Name="repartidor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipo" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="direccion" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="cp" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="localidad" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="provincia" MaxLength="34" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="fechaalta" Precision="0" />
+    <Property Type="String" Name="tlfno" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="fax" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codtarifa" />
+    <Property Type="String" Name="cif" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codvehiculo" />
+    <Property Type="String" Name="numlocalizador" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="Int16" Name="codtipoprov" />
+    <Property Type="DateTime" Name="fechabaja" Precision="0" />
+    <Property Type="Int16" Name="codCola" Nullable="false" />
+    <Property Type="Boolean" Name="repartePuntoDia" />
+  </EntityType>
+  <EntityType Name="tReparto">
+    <Key>
+      <PropertyRef Name="codplaza_org" />
+      <PropertyRef Name="codexp" />
+      <PropertyRef Name="fecha_asignacion" />
+    </Key>
+    <Property Type="Int16" Name="codplaza_org" Nullable="false" />
+    <Property Type="Int32" Name="codexp" Nullable="false" />
+    <Property Type="Int32" Name="hoja" />
+    <Property Type="Int32" Name="hojaAut" />
+    <Property Type="Int32" Name="hojaMan" />
+    <Property Type="Int16" Name="codservicio" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+    <Property Type="String" Name="calle_dst" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="localidad_dst" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre_dst" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cp_dst" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="referencia" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="reembolso" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="debidos" Precision="19" Scale="4" />
+    <Property Type="Int16" Name="bultos" />
+    <Property Type="Decimal" Name="kgs" Precision="6" Scale="1" />
+    <Property Type="Int16" Name="escaneo" Nullable="false" />
+    <Property Type="Int16" Name="liquidacion" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_liquidacion" Precision="0" />
+    <Property Type="DateTime" Name="fecha_asignacion" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="codrepartidor" />
+    <Property Type="Int32" Name="orden" />
+    <Property Type="Int16" Name="tipo" />
+    <Property Type="Int16" Name="ppago" />
+    <Property Type="Int16" Name="codplaza" />
+  </EntityType>
+  <EntityType Name="tRepartoHojas">
+    <Key>
+      <PropertyRef Name="hoja" />
+      <PropertyRef Name="codrepartidor" />
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Type="Int32" Name="hoja" Nullable="false" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="codrepartidor" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_liquidacion" Precision="0" />
+    <Property Type="Int32" Name="nenvios" />
+    <Property Type="Int16" Name="estado" />
+    <Property Type="DateTime" Name="fecha_cierre" Precision="3" />
+    <Property Type="Int16" Name="codplaza" Nullable="false" />
+    <Property Type="Int16" Name="codplaza_rep" />
+    <Property Type="DateTime" Name="ftick" Precision="3" />
+  </EntityType>
+  <EntityType Name="geoPlazas">
+    <Key>
+      <PropertyRef Name="codgeoplaza" />
+    </Key>
+    <Property Type="Int32" Name="codgeoplaza" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="codplaza" Nullable="false" />
+    <Property Type="Single" Name="lon" />
+    <Property Type="Single" Name="lat" />
+    <Property Type="Int16" Name="accuracy" />
+    <Property Type="String" Name="contesta" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ftick" Nullable="false" Precision="3" />
+    <Property Type="String" Name="direccion" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="codpais" />
+  </EntityType>
+</Schema>

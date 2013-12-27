@@ -1,0 +1,182 @@
+﻿@model ASM.BD.Models.ConfigEntities
+
+@{
+	ViewBag.Title = "Contactos WEB";
+}
+
+<script type="text/javascript" src="/Scripts/i18n/jquery.ui.datepicker-es.js"></script>
+<div class="inside block filter-block" >
+	<h1 class="single-title" >@ViewBag.Title</h1>
+		<div style="float:left; margin-right:20px; margin-top:10px">
+			Abiertas 
+			@Html.CheckBox("Abiertas",true)
+		</div>
+		<div style="float:left; margin-right:20px; margin-top:10px">
+			Cerradas 
+			@Html.CheckBox("Cerradas",false)
+		</div>
+		<div style="float:left; margin-right:20px; margin-top:0px">
+			Fecha desde 
+			@Html.TextBox("FechaDesde", null, new { @style = "margin-left:5px; width:120px" })
+		</div>        
+
+    <br />
+    <br />
+    <br />
+
+	@using MvcJqGrid 
+	@{
+		MvcJqGrid.DataReaders.JsonReader pendientes = new MvcJqGrid.DataReaders.JsonReader();
+		pendientes.RepeatItems = false;
+		pendientes.Id = "pendientes";
+
+		MvcJqGrid.DataReaders.JsonReader tracking = new MvcJqGrid.DataReaders.JsonReader();
+		tracking.RepeatItems = false;
+		tracking.Id = "tracking";
+				
+		}
+
+@(Html.Grid("gridPendientes")
+	.AddColumn(new Column("&nbsp")
+	.SetCustomFormatter("buttonize")
+	.SetSortable(false)
+	.SetWidth(60)
+	)
+	.AddColumn(new Column("id").SetHidden(true))
+
+	.AddColumn(new Column("NombreEstado").SetWidth(80).SetLabel("Estado") )
+	.AddColumn(new Column("fecha").SetWidth(80)
+        .SetFormatter(MvcJqGrid.Enums.Formatters.Date)
+		.SetSearchDateFormat("yy-mm-dd")
+        )
+    .AddColumn(new Column("Plaza").SetWidth(80))
+	.AddColumn(new Column("empresa").SetWidth(100))
+	.AddColumn(new Column("contacto").SetWidth(100))
+
+    .AddColumn(new Column("direccion").SetWidth(100))
+    .AddColumn(new Column("poblacion").SetWidth(100))
+	.AddColumn(new Column("cp").SetWidth(50))
+	.AddColumn(new Column("telefono").SetWidth(80))
+	.AddColumn(new Column("email").SetWidth(80))
+	.AddColumn(new Column("peticion").SetWidth(100))
+	.AddColumn(new Column("texto").SetWidth(100))
+
+	.SetUrl("/ContactosWEB/ContactosPendientes?abiertas=true")
+    
+	
+	.SetAutoEncode(true)
+	.SetDataType(MvcJqGrid.Enums.DataType.Json)
+	.SetAutoWidth(false)
+	.SetWidth(925)
+	.SetHeight(350)
+	.SetRowNum(100)
+	.SetJsonReader(pendientes)
+	.SetLoadUi(MvcJqGrid.Enums.LoadUi.Block)
+	.SetLoadText("Cargando contactos")
+	.SetPager("pager")
+	.SetShrinkToFit(false)
+	.SetViewRecords(true)
+	.SetPgInput(false)
+	.SetSearchToggleButton(true)
+    .SetSearchToolbar(false)
+	.OnSelectRow("onSelectRow(rowid)")
+
+	)
+	<br />
+
+@(Html.Grid("gridTracking")
+	.AddColumn(new Column("fecha")
+		.SetWidth(80)
+		.SetFormatter(MvcJqGrid.Enums.Formatters.Date)
+        .SetLabel("Fecha")
+		
+
+		)
+	.AddColumn(new Column("usuario").SetWidth(100).SetLabel("Anotado por"))
+	.AddColumn(new Column("NombreTipo").SetWidth(100).SetLabel("Tipo"))
+	.AddColumn(new Column("texto").SetWidth(400).SetLabel("Texto"))
+
+	.SetUrl("/ContactosWEB/TrackingContacto")
+	.SetAutoEncode(true)
+	.SetDataType(MvcJqGrid.Enums.DataType.Json)
+	.SetAutoWidth(false)
+	
+	.SetWidth(925)
+	.SetHeight(100)
+	.SetRowNum(20)
+	.SetJsonReader(tracking)
+	.SetLoadUi(MvcJqGrid.Enums.LoadUi.Block)
+	.SetLoadText("Cargando tracking")
+	//.SetPager("pager")
+	.SetShrinkToFit(true)
+	.SetViewRecords(true)
+	.SetHeaderTitles(false)
+	.SetEmptyRecords("No existe tracking para este contacto")
+	)
+
+</div>
+
+<script type="text/javascript">
+	function buttonize(cellvalue, options, rowobject) {
+		var s = "";
+		s += "<span class='ui-icon ui-icon-comment jqgrid-button' onclick='addComentario( " + rowobject["id"] + ")'></span>";
+		s += "<span class='ui-icon ui-icon-locked jqgrid-button' onclick='cierra( " + rowobject["id"] + ")'></span>";
+		return s;
+	}
+
+	function editar(id) {
+		jQuery('#gridPendientes').editRow(id, true);
+	}
+
+	function addComentario(id) {
+	    alert(id);
+	    window.location.href = '/ContactosWEB/NuevoTracking?id=' + id + '&tipo=1';
+	}
+	function cierra(id) {
+	    window.location.href = '/ContactosWEB/NuevoTracking?id=' + id + '&tipo=2'
+	}
+
+	function onSelectRow(rowid) {
+	    var row = $("#gridPendientes").jqGrid('getRowData', rowid);
+			$("#gridTracking")
+				.jqGrid()
+				.setGridParam({
+					data: 'xml',
+					url: "/ContactosWEB/TrackingContacto?id=" + row.id
+				})
+				.trigger("reloadGrid");
+		}
+
+		function setParametrosGrid() {
+		    var path = "/ContactosWEB/ContactosPendientes";
+			path += "?abiertas=" + $("#Abiertas").is(":checked")
+			path += "&cerradas=" + $("#Cerradas").is(":checked")
+			path += "&fechadesde=" + $("#FechaDesde").val()
+
+			$("#gridPendientes")
+				.jqGrid()
+				.setGridParam({
+					data: 'xml',
+					url: path
+				})
+				.trigger("reloadGrid");
+		}
+
+		$(document).ready(function () {
+			$(function () {
+				$("#FechaDesde").datepicker(
+					{
+						buttonImageOnly: true
+					});
+
+				$("#gridTracking > .ui-jqgrid-titlebar").hide();
+			});
+			$("#Abiertas").change(function () { setParametrosGrid(); });
+			$("#Cerradas").change(function () { setParametrosGrid(); });
+			$("#FechaDesde").change(function () { setParametrosGrid(); });
+
+		})
+
+</script>
+
+

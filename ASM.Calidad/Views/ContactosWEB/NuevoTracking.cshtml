@@ -1,0 +1,58 @@
+﻿@model ASM.BD.Models.webContactosTracking
+
+@{
+    ViewBag.Title = "NuevoTracking";
+}
+
+<h2 class="single-title" id="titulo">Nuevo Seguimiento</h2>
+
+<section id="loginForm">
+    <div class="inside block">
+        
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model=> model.idContacto)
+        
+
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.texto, 10,5, new { @style = "width: 250px" })
+            @Html.ValidationMessageFor(model => model.texto)
+        </div>
+
+        <p>
+            <input type="submit" value="Aceptar" />
+        </p>
+        
+        <div>
+            @Html.ActionLink("Anular", "Index")
+        </div>
+    }
+</div>
+</section>
+
+<section class="social" id="socialLoginForm">
+    <div id="helpBlock" class="inside block help-block ">
+        <h2 id="textoAyuda"></h2>
+    </div>
+</section>
+
+<script>
+    jQuery(function () {
+
+        $("document").ready(function () {
+            if ("@Model.tipo.Equals(1)" == "True") {
+                $("#textoAyuda").html("Acepta para añadir el seguimiento");
+                $("#titulo").html("Añadir seguimiento");
+            }
+            if ("@Model.tipo.Equals(2)" == "True") {
+                $("#textoAyuda").html("Acepta para cerrar el contacto");
+                $("#titulo").html("Cierre de contacto");
+            }
+        });
+    });
+    
+</script>

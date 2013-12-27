@@ -1,0 +1,14 @@
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.csprojResolveAssemblyReference.cache
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.csprojResolveAssemblyReference.cache
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb

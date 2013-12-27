@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SeguridadModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SeguridadModelStoreContainer">
+    <EntitySet Name="cnfCuentas" EntityType="SeguridadModel.Store.cnfCuentas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cnfModulos" EntityType="SeguridadModel.Store.cnfModulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cnfModulosxCuenta" EntityType="SeguridadModel.Store.cnfModulosxCuenta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cnfPermisosxCuenta" EntityType="SeguridadModel.Store.cnfPermisosxCuenta" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="cnfCuentas">
+    <Key>
+      <PropertyRef Name="codCuenta" />
+    </Key>
+    <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cuenta" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="codPlaza" Type="smallint" Nullable="false" />
+    <Property Name="tipo" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="password" Type="varchar" MaxLength="25" />
+    <Property Name="perfilSonido" Type="smallint" />
+    <Property Name="fechaCadPass" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="cnfModulos">
+    <Key>
+      <PropertyRef Name="codModulo" />
+    </Key>
+    <Property Name="codModulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="modulo" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="path" Type="varchar" MaxLength="255" />
+    <Property Name="pathCitrix" Type="varchar" MaxLength="255" />
+    <Property Name="codModuloPadre" Type="int" />
+    <Property Name="orden" Type="smallint" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="nombreMenu" Type="varchar" MaxLength="50" />
+    <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cnfModulosxCuenta">
+    <Key>
+      <PropertyRef Name="codModuloxCuenta" />
+    </Key>
+    <Property Name="codModuloxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codModulo" Type="int" Nullable="false" />
+    <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FechaAlta" Type="char" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="cnfPermisosxCuenta">
+    <Key>
+      <PropertyRef Name="codPermisoxCuenta" />
+    </Key>
+    <Property Name="codPermisoxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codPermiso" Type="smallint" Nullable="false" />
+    <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="cnfPerteneceA" ReturnType="tinyint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="roleid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="secActivaCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="secDesactivaMe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="secGetMiPlaza" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="secGetMiUsuario" ReturnType="uniqueidentifier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="secPertenezcoA" ReturnType="bit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="permiso" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="secValidaUsuario" ReturnType="smallint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="modulo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="tienePermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="ejecutable" Type="varchar" Mode="In" />
+    <Parameter Name="form" Type="varchar" Mode="In" />
+    <Parameter Name="accion" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

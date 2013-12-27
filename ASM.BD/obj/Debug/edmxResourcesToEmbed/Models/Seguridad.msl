@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SeguridadModelStoreContainer" CdmEntityContainer="SeguridadEntities">
+    <EntitySetMapping Name="cnfCuentas">
+      <EntityTypeMapping TypeName="SeguridadModel.cnfCuentas">
+        <MappingFragment StoreEntitySet="cnfCuentas">
+          <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codPlaza" ColumnName="codPlaza" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="perfilSonido" ColumnName="perfilSonido" />
+          <ScalarProperty Name="fechaCadPass" ColumnName="fechaCadPass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cnfModulos">
+      <EntityTypeMapping TypeName="SeguridadModel.cnfModulos">
+        <MappingFragment StoreEntitySet="cnfModulos">
+          <ScalarProperty Name="codModulo" ColumnName="codModulo" />
+          <ScalarProperty Name="modulo" ColumnName="modulo" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="pathCitrix" ColumnName="pathCitrix" />
+          <ScalarProperty Name="codModuloPadre" ColumnName="codModuloPadre" />
+          <ScalarProperty Name="orden" ColumnName="orden" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cnfModulosxCuenta">
+      <EntityTypeMapping TypeName="SeguridadModel.cnfModulosxCuenta">
+        <MappingFragment StoreEntitySet="cnfModulosxCuenta">
+          <ScalarProperty Name="codModuloxCuenta" ColumnName="codModuloxCuenta" />
+          <ScalarProperty Name="codModulo" ColumnName="codModulo" />
+          <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+          <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cnfPermisosxCuenta">
+      <EntityTypeMapping TypeName="SeguridadModel.cnfPermisosxCuenta">
+        <MappingFragment StoreEntitySet="cnfPermisosxCuenta">
+          <ScalarProperty Name="codPermisoxCuenta" ColumnName="codPermisoxCuenta" />
+          <ScalarProperty Name="codPermiso" ColumnName="codPermiso" />
+          <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+          <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="secActivaCuenta" FunctionName="SeguridadModel.Store.secActivaCuenta" />
+    <FunctionImportMapping FunctionImportName="secDesactivaMe" FunctionName="SeguridadModel.Store.secDesactivaMe" />
+    <FunctionImportMapping FunctionImportName="tienePermiso" FunctionName="SeguridadModel.Store.tienePermiso" />
+  </EntityContainerMapping>
+</Mapping>

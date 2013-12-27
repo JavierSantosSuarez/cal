@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDLogModelStoreContainer" CdmEntityContainer="BDLogEntities">
+    <EntitySetMapping Name="DiaLog">
+      <EntityTypeMapping TypeName="BDLogModel.DiaLog">
+        <MappingFragment StoreEntitySet="DiaLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+          <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+          <ScalarProperty Name="proceso" ColumnName="proceso" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wsLogLlamadas">
+      <EntityTypeMapping TypeName="BDLogModel.wsLogLlamadas">
+        <MappingFragment StoreEntitySet="wsLogLlamadas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="xmlin" ColumnName="xmlin" />
+          <ScalarProperty Name="proceso" ColumnName="proceso" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="xmlout" ColumnName="xmlout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wsPlaneta">
+      <EntityTypeMapping TypeName="BDLogModel.wsPlaneta">
+        <MappingFragment StoreEntitySet="wsPlaneta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+          <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+          <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wsProcesaFichero">
+      <EntityTypeMapping TypeName="BDLogModel.wsProcesaFichero">
+        <MappingFragment StoreEntitySet="wsProcesaFichero">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+          <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+          <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+          <ScalarProperty Name="EnviosOk" ColumnName="EnviosOk" />
+          <ScalarProperty Name="EnviosKo" ColumnName="EnviosKo" />
+          <ScalarProperty Name="RecogidasOk" ColumnName="RecogidasOk" />
+          <ScalarProperty Name="RecogidasKo" ColumnName="RecogidasKo" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wsTarificador">
+      <EntityTypeMapping TypeName="BDLogModel.wsTarificador">
+        <MappingFragment StoreEntitySet="wsTarificador">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="xmlIn" ColumnName="xmlIn" />
+          <ScalarProperty Name="xmlOut" ColumnName="xmlOut" />
+          <ScalarProperty Name="tiempoProceso" ColumnName="tiempoProceso" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

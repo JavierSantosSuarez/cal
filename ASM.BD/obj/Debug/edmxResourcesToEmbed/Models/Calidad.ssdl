@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalidadModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CalidadModelStoreContainer">
+    <EntitySet Name="clReclamaciones" EntityType="CalidadModel.Store.clReclamaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="clTiposReclamacion" EntityType="CalidadModel.Store.clTiposReclamacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="clTiposTrackingReclamacion" EntityType="CalidadModel.Store.clTiposTrackingReclamacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="clTrackingReclamacion" EntityType="CalidadModel.Store.clTrackingReclamacion" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="clReclamaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tipoReclamacion" Type="tinyint" />
+    <Property Name="codplazaReclama" Type="smallint" />
+    <Property Name="codplazaReclamada" Type="smallint" />
+    <Property Name="fechaInicio" Type="datetime" />
+    <Property Name="fechaFin" Type="datetime" />
+    <Property Name="codexp" Type="int" />
+    <Property Name="codrecogida" Type="bigint" />
+    <Property Name="importePenalizacion" Type="money" />
+    <Property Name="importeIndemnizacion" Type="money" />
+    <Property Name="codplazaPenalizada" Type="smallint" />
+    <Property Name="codplazaIndemnizada" Type="smallint" />
+  </EntityType>
+  <EntityType Name="clTiposReclamacion">
+    <Key>
+      <PropertyRef Name="tipoReclamacion" />
+    </Key>
+    <Property Name="tipoReclamacion" Type="tinyint" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="clTiposTrackingReclamacion">
+    <Key>
+      <PropertyRef Name="tipoTracking" />
+    </Key>
+    <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="clTrackingReclamacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idReclamacion" Type="bigint" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="500" />
+  </EntityType>
+</Schema>

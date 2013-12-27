@@ -1,0 +1,274 @@
+﻿@model ASM.BD.Models.ConfigEntities
+
+@{
+	ViewBag.Title = "Reclamaciones por fraude";
+}
+
+
+@*<div class="navbar submenu">
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="nav-collapse">
+				<ul id="reclamaciones-menu" class="nav">
+					<li class="menu-item menu-item-type-post_type menu-item-object-page">@Html.ActionLink("Nueva reclamacion","NuevaReclamacion", "Reclamaciones")</li>
+				</ul>
+			</div> <!--/.nav-collapse -->
+		</div>
+	</div>
+</div>*@
+
+<script type="text/javascript" src="/Scripts/i18n/jquery.ui.datepicker-es.js"></script>
+
+<div class="inside block filter-block" >
+	<h1 class="single-title" >@ViewBag.Title</h1>
+		<div style="float:left; margin-right:20px; margin-top:10px">
+			Abiertas 
+			@Html.CheckBox("Abiertas",true)
+		</div>
+		<div style="float:left; margin-right:20px; margin-top:10px">
+			Cerradas 
+			@Html.CheckBox("Cerradas",false)
+		</div>
+		<div style="float:left; margin-right:20px; margin-top:0px">
+			Fecha desde 
+			@Html.TextBox("FechaDesde", null, new { @style = "margin-left:5px; width:120px" })
+		</div>        
+
+		<div style="float:right; margin-right:4px">
+           @Html.ActionLink("Nueva reclamación", "NuevaReclamacion", "Reclamaciones", new { @class = "button" })
+		</div>        
+
+    <br />
+    <br />
+    <br />
+
+	@using MvcJqGrid 
+	@{
+		MvcJqGrid.DataReaders.JsonReader pendientes = new MvcJqGrid.DataReaders.JsonReader();
+		pendientes.RepeatItems = false;
+		pendientes.Id = "pendientes";
+
+		MvcJqGrid.DataReaders.JsonReader tracking = new MvcJqGrid.DataReaders.JsonReader();
+		tracking.RepeatItems = false;
+		tracking.Id = "tracking";
+				
+		}
+
+@(Html.Grid("gridPendientes")
+	.AddColumn(new Column("&nbsp")
+	.SetCustomFormatter("buttonize")
+	.SetSortable(false)
+	.SetWidth(60)
+		
+	)
+	.AddColumn(new Column("Id").SetHidden(true))
+
+	.AddColumn(new Column("Estado").SetWidth(50))
+	.AddColumn(new Column("CodPlazaReclama").SetLabel("&nbsp").SetWidth(30))
+	.AddColumn(new Column("PlazaReclama").SetLabel("Reclama").SetWidth(100))
+	.AddColumn(new Column("CodPlazaReclamada").SetLabel("&nbsp").SetWidth(30))
+	.AddColumn(new Column("PlazaReclamada").SetLabel("Reclamada").SetWidth(100))
+
+	.AddColumn(new Column("CodExp").SetLabel("Expedicion").SetWidth(80).SetEditable(true))
+	.AddColumn(new Column("CodRecogida").SetLabel("Recogida").SetWidth(80).SetEditable(true))
+
+	.AddColumn(new Column("ImportePenalizacion").SetLabel("€ Penalizacion").SetWidth(100).SetEditable(true))
+	.AddColumn(new Column("ImporteIndemnizacion").SetLabel("€ Indemnizacion").SetWidth(100).SetEditable(true))
+
+	.AddColumn(new Column("FechaInicio")
+		.SetLabel("Fecha")
+		.SetWidth(80)
+		.SetFormatter(MvcJqGrid.Enums.Formatters.Date)
+		.SetSearchDateFormat("yy-mm-dd")
+		)
+
+	.SetUrl("/Reclamaciones/ReclamacionesPendientes?abiertas=true&cerradas=false")
+	
+	.SetAutoEncode(true)
+	.SetDataType(MvcJqGrid.Enums.DataType.Json)
+	.SetAutoWidth(false)
+	.SetWidth(925)
+	.SetHeight(350)
+	.SetRowNum(100)
+	.SetJsonReader(pendientes)
+	.SetLoadUi(MvcJqGrid.Enums.LoadUi.Block)
+	//.SetRowList(new int[] { 50,100 })
+	.SetLoadText("Cargando reclamaciones")
+	.SetPager("pager")
+	.SetShrinkToFit(true)
+
+	//.SetGridView(true)
+
+	//.SetPgButtons(true)
+	.SetViewRecords(true)
+	.SetPgInput(false)
+	//.SetPagerPos(MvcJqGrid.Enums.PagerPos.Left)
+			
+	.SetSearchToggleButton(true)
+
+
+
+
+
+	//.SetTopPager(true)
+			.SetSearchToolbar(false)
+			.OnSelectRow("onSelectRow(rowid)")
+
+	)
+	<br />
+
+@(Html.Grid("gridTracking")
+	.AddColumn(new Column("fecha")
+		.SetWidth(80)
+		.SetFormatter(MvcJqGrid.Enums.Formatters.Date)
+        .SetLabel("Fecha")
+		
+
+		)
+	.AddColumn(new Column("usuario").SetWidth(100).SetLabel("Anotado por"))
+	.AddColumn(new Column("NombreTipo").SetWidth(100).SetLabel("Tipo"))
+	.AddColumn(new Column("observaciones").SetWidth(400).SetLabel("Observaciones"))
+
+	.SetUrl("/Reclamaciones/TrackingReclamacion")
+	.SetAutoEncode(true)
+	.SetDataType(MvcJqGrid.Enums.DataType.Json)
+	.SetAutoWidth(false)
+	
+	.SetWidth(925)
+	.SetHeight(100)
+	.SetRowNum(20)
+	.SetJsonReader(tracking)
+	.SetLoadUi(MvcJqGrid.Enums.LoadUi.Block)
+	.SetLoadText("Cargando tracking")
+	//.SetPager("pager")
+	.SetShrinkToFit(true)
+	.SetViewRecords(true)
+	.SetHeaderTitles(false)
+	.SetEmptyRecords("No existe tracking para esta reclamación")
+	)
+
+</div>
+
+<script type="text/javascript">
+	function buttonize(cellvalue, options, rowobject) {
+		var s = "";
+		s += "<span class='ui-icon ui-icon-comment jqgrid-button' onclick='addComentario( " + rowobject["Id"] + ")'></span>";
+		s += "<span class='ui-icon ui-icon-check jqgrid-button' onclick='valida( " + rowobject["Id"] + ")'></span>";
+		s += "<span class='ui-icon ui-icon-close jqgrid-button' onclick='invalida( " + rowobject["Id"] + ")'></span>";
+		//s += "<span class='ui-icon ui-icon-search jqgrid-button' onclick='detalle(" + rowobject["CodExp"] + ")'></span>";
+		return s;
+	}
+
+	function editar(id) {
+		jQuery('#gridPendientes').editRow(id, true);
+	}
+
+	function addComentario(id) {
+		window.location.href = '/Reclamaciones/NuevoTracking?id=' + id + '&tipoTracking=2';
+	}
+	function valida(id) {
+		window.location.href = '/Reclamaciones/NuevoTracking?id=' + id + '&tipoTracking=3'
+	}
+	function invalida(id) {
+	    window.location.href = '/Reclamaciones/NuevoTracking?id=' + id + '&tipoTracking=4'
+	}
+	function detalle(codexp) {
+	    window.location.href = '/Expediciones?codexp=' + codexp
+	}
+	//return '<input type="button" value="' + cellvalue + '" onclick="alert(' + cellvalue + ')">';
+
+</script>
+
+
+	<script>
+		function onSelectRow(rowid) {
+			var row = $("#gridPendientes").jqGrid('getRowData', rowid);
+			$("#gridTracking")
+				.jqGrid()
+				.setGridParam({
+					data: 'xml',
+					url: "/Reclamaciones/TrackingReclamacion?id=" + row.Id
+				})
+				.trigger("reloadGrid");
+
+
+		}
+		
+
+		function setParametrosGrid() {
+			var path = "/Reclamaciones/ReclamacionesPendientes";
+			path += "?abiertas=" + $("#Abiertas").is(":checked")
+			path += "&cerradas=" + $("#Cerradas").is(":checked")
+			path += "&fechadesde=" + $("#FechaDesde").val()
+
+			$("#gridPendientes")
+				.jqGrid()
+				.setGridParam({
+					data: 'xml',
+					url: path
+				})
+				.trigger("reloadGrid");
+		}
+		$(document).ready(function () {
+			$(function () {
+				$("#FechaDesde").datepicker(
+					{
+						buttonImageOnly: true
+					});
+
+				$("#gridTracking > .ui-jqgrid-titlebar").hide();
+
+			//	$("#gridPendientes")
+			//		.jqGrid({
+			//			subGrid: true,
+			//			subGridModel: [{
+			//				name: ['fecha', 'NombreTipo', 'observaciones'],
+			//				width: [200, 100, 100],
+			//				align: ['left', 'left', 'left']
+			//			}],
+			//			subGridUrl: '/Reclamaciones/TrackingReclamacion/'
+			//		});                        
+					
+			//	$("#gridPendientes")
+			//.jqGrid()
+			//.setGridParam({
+			//    data: 'xml',
+			//    subGrid: true
+			//})
+
+
+			});
+			$("#Abiertas").change(function () { setParametrosGrid(); });
+			$("#Cerradas").change(function () { setParametrosGrid(); });
+			$("#FechaDesde").change(function () { setParametrosGrid(); });
+
+
+			//    $("#gridPendientes")
+			//        .jqGrid()
+			//.setGridParam({
+			//    data: 'xml',
+			//    url: '/Reclamaciones/ReclamacionesPendientes?op01=' + $("#Op01").val()
+			//})
+			//        //.setGridParam('editurl', '/Reclamaciones/ReclamacionesPendientes?op01=280')
+			//.trigger("reloadGrid");
+
+
+
+
+			
+			//$("#gridPendientes").jqGrid('navGrid', "#pager", { edit: true, add: true, del: true});
+			//$("#gridPendientes").jqGrid('inlineNav', "#pager");
+			//$("#gridPendientes").jqGrid('navButtonAdd', '#pager', {
+			//	caption: "Prueba",
+			//	onClickButton: function () {
+			//		var gsr = jQuery("#gridPendientes").jqGrid('getGridParam', 'selrow');
+			//		if (gsr) {
+			//			jQuery("#gridPendientes").jqGrid('editGridRow', gsr, "#order");
+			//		} else {
+			//			alert("Please select Row")
+			//		}
+			//	}
+			//});
+		})    </script>
+
+

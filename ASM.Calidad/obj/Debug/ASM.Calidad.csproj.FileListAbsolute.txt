@@ -1,0 +1,392 @@
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.pdb
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Antlr3.Runtime.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Infrastructure.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\MvcJqGrid.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Optimization.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\WebGrease.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.pdb
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\de\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\es\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\fr\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\it\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ja\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ko\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ru\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\System.Spatial.resources.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.csprojResolveAssemblyReference.cache
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.pdb
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.xml
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Antlr3.Runtime.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\MvcJqGrid.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Optimization.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebGrease.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.xml
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.csprojResolveAssemblyReference.cache
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.pdb
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.pdb
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Antlr3.Runtime.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\MvcJqGrid.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Optimization.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebGrease.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.BD.pdb
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ASM.Library.pdb
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\EntityFramework.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Spatial.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.xml
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\de\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\es\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\fr\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\it\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ja\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ko\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\ru\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.Calidad.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Antlr3.Runtime.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.BD.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.Library.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\EntityFramework.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\MvcJqGrid.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Spatial.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Optimization.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\WebGrease.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.BD.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ASM.Library.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\JQueryUIHelpers.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\EntityFramework.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Newtonsoft.Json.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.Formatting.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Net.Http.WebRequest.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Helpers.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.WebHost.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Mvc.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Razor.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.WebPages.Razor.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\WebMatrix.Data.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\WebMatrix.WebData.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.Core.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.OData.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.Edm.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\Microsoft.Data.OData.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Spatial.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\System.Web.Http.Tracing.xml
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\de\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\es\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\fr\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\it\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ja\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ko\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\ru\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Calidad\obj\Debug\ASM.Calidad.pdb

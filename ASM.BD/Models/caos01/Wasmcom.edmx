@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WasmcomModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="WasmcomModelStoreContainer">
+          <EntitySet Name="clReclamaciones" EntityType="WasmcomModel.Store.clReclamaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="clTiposReclamacion" EntityType="WasmcomModel.Store.clTiposReclamacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="clTiposTrackingReclamacion" EntityType="WasmcomModel.Store.clTiposTrackingReclamacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="clTrackingReclamacion" EntityType="WasmcomModel.Store.clTrackingReclamacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tplazas" EntityType="WasmcomModel.Store.tplazas" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="clReclamaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tipoReclamacion" Type="tinyint" />
+          <Property Name="codplazaReclama" Type="smallint" />
+          <Property Name="codplazaReclamada" Type="smallint" />
+          <Property Name="fechaInicio" Type="datetime" />
+          <Property Name="fechaFin" Type="datetime" />
+          <Property Name="codexp" Type="int" />
+          <Property Name="codrecogida" Type="bigint" />
+          <Property Name="importePenalizacion" Type="money" />
+          <Property Name="importeIndemnizacion" Type="money" />
+          <Property Name="codplazaPenalizada" Type="smallint" />
+          <Property Name="codplazaIndemnizada" Type="smallint" />
+        </EntityType>
+        <EntityType Name="clTiposReclamacion">
+          <Key>
+            <PropertyRef Name="tipoReclamacion" />
+          </Key>
+          <Property Name="tipoReclamacion" Type="tinyint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="clTiposTrackingReclamacion">
+          <Key>
+            <PropertyRef Name="tipoTracking" />
+          </Key>
+          <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="clTrackingReclamacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idReclamacion" Type="bigint" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
+          <Property Name="observaciones" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tplazas">
+          <Key>
+            <PropertyRef Name="codplaza" />
+          </Key>
+          <Property Name="codplaza" Type="smallint" Nullable="false" />
+          <Property Name="plaza" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="nemonico" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="codcli_red" Type="int" Nullable="false" />
+          <Property Name="codprov_red" Type="int" Nullable="false" />
+          <Property Name="codplaza_old" Type="smallint" />
+          <Property Name="plz_internacional" Type="smallint" Nullable="false" />
+          <Property Name="operativa" Type="char" MaxLength="1" />
+          <Property Name="reparto" Type="char" MaxLength="1" />
+          <Property Name="codprovincia" Type="smallint" Nullable="false" />
+          <Property Name="codregion" Type="smallint" Nullable="false" />
+          <Property Name="bpack" Type="smallint" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
+          <Property Name="codzona" Type="smallint" />
+          <Property Name="codpais" Type="smallint" />
+          <Property Name="CpNave" Type="varchar" MaxLength="25" />
+          <Property Name="NombreWEB" Type="varchar" MaxLength="255" />
+          <Property Name="NombreComercial" Type="varchar" MaxLength="255" />
+          <Property Name="Direccion" Type="varchar" MaxLength="255" />
+          <Property Name="Poblacion" Type="varchar" MaxLength="255" />
+          <Property Name="Provincia" Type="varchar" MaxLength="255" />
+          <Property Name="Cp" Type="varchar" MaxLength="25" />
+          <Property Name="Gerente" Type="varchar" MaxLength="255" />
+          <Property Name="Responsable" Type="varchar" MaxLength="255" />
+          <Property Name="Telefono" Type="varchar" MaxLength="255" />
+          <Property Name="Fax" Type="varchar" MaxLength="255" />
+          <Property Name="MailWeb" Type="varchar" MaxLength="255" />
+          <Property Name="MailComercial" Type="varchar" MaxLength="255" />
+          <Property Name="MailOperativo" Type="varchar" MaxLength="255" />
+          <Property Name="hoficina" Type="varchar" MaxLength="255" />
+          <Property Name="visibleWeb" Type="smallint" Nullable="false" />
+          <Property Name="Software" Type="smallint" Nullable="false" />
+          <Property Name="FSoftWare" Type="smalldatetime" />
+          <Property Name="codPunto" Type="bigint" />
+          <Property Name="logistica" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="DireccionWeb" Type="varchar" MaxLength="255" />
+          <Property Name="codIsla" Type="smallint" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WasmcomModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="WasmcomEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="clReclamaciones" EntityType="WasmcomModel.clReclamaciones" />
+          <EntitySet Name="clTiposReclamacion" EntityType="WasmcomModel.clTiposReclamacion" />
+          <EntitySet Name="clTiposTrackingReclamacion" EntityType="WasmcomModel.clTiposTrackingReclamacion" />
+          <EntitySet Name="clTrackingReclamacion" EntityType="WasmcomModel.clTrackingReclamacion" />
+          <EntitySet Name="tplazas" EntityType="WasmcomModel.tplazas" />
+        </EntityContainer>
+        <EntityType Name="clReclamaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoReclamacion" Type="Byte" />
+          <Property Name="codplazaReclama" Type="Int16" />
+          <Property Name="codplazaReclamada" Type="Int16" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="fechaFin" Type="DateTime" Precision="3" />
+          <Property Name="codexp" Type="Int32" />
+          <Property Name="codrecogida" Type="Int64" />
+          <Property Name="importePenalizacion" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="importeIndemnizacion" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="codplazaPenalizada" Type="Int16" />
+          <Property Name="codplazaIndemnizada" Type="Int16" />
+        </EntityType>
+        <EntityType Name="clTiposReclamacion">
+          <Key>
+            <PropertyRef Name="tipoReclamacion" />
+          </Key>
+          <Property Name="tipoReclamacion" Type="Byte" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="clTiposTrackingReclamacion">
+          <Key>
+            <PropertyRef Name="tipoTracking" />
+          </Key>
+          <Property Name="tipoTracking" Type="Byte" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="clTrackingReclamacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idReclamacion" Type="Int64" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tipoTracking" Type="Byte" Nullable="false" />
+          <Property Name="observaciones" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tplazas">
+          <Key>
+            <PropertyRef Name="codplaza" />
+          </Key>
+          <Property Name="codplaza" Type="Int16" Nullable="false" />
+          <Property Name="plaza" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="nemonico" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="codcli_red" Type="Int32" Nullable="false" />
+          <Property Name="codprov_red" Type="Int32" Nullable="false" />
+          <Property Name="codplaza_old" Type="Int16" />
+          <Property Name="plz_internacional" Type="Int16" Nullable="false" />
+          <Property Name="operativa" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="reparto" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="codprovincia" Type="Int16" Nullable="false" />
+          <Property Name="codregion" Type="Int16" Nullable="false" />
+          <Property Name="bpack" Type="Int16" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="codzona" Type="Int16" />
+          <Property Name="codpais" Type="Int16" />
+          <Property Name="CpNave" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="NombreWEB" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="NombreComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Poblacion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Provincia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Cp" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Gerente" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Responsable" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MailWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MailComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MailOperativo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="hoficina" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="visibleWeb" Type="Int16" Nullable="false" />
+          <Property Name="Software" Type="Int16" Nullable="false" />
+          <Property Name="FSoftWare" Type="DateTime" Precision="0" />
+          <Property Name="codPunto" Type="Int64" />
+          <Property Name="logistica" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DireccionWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="codIsla" Type="Int16" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WasmcomModelStoreContainer" CdmEntityContainer="WasmcomEntities">
+          <EntitySetMapping Name="clReclamaciones">
+            <EntityTypeMapping TypeName="WasmcomModel.clReclamaciones">
+              <MappingFragment StoreEntitySet="clReclamaciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+                <ScalarProperty Name="codplazaReclama" ColumnName="codplazaReclama" />
+                <ScalarProperty Name="codplazaReclamada" ColumnName="codplazaReclamada" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+                <ScalarProperty Name="codexp" ColumnName="codexp" />
+                <ScalarProperty Name="codrecogida" ColumnName="codrecogida" />
+                <ScalarProperty Name="importePenalizacion" ColumnName="importePenalizacion" />
+                <ScalarProperty Name="importeIndemnizacion" ColumnName="importeIndemnizacion" />
+                <ScalarProperty Name="codplazaPenalizada" ColumnName="codplazaPenalizada" />
+                <ScalarProperty Name="codplazaIndemnizada" ColumnName="codplazaIndemnizada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clTiposReclamacion">
+            <EntityTypeMapping TypeName="WasmcomModel.clTiposReclamacion">
+              <MappingFragment StoreEntitySet="clTiposReclamacion">
+                <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clTiposTrackingReclamacion">
+            <EntityTypeMapping TypeName="WasmcomModel.clTiposTrackingReclamacion">
+              <MappingFragment StoreEntitySet="clTiposTrackingReclamacion">
+                <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clTrackingReclamacion">
+            <EntityTypeMapping TypeName="WasmcomModel.clTrackingReclamacion">
+              <MappingFragment StoreEntitySet="clTrackingReclamacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tplazas">
+            <EntityTypeMapping TypeName="WasmcomModel.tplazas">
+              <MappingFragment StoreEntitySet="tplazas">
+                <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+                <ScalarProperty Name="plaza" ColumnName="plaza" />
+                <ScalarProperty Name="nemonico" ColumnName="nemonico" />
+                <ScalarProperty Name="codcli_red" ColumnName="codcli_red" />
+                <ScalarProperty Name="codprov_red" ColumnName="codprov_red" />
+                <ScalarProperty Name="codplaza_old" ColumnName="codplaza_old" />
+                <ScalarProperty Name="plz_internacional" ColumnName="plz_internacional" />
+                <ScalarProperty Name="operativa" ColumnName="operativa" />
+                <ScalarProperty Name="reparto" ColumnName="reparto" />
+                <ScalarProperty Name="codprovincia" ColumnName="codprovincia" />
+                <ScalarProperty Name="codregion" ColumnName="codregion" />
+                <ScalarProperty Name="bpack" ColumnName="bpack" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="codzona" ColumnName="codzona" />
+                <ScalarProperty Name="codpais" ColumnName="codpais" />
+                <ScalarProperty Name="CpNave" ColumnName="CpNave" />
+                <ScalarProperty Name="NombreWEB" ColumnName="NombreWEB" />
+                <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Cp" ColumnName="Cp" />
+                <ScalarProperty Name="Gerente" ColumnName="Gerente" />
+                <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="MailWeb" ColumnName="MailWeb" />
+                <ScalarProperty Name="MailComercial" ColumnName="MailComercial" />
+                <ScalarProperty Name="MailOperativo" ColumnName="MailOperativo" />
+                <ScalarProperty Name="hoficina" ColumnName="hoficina" />
+                <ScalarProperty Name="visibleWeb" ColumnName="visibleWeb" />
+                <ScalarProperty Name="Software" ColumnName="Software" />
+                <ScalarProperty Name="FSoftWare" ColumnName="FSoftWare" />
+                <ScalarProperty Name="codPunto" ColumnName="codPunto" />
+                <ScalarProperty Name="logistica" ColumnName="logistica" />
+                <ScalarProperty Name="DireccionWeb" ColumnName="DireccionWeb" />
+                <ScalarProperty Name="codIsla" ColumnName="codIsla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9288cc90a4fc4a7ab72a5472bbf8fd84" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="WASMCOMModel.clReclamaciones" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.clTiposReclamacion" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.clTiposTrackingReclamacion" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.clTrackingReclamacion" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tplazas" Width="1.5" PointX="5.625" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.texp_codbar_cli" Width="1.5" PointX="2.375" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.texpdetalle" Width="1.5" PointX="2.375" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.TExpDetalle2" Width="1.5" PointX="2.375" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.texpediciones" Width="1.5" PointX="2.375" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.expediciones" Width="1.5" PointX="2.375" PointY="4.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.ExpedicionesResumen" Width="1.5" PointX="2.375" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.texpestado" Width="1.5" PointX="2.375" PointY="3.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tslrEstados" Width="1.5" PointX="4" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tslrExpediciones" Width="1.5" PointX="4" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tslrRecogidas" Width="1.5" PointX="4" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tslrReferencias" Width="1.5" PointX="4" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tslrSeguimiento" Width="1.5" PointX="4" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.treferencias" Width="1.5" PointX="2.375" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tclientes" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tclientes_red" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.pnlBonificaciones" Width="1.5" PointX="9.25" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.pnlExpediciones" Width="1.5" PointX="9.25" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.pnlSlRecogidas" Width="1.5" PointX="9.25" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.pnlTipos" Width="1.5" PointX="9.25" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tPdaPosiciones" Width="1.5" PointX="9.25" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.webContactos" Width="1.5" PointX="7.625" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.webContactosTracking" Width="1.5" PointX="7.625" PointY="4.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.trepartidores" Width="1.5" PointX="11" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tReparto" Width="1.5" PointX="11" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.tRepartoHojas" Width="1.5" PointX="11" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="WASMCOMModel.geoPlazas" Width="1.5" PointX="9.25" PointY="4.25" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ConfigModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ConfigModelStoreContainer">
+          <EntitySet Name="cnfConfiguracion" EntityType="ConfigModel.Store.cnfConfiguracion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfCuentas" EntityType="ConfigModel.Store.cnfCuentas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfEmpresasxCuenta" EntityType="ConfigModel.Store.cnfEmpresasxCuenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfModulos" EntityType="ConfigModel.Store.cnfModulos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfModulosxCuenta" EntityType="ConfigModel.Store.cnfModulosxCuenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfPermisos" EntityType="ConfigModel.Store.cnfPermisos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfPermisosxCuenta" EntityType="ConfigModel.Store.cnfPermisosxCuenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfPermisosxModulo" EntityType="ConfigModel.Store.cnfPermisosxModulo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfPlazasxCuenta" EntityType="ConfigModel.Store.cnfPlazasxCuenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfRestricciones" EntityType="ConfigModel.Store.cnfRestricciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfRestriccionesxCuenta" EntityType="ConfigModel.Store.cnfRestriccionesxCuenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfTiposCliente" EntityType="ConfigModel.Store.cnfTiposCliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfTiposPlaza" EntityType="ConfigModel.Store.cnfTiposPlaza" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cnfTiposRed" EntityType="ConfigModel.Store.cnfTiposRed" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="cnfConfiguracion">
+          <Key>
+            <PropertyRef Name="codConfig" />
+          </Key>
+          <Property Name="codConfig" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codCuenta" Type="uniqueidentifier" />
+          <Property Name="codplaza" Type="smallint" />
+          <Property Name="codEmpresa" Type="smallint" />
+          <Property Name="seccion" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="unidad" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="valor" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="cnfCuentas">
+          <Key>
+            <PropertyRef Name="codCuenta" />
+          </Key>
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="cuenta" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="estado" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="codPlaza" Type="smallint" Nullable="false" />
+          <Property Name="tipo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="password" Type="varchar" MaxLength="25" />
+          <Property Name="perfilSonido" Type="smallint" />
+          <Property Name="fechaCadPass" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="cnfEmpresasxCuenta">
+          <Key>
+            <PropertyRef Name="codEmpresaxCuenta" />
+          </Key>
+          <Property Name="codEmpresaxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codEmpresa" Type="smallint" Nullable="false" />
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cnfModulos">
+          <Key>
+            <PropertyRef Name="codModulo" />
+          </Key>
+          <Property Name="codModulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="modulo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="path" Type="varchar" MaxLength="255" />
+          <Property Name="pathCitrix" Type="varchar" MaxLength="255" />
+          <Property Name="codModuloPadre" Type="int" />
+          <Property Name="orden" Type="smallint" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="nombreMenu" Type="varchar" MaxLength="50" />
+          <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cnfModulosxCuenta">
+          <Key>
+            <PropertyRef Name="codModuloxCuenta" />
+          </Key>
+          <Property Name="codModuloxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codModulo" Type="int" Nullable="false" />
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaAlta" Type="char" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="cnfPermisos">
+          <Key>
+            <PropertyRef Name="codPermiso" />
+          </Key>
+          <Property Name="codPermiso" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="permiso" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="cnfPermisosxCuenta">
+          <Key>
+            <PropertyRef Name="codPermisoxCuenta" />
+          </Key>
+          <Property Name="codPermisoxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codPermiso" Type="smallint" Nullable="false" />
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cnfPermisosxModulo">
+          <Key>
+            <PropertyRef Name="codPermiso" />
+            <PropertyRef Name="codModulo" />
+          </Key>
+          <Property Name="codPermiso" Type="smallint" Nullable="false" />
+          <Property Name="permiso" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="codModulo" Type="int" Nullable="false" />
+          <Property Name="modulo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="nombreMenu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cnfPlazasxCuenta">
+          <Key>
+            <PropertyRef Name="codPlazaxCuenta" />
+          </Key>
+          <Property Name="codPlazaxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codPlaza" Type="smallint" Nullable="false" />
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codTipoPlaza" Type="tinyint" Nullable="false" />
+          <Property Name="fechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cnfRestricciones">
+          <Key>
+            <PropertyRef Name="codRestriccion" />
+          </Key>
+          <Property Name="codRestriccion" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="restriccion" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="cnfRestriccionesxCuenta">
+          <Key>
+            <PropertyRef Name="codRestriccionxCuenta" />
+          </Key>
+          <Property Name="codRestriccionxCuenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codRestriccion" Type="smallint" Nullable="false" />
+          <Property Name="codCuenta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cnfTiposCliente">
+          <Key>
+            <PropertyRef Name="codTipoCliente" />
+          </Key>
+          <Property Name="codTipoCliente" Type="tinyint" Nullable="false" />
+          <Property Name="tipoCliente" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cnfTiposPlaza">
+          <Key>
+            <PropertyRef Name="codTipoPlaza" />
+          </Key>
+          <Property Name="codTipoPlaza" Type="tinyint" Nullable="false" />
+          <Property Name="tipoPlaza" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cnfTiposRed">
+          <Key>
+            <PropertyRef Name="codTipoRed" />
+          </Key>
+          <Property Name="codTipoRed" Type="tinyint" Nullable="false" />
+          <Property Name="tipoRed" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Function Name="secActivaCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cuenta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="secDesactivaMe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConfigModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ConfigEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cnfCuentas" EntityType="ConfigModel.cnfCuentas" />
+          <EntitySet Name="cnfEmpresasxCuenta" EntityType="ConfigModel.cnfEmpresasxCuenta" />
+          <EntitySet Name="cnfModulos" EntityType="ConfigModel.cnfModulos" />
+          <EntitySet Name="cnfModulosxCuenta" EntityType="ConfigModel.cnfModulosxCuenta" />
+          <EntitySet Name="cnfPermisos" EntityType="ConfigModel.cnfPermisos" />
+          <EntitySet Name="cnfPermisosxCuenta" EntityType="ConfigModel.cnfPermisosxCuenta" />
+          <EntitySet Name="cnfPermisosxModulo" EntityType="ConfigModel.cnfPermisosxModulo" />
+          <EntitySet Name="cnfPlazasxCuenta" EntityType="ConfigModel.cnfPlazasxCuenta" />
+          <EntitySet Name="cnfRestricciones" EntityType="ConfigModel.cnfRestricciones" />
+          <EntitySet Name="cnfRestriccionesxCuenta" EntityType="ConfigModel.cnfRestriccionesxCuenta" />
+          <EntitySet Name="cnfTiposCliente" EntityType="ConfigModel.cnfTiposCliente" />
+          <EntitySet Name="cnfTiposPlaza" EntityType="ConfigModel.cnfTiposPlaza" />
+          <EntitySet Name="cnfTiposRed" EntityType="ConfigModel.cnfTiposRed" />
+          <FunctionImport Name="secActivaCuenta">
+          <Parameter Name="cuenta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="secDesactivaMe" />
+          <EntitySet Name="cnfConfiguracion" EntityType="ConfigModel.cnfConfiguracion" />
+        </EntityContainer>
+        <EntityType Name="cnfCuentas">
+          <Key>
+            <PropertyRef Name="codCuenta" />
+          </Key>
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="cuenta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="codPlaza" Type="Int16" Nullable="false" />
+          <Property Name="tipo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="password" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="perfilSonido" Type="Int16" />
+          <Property Name="fechaCadPass" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="cnfEmpresasxCuenta">
+          <Key>
+            <PropertyRef Name="codEmpresaxCuenta" />
+          </Key>
+          <Property Name="codEmpresaxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codEmpresa" Type="Int16" Nullable="false" />
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+          <Property Name="fechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="cnfModulos">
+          <Key>
+            <PropertyRef Name="codModulo" />
+          </Key>
+          <Property Name="codModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="pathCitrix" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="codModuloPadre" Type="Int32" />
+          <Property Name="orden" Type="Int16" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nombreMenu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfModulosxCuenta">
+          <Key>
+            <PropertyRef Name="codModuloxCuenta" />
+          </Key>
+          <Property Name="codModuloxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codModulo" Type="Int32" Nullable="false" />
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+          <Property Name="FechaAlta" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="cnfPermisos">
+          <Key>
+            <PropertyRef Name="codPermiso" />
+          </Key>
+          <Property Name="codPermiso" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfPermisosxCuenta">
+          <Key>
+            <PropertyRef Name="codPermisoxCuenta" />
+          </Key>
+          <Property Name="codPermisoxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codPermiso" Type="Int16" Nullable="false" />
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="cnfPermisosxModulo">
+          <Key>
+            <PropertyRef Name="codPermiso" />
+            <PropertyRef Name="codModulo" />
+          </Key>
+          <Property Name="codPermiso" Type="Int16" Nullable="false" />
+          <Property Name="permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="codModulo" Type="Int32" Nullable="false" />
+          <Property Name="modulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="nombreMenu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfPlazasxCuenta">
+          <Key>
+            <PropertyRef Name="codPlazaxCuenta" />
+          </Key>
+          <Property Name="codPlazaxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codPlaza" Type="Int16" Nullable="false" />
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+          <Property Name="codTipoPlaza" Type="Byte" Nullable="false" />
+          <Property Name="fechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="cnfRestricciones">
+          <Key>
+            <PropertyRef Name="codRestriccion" />
+          </Key>
+          <Property Name="codRestriccion" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restriccion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfRestriccionesxCuenta">
+          <Key>
+            <PropertyRef Name="codRestriccionxCuenta" />
+          </Key>
+          <Property Name="codRestriccionxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codRestriccion" Type="Int16" Nullable="false" />
+          <Property Name="codCuenta" Type="Guid" Nullable="false" />
+          <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="cnfTiposCliente">
+          <Key>
+            <PropertyRef Name="codTipoCliente" />
+          </Key>
+          <Property Name="codTipoCliente" Type="Byte" Nullable="false" />
+          <Property Name="tipoCliente" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfTiposPlaza">
+          <Key>
+            <PropertyRef Name="codTipoPlaza" />
+          </Key>
+          <Property Name="codTipoPlaza" Type="Byte" Nullable="false" />
+          <Property Name="tipoPlaza" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfTiposRed">
+          <Key>
+            <PropertyRef Name="codTipoRed" />
+          </Key>
+          <Property Name="codTipoRed" Type="Byte" Nullable="false" />
+          <Property Name="tipoRed" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cnfConfiguracion">
+          <Key>
+            <PropertyRef Name="codConfig" />
+          </Key>
+          <Property Type="Int32" Name="codConfig" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="codCuenta" />
+          <Property Type="Int16" Name="codplaza" />
+          <Property Type="Int16" Name="codEmpresa" />
+          <Property Type="String" Name="seccion" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="unidad" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="valor" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConfigModelStoreContainer" CdmEntityContainer="ConfigEntities">
+          <EntitySetMapping Name="cnfCuentas">
+            <EntityTypeMapping TypeName="ConfigModel.cnfCuentas">
+              <MappingFragment StoreEntitySet="cnfCuentas">
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codPlaza" ColumnName="codPlaza" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="perfilSonido" ColumnName="perfilSonido" />
+                <ScalarProperty Name="fechaCadPass" ColumnName="fechaCadPass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfEmpresasxCuenta">
+            <EntityTypeMapping TypeName="ConfigModel.cnfEmpresasxCuenta">
+              <MappingFragment StoreEntitySet="cnfEmpresasxCuenta">
+                <ScalarProperty Name="codEmpresaxCuenta" ColumnName="codEmpresaxCuenta" />
+                <ScalarProperty Name="codEmpresa" ColumnName="codEmpresa" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+                <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfModulos">
+            <EntityTypeMapping TypeName="ConfigModel.cnfModulos">
+              <MappingFragment StoreEntitySet="cnfModulos">
+                <ScalarProperty Name="codModulo" ColumnName="codModulo" />
+                <ScalarProperty Name="modulo" ColumnName="modulo" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="pathCitrix" ColumnName="pathCitrix" />
+                <ScalarProperty Name="codModuloPadre" ColumnName="codModuloPadre" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfModulosxCuenta">
+            <EntityTypeMapping TypeName="ConfigModel.cnfModulosxCuenta">
+              <MappingFragment StoreEntitySet="cnfModulosxCuenta">
+                <ScalarProperty Name="codModuloxCuenta" ColumnName="codModuloxCuenta" />
+                <ScalarProperty Name="codModulo" ColumnName="codModulo" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfPermisos">
+            <EntityTypeMapping TypeName="ConfigModel.cnfPermisos">
+              <MappingFragment StoreEntitySet="cnfPermisos">
+                <ScalarProperty Name="codPermiso" ColumnName="codPermiso" />
+                <ScalarProperty Name="permiso" ColumnName="permiso" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfPermisosxCuenta">
+            <EntityTypeMapping TypeName="ConfigModel.cnfPermisosxCuenta">
+              <MappingFragment StoreEntitySet="cnfPermisosxCuenta">
+                <ScalarProperty Name="codPermisoxCuenta" ColumnName="codPermisoxCuenta" />
+                <ScalarProperty Name="codPermiso" ColumnName="codPermiso" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfPermisosxModulo">
+            <EntityTypeMapping TypeName="ConfigModel.cnfPermisosxModulo">
+              <MappingFragment StoreEntitySet="cnfPermisosxModulo">
+                <ScalarProperty Name="codPermiso" ColumnName="codPermiso" />
+                <ScalarProperty Name="permiso" ColumnName="permiso" />
+                <ScalarProperty Name="codModulo" ColumnName="codModulo" />
+                <ScalarProperty Name="modulo" ColumnName="modulo" />
+                <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfPlazasxCuenta">
+            <EntityTypeMapping TypeName="ConfigModel.cnfPlazasxCuenta">
+              <MappingFragment StoreEntitySet="cnfPlazasxCuenta">
+                <ScalarProperty Name="codPlazaxCuenta" ColumnName="codPlazaxCuenta" />
+                <ScalarProperty Name="codPlaza" ColumnName="codPlaza" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+                <ScalarProperty Name="codTipoPlaza" ColumnName="codTipoPlaza" />
+                <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfRestricciones">
+            <EntityTypeMapping TypeName="ConfigModel.cnfRestricciones">
+              <MappingFragment StoreEntitySet="cnfRestricciones">
+                <ScalarProperty Name="codRestriccion" ColumnName="codRestriccion" />
+                <ScalarProperty Name="restriccion" ColumnName="restriccion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfRestriccionesxCuenta">
+            <EntityTypeMapping TypeName="ConfigModel.cnfRestriccionesxCuenta">
+              <MappingFragment StoreEntitySet="cnfRestriccionesxCuenta">
+                <ScalarProperty Name="codRestriccionxCuenta" ColumnName="codRestriccionxCuenta" />
+                <ScalarProperty Name="codRestriccion" ColumnName="codRestriccion" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codCuentaDirecta" ColumnName="codCuentaDirecta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfTiposCliente">
+            <EntityTypeMapping TypeName="ConfigModel.cnfTiposCliente">
+              <MappingFragment StoreEntitySet="cnfTiposCliente">
+                <ScalarProperty Name="codTipoCliente" ColumnName="codTipoCliente" />
+                <ScalarProperty Name="tipoCliente" ColumnName="tipoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfTiposPlaza">
+            <EntityTypeMapping TypeName="ConfigModel.cnfTiposPlaza">
+              <MappingFragment StoreEntitySet="cnfTiposPlaza">
+                <ScalarProperty Name="codTipoPlaza" ColumnName="codTipoPlaza" />
+                <ScalarProperty Name="tipoPlaza" ColumnName="tipoPlaza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnfTiposRed">
+            <EntityTypeMapping TypeName="ConfigModel.cnfTiposRed">
+              <MappingFragment StoreEntitySet="cnfTiposRed">
+                <ScalarProperty Name="codTipoRed" ColumnName="codTipoRed" />
+                <ScalarProperty Name="tipoRed" ColumnName="tipoRed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="secActivaCuenta" FunctionName="ConfigModel.Store.secActivaCuenta" />
+          <FunctionImportMapping FunctionImportName="secDesactivaMe" FunctionName="ConfigModel.Store.secDesactivaMe" />
+          <EntitySetMapping Name="cnfConfiguracion">
+            <EntityTypeMapping TypeName="ConfigModel.cnfConfiguracion">
+              <MappingFragment StoreEntitySet="cnfConfiguracion">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+                <ScalarProperty Name="seccion" ColumnName="seccion" />
+                <ScalarProperty Name="codEmpresa" ColumnName="codEmpresa" />
+                <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+                <ScalarProperty Name="codCuenta" ColumnName="codCuenta" />
+                <ScalarProperty Name="codConfig" ColumnName="codConfig" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

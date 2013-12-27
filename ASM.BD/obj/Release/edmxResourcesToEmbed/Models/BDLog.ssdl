@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDLogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BDLogModelStoreContainer">
+    <EntitySet Name="DiaLog" EntityType="BDLogModel.Store.DiaLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wsLogLlamadas" EntityType="BDLogModel.Store.wsLogLlamadas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wsPlaneta" EntityType="BDLogModel.Store.wsPlaneta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wsProcesaFichero" EntityType="BDLogModel.Store.wsProcesaFichero" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wsTarificador" EntityType="BDLogModel.Store.wsTarificador" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="DiaLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ftick" Type="datetime" Nullable="false" />
+    <Property Name="xmlIn" Type="xml" />
+    <Property Name="xmlOut" Type="xml" />
+    <Property Name="proceso" Type="varchar" MaxLength="50" />
+    <Property Name="observaciones" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="wsLogLlamadas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ftick" Type="datetime" Nullable="false" />
+    <Property Name="xmlin" Type="ntext" />
+    <Property Name="proceso" Type="varchar" MaxLength="50" />
+    <Property Name="cliente" Type="varchar" MaxLength="50" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+    <Property Name="xmlout" Type="ntext" />
+  </EntityType>
+  <EntityType Name="wsPlaneta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ftick" Type="datetime" Nullable="false" />
+    <Property Name="xmlIn" Type="ntext" />
+    <Property Name="xmlOut" Type="ntext" />
+    <Property Name="tiempoProceso" Type="datetime" />
+  </EntityType>
+  <EntityType Name="wsProcesaFichero">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ftick" Type="datetime" Nullable="false" />
+    <Property Name="xmlIn" Type="ntext" />
+    <Property Name="xmlOut" Type="ntext" />
+    <Property Name="tiempoProceso" Type="datetime" />
+    <Property Name="EnviosOk" Type="int" />
+    <Property Name="EnviosKo" Type="int" />
+    <Property Name="RecogidasOk" Type="int" />
+    <Property Name="RecogidasKo" Type="int" />
+    <Property Name="Cliente" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="wsTarificador">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ftick" Type="datetime" Nullable="false" />
+    <Property Name="xmlIn" Type="ntext" />
+    <Property Name="xmlOut" Type="ntext" />
+    <Property Name="tiempoProceso" Type="datetime" />
+    <Property Name="Cliente" Type="varchar" MaxLength="150" />
+  </EntityType>
+</Schema>

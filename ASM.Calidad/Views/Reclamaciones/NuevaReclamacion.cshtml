@@ -1,0 +1,253 @@
+﻿@model ASM.BD.Models.clReclamaciones
+
+@{
+    ViewBag.Title = "NuevaReclamacion";
+}
+<h2 class="single-title" >Nueva Reclamacion</h2>
+
+<section id="loginForm">
+    <div class="inside block">
+        
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tipoReclamacion)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.tipoReclamacion, Model.TiposReclamacionItems)
+        </div>
+        
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.codexp)
+            @Html.HiddenFor(model => model.codrecogida)
+
+            @Html.Label("Codigo")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("acCodigoServicio")
+        </div>
+        
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codplazaReclama)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.codplazaReclama)
+            @Html.TextBox("acPlazaReclama", null, null, new { @class = "ui-autocomplete-loading" })
+            @Html.ValidationMessageFor(model => model.codplazaReclama)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codplazaReclamada)
+        </div>
+
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.codplazaReclamada)
+            @Html.TextBox("acPlazaReclamada")
+            @Html.ValidationMessageFor(model => model.codplazaReclamada)
+        </div>
+
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ObservacionesAlta, 10,5, new { @style = "width: 250px" })
+            @Html.ValidationMessageFor(model => model.ObservacionesAlta)
+        </div>
+
+        <p>
+            <input type="submit" value="Reclamar" />
+        </p>
+        
+        <div>
+            @Html.ActionLink("Anular", "Index")
+        </div>
+    }
+</div>
+</section>
+
+<section class="social" id="socialLoginForm">
+    <div id="helpBlock" class="inside block help-block ">
+        <h2>Introduce un código de expedicion o recogida para mostrar la ayuda</h2>
+    </div>
+</section>
+
+
+<script>
+    function validaPlaza(tipoPlaza) {
+        $("#acPlaza" + tipoPlaza).addClass("ui-autocomplete-loading");
+        plaza = $("#acPlaza" + tipoPlaza).val();
+        codplaza = plaza.split(" - ")[0];
+        if (isNaN(codplaza)) {
+            $("#acPlaza" + tipoPlaza).val("");
+            $("#codplaza" + Reclamada).val("");
+            //alert("No es una plaza válida");
+            $("#acPlaza" + tipoPlaza).removeClass("ui-autocomplete-loading");
+        }
+        else {
+            $.ajax({
+                url: '/Reclamaciones/GetPlaza',
+                data: JSON.stringify({ codplaza: codplaza }),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.resultado == 0) {
+                        $("#acPlaza" + tipoPlaza).val(data.plaza.codplaza + " - " + data.plaza.plaza);
+                        $("#codplaza" + tipoPlaza).val(data.plaza.codplaza);
+                    }
+                    else {
+                        $("#acPlaza" + tipoPlaza).val("");
+                        $("#codplaza" + tipoPlaza).val("");
+                        //alert("No es una plaza válida");
+                    }
+                    $("#acPlaza" + tipoPlaza).removeClass("ui-autocomplete-loading");
+                },
+                error: function () {
+                    $("#acPlaza" + tipoPlaza).removeClass("ui-autocomplete-loading");
+                    alert("Se produjo un error validando la plaza");
+                }
+            });
+        }
+
+    }
+    jQuery(function () {
+
+        $("document").ready(function () {
+            //TODO mirarlo en las propiedades del usuario
+            $("#acPlazaReclama").prop("disabled", true);
+            $("#acPlazaReclama").val($("#codplazaReclama").val());
+            validaPlaza("Reclama");
+        });
+
+
+        $("#codexp").focusout(function (event) {
+            var ai = {
+                codexp: $("#codexp").val()
+            };
+
+            if (ai.codexp != "") {
+                $("#codexp").addClass("ui-autocomplete-loading");
+
+                $.ajax({
+                    url: '/Reclamaciones/CheckCodexp',
+                    data: JSON.stringify(ai),
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.resultado == 0) {
+                            $("#acPlazaReclamada").val(data.codplaza);
+                            validaPlaza("Reclamada");
+
+                        }
+                        else {
+                            $("#codexp").val("");
+                            //alert("No existe la expedición");
+                        }
+                        $("#codexp").removeClass("ui-autocomplete-loading");
+                    },
+                    error: function () {
+                        $("#codexp").removeClass("ui-autocomplete-loading");
+                        alert("Se produjo un error validando la expedición");
+                    }
+
+                });
+            }
+        });
+
+        $("#acCodigoServicio").autocomplete({
+            source: '/Reclamaciones/GetServicios',
+            minLength: 6,
+            focus: function (event, ui) {
+                $("#helpBlock").html(ui.item.help)
+            },
+            open: function () {
+                $(this).removeClass("ui-corner-all").addClass("ui-corner-top").addClass("ui-autocomplete-loading");
+            },
+            close: function () {
+                $(this).removeClass("ui-corner-top").addClass("ui-corner-all").removeClass("ui-autocomplete-loading");
+            },
+            change: function (event, ui) {
+
+                if (ui.item == null) {
+                    
+                }
+                else if (ui.item.tipo == "EXPEDICION") {
+                    $("#codexp").val(ui.item.value);
+                    $("#codrecogida").val("");
+                    $("#helpBlock").html(ui.item.help)
+
+                    $("#acPlazaReclamada").val(ui.item.adicional01);
+                    validaPlaza("Reclamada");
+                }
+                else if (ui.item.tipo == "SLRECOGIDA") {
+                    $("#codrecogida").val(ui.item.value);
+                    $("#codexp").val("");
+                    $("#helpBlock").html(ui.item.help)
+
+                    $("#acPlazaReclamada").val(ui.item.adicional01);
+                    validaPlaza("Reclamada");
+                } else {
+                    
+                }
+            }
+
+        })
+
+            .data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $("<li>")
+                    .append("<a>" + item.label + "<p style='ui-autocomplete-subtext'>" + item.descripcion + "</p></a>")
+                    .appendTo(ul);
+            };
+
+        
+
+
+        $("#acPlazaReclama").autocomplete({
+            source: '/Reclamaciones/GetPlazas',
+            minLength: 3,
+            select: function (event, ui) {
+                $("#codplazaReclama").val(ui.item ?
+                  (ui.item.label.split(" - ")[0]) :
+                  ("")
+                  );
+            },
+            open: function () {
+                $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+            },
+            close: function () {
+                $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+            },
+            change: function (event, ui) {
+                validaPlaza("Reclama");
+            }
+
+        });
+
+        $("#acPlazaReclamada").autocomplete({
+            source: '/Reclamaciones/GetPlazas',
+            minLength: 2,
+            select: function (event, ui) {
+                $("#codplazaReclamada").val(ui.item ?
+                  (ui.item.label.split(" - ")[0]) :
+                  ("")
+                  );
+            },
+            open: function () {
+                $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+            },
+            close: function () {
+                $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+            },
+            change: function (event, ui) {
+                validaPlaza("Reclamada");
+            }
+
+        });
+
+    });
+
+
+
+    </script>

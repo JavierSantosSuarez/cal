@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title - Aplicacion ASM</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="~/Content/themes/asm.web/bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/Content/themes/asm.web/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/Content/themes/asm.web/fonts/font-awesome.css">
+	<link rel="stylesheet" href="~/Content/themes/asm.web/js/jqueryui/css/smoothness/jquery-ui-1.8.20.custom.css">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        PickRandomBackground();
+    });
+
+    function PickRandomBackground() {
+        var index = (Math.floor(Math.random() * 5)) + 1;
+        $('body').addClass('random-background-' + index)
+    }
+</script>    
+
+</head>
+<body class="home blog">
+    <header>
+	    <div  class="content-wrapper">
+		    <div class="logo">
+			    <a href="http://www.asmred.com/wp"><h1>ASM Transporte urgente</h1></a>
+			</div>
+            @Html.Partial("_Menu", new ASM.BD.Models.Seguridad())
+		</div>
+	</header>
+
+    <div id="body" >
+	    @RenderSection("featured", required: false)
+		<section class="content-wrapper">@RenderBody()</section>
+    </div>
+
+    <footer>
+        <div class="footer-wrapper hidden-phone">
+        	<div class="container">
+		        <div class="inside footer">
+			        <ul>
+				        <li>&copy; @DateTime.Now.Year /// ASM</li>
+			        </ul>
+			        <div class="float-right">
+				        @Html.Partial("_LoginPartial")
+				
+			        </div>
+		        </div>
+	        </div>
+        </div> <!-- /.footer-wrapper -->
+    </footer>
+
+	@RenderSection("scripts", required: false)
+</body>
+</html>

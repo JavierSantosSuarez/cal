@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a01df98044946de92ad6d6b0525571e" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="ConfigModel.cnfCuentas" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfEmpresasxCuenta" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfModulos" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfModulosxCuenta" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfPermisos" Width="1.5" PointX="4.75" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfPermisosxCuenta" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfPermisosxModulo" Width="1.5" PointX="6.75" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfPlazasxCuenta" Width="1.5" PointX="2.75" PointY="2.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfRestricciones" Width="1.5" PointX="2.75" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfRestriccionesxCuenta" Width="1.5" PointX="2.75" PointY="3.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfTiposCliente" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfTiposPlaza" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfTiposRed" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="ConfigModel.cnfConfiguracion" Width="1.5" PointX="4.75" PointY="1.75" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

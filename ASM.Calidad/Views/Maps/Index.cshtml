@@ -1,0 +1,513 @@
+﻿@model List<ASM.BD.Models.tPdaPosiciones>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCQEpHQRd8FtlvDJUDtSXBRWhlNWaZxz6w&sensor=true"> type="text/javascript"></script>
+<script src="~/Scripts/i18n/jquery.ui.datepicker-es.js"></script>
+<style> #map_canvas img{max-width:none} </style>
+<style>
+    .infoDiv {
+    height: 200px;    
+    width: 300px; 
+    -webkit-user-select: none; 
+    background-color: white; 
+}  
+</style>
+
+@section scripts { 
+<section class="scripts">  
+   <script type="text/javascript">
+
+       var markers = [];
+       var posiciones = [];
+       var hojas = [];
+       var polylines = [];
+
+       //dani
+       var codPlazaLat = "";
+       var codPlazaLon = "";
+       var iconoPlaza = "/Images/marcaGoogleAsm01.png";
+
+       var map;
+       var interval;
+
+       var actualMarker = 0;
+       var entregas = 0;
+       var incidencias = 0;
+       var animando = false;
+       var pausado = false;
+
+       $(document).ready(function () {
+           initialize();
+       });
+
+
+       function formatJSONDate(jsonDate) {
+           var newDate = dateFormat(jsonDate, "dd/mm/yyyy hh:mm:ss");
+           return newDate;
+       }
+
+       function onSlide(event, ui) {
+           slideTime();
+       }
+       function onSlideVelocidad(event, ui) {
+           var val = $("#slider-velocidad").slider("values", 0);
+           if (val < 100) $("#velocidad").text("Muy rápido");
+           else if (val < 200) $("#velocidad").text("Rápido");
+           else if (val < 300) $("#velocidad").text("Normal");
+           else if (val < 400) $("#velocidad").text("Lento");
+           else $("#velocidad").text("Muy Lento");
+
+
+           if (animando == true && pausado == false ) {
+               window.clearInterval(interval);
+               interval = window.setInterval(animaSiguiente, $("#slider-velocidad").slider("values", 0));
+           }
+       }
+
+       function pausa() {
+           pausado = !pausado;
+           if (pausado == true) {
+               window.clearInterval(interval);
+           } else {
+               interval = window.setInterval(animaSiguiente, $("#slider-velocidad").slider("values", 0));
+           }
+       }
+       
+       function slideTime() {
+           var val0 = $("#slider-range").slider("values", 0),
+               minutes0 = parseInt(val0 % 60, 10),
+               hours0 = parseInt(val0 / 60 % 24, 10);
+
+           startTime = getTime(hours0, minutes0);
+
+           $("#ftick").text(startTime);
+       }
+       function getTime(hours, minutes) {
+           minutes = minutes + "";
+           hours = hours + "";
+           if (minutes.length == 1) minutes = "0" + minutes;
+           if (hours.length == 1) hours = "0" + hours;
+           return hours + ":" + minutes;
+       }
+
+
+       function actualizaDatos() {
+           var codplaza = $("#repartidor").val().toString().split('-')[0];
+           var codrepartidor = $("#repartidor").val().toString().split('-')[1];
+           $("#resumen_movimiento").text("");
+
+           $.ajax({
+               cache: false,
+               url: '@Url.Action("ActualizaDatosMapa", "Maps")',
+               data: { codplaza: codplaza, codrepartidor: codrepartidor, fecha: $("#datepicker").datepicker("getDate").toDateString() },
+               contentType: "application/json; charset=utf-8",
+               success: function (data) {
+                   posiciones.length = 0;
+                   posiciones = data.posiciones;
+                   hojas = data.hojas;
+
+                   codPlazaLat = data.codPlazaLat.toString();
+                   codPlazaLon = data.codPlazaLon.toString();
+
+                   $("#slider-range").slider("option", "min", data.minHora);
+                   $("#slider-range").slider("option", "max", data.maxHora);
+                   slideTime();
+
+
+                   actualizaMapa();
+               },
+               error: function (xhr, ajaxOptions, thrownError) {
+                   alert("error..." + xhr.status);
+                   alert(thrownError);
+               }
+           });
+       }
+
+       function actualizaMapa() {
+           $("#run").text("Animar");
+           $("#pausar").css('display', 'none');
+
+           
+           //dani
+           var markerCodPlaza = new google.maps.Marker({
+               'position': new google.maps.LatLng(codPlazaLat, codPlazaLon),
+               'title': 'ASM',
+               'icon': iconoPlaza
+           });
+
+           markerCodPlaza.setMap(map);           
+
+           for (var i = 0; i < markers.length; i++) markers[i].setMap();
+           markers.length = 0;
+
+           for (var i = 0; i < polylines.length; i++) polylines[i].setMap();
+           polylines.length = 0;
+
+           for (var i = 0; i < posiciones.length; i++) {
+               if (posiciones[i].Tipo == 1) title = '[' + i + '] ' + posiciones[i].Fecha;
+               if (posiciones[i].Tipo == 2) title = 'ENTREGA  - ' + posiciones[i].Expedicion + ' - ' + posiciones[i].Fecha;
+               if (posiciones[i].Tipo == 3) title = 'INCIDENCIA  - ' + posiciones[i].Expedicion + ' - ' + posiciones[i].Fecha;
+
+               var marker = new google.maps.Marker({
+                   'position': new google.maps.LatLng(posiciones[i].Latitud, posiciones[i].Longitud),
+                   'title': title,
+                   'icon': posiciones[i].Icono
+               });
+               
+               if (posiciones[i].Tipo == 1 && posiciones[i].Ruta != null) {
+                   var polylineCoordenadas = [];
+                   for (var p = 0; p < posiciones[i].Ruta.length; p++) {
+                       polylineCoordenadas.push(new google.maps.LatLng(posiciones[i].Ruta[p].lat, posiciones[i].Ruta[p].lng));
+                   }
+
+                   polyline = new google.maps.Polyline({
+                       path: polylineCoordenadas,
+                       geodesic: true,
+                       strokeColor: '#0000FF',
+                       strokeOpacity: 0.6,
+                       strokeWeight: 3
+                   });
+
+                   polyline.setMap(map);
+                   polylines.push(polyline);
+               }
+
+
+               markers.push(marker);
+               
+               //Dani 24/12/2013 Mostramos la última posición de tipo 1
+               if (posiciones[i].Tipo != 1 || i == posiciones.length-1) {
+                   marker.setAnimation(google.maps.Animation.DROP);
+                   marker.setMap(map);
+               }
+               
+           }
+
+           var texto = "";
+           for (var i = 0; i < hojas.length; i++) {
+               texto += "<h2>" + hojas[i].Hoja + " [" + hojas[i].Estado + "]</h2>";
+               texto += "<h2>Expediciones: " + hojas[i].Expediciones.length + "</h2>";
+               texto += "<h3>Entregadas: " + hojas[i].ExpsEntregadas + " - " + hojas[i].PorcentajeExpsEntregadas.toFixed(2) + "% </h3>";
+               texto += "<h3>En incidencia: " + hojas[i].ExpsIncidencia + " - " + hojas[i].PorcentajeExpsIncidencia.toFixed(2) + "% </h3>";
+               texto += "<h3>Pendientes: " + hojas[i].ExpsPendientes + " - " + hojas[i].PorcentajeExpsPendientes.toFixed(2) + "% </h3>";
+           }
+
+           $("#resumen_ruta").html(texto);
+           //$("#resumen_movimiento").text("");
+       }
+
+       function animaSiguiente() {
+           
+           if (animando == false) {
+               window.clearInterval(interval);
+               actualizaMapa();
+           } else if (actualMarker >= markers.length) {
+               if (actualMarker > 2) {
+                   if (posiciones[actualMarker - 3].Tipo == 1) markers[actualMarker - 3].setMap();
+                   if (posiciones[actualMarker - 2].Tipo == 1) markers[actualMarker - 2].setMap();
+                   if (posiciones[actualMarker - 1].Tipo == 1) markers[actualMarker - 1].setMap();
+               }
+               animando = false;
+               window.clearInterval(interval);
+               actualizaMapa();
+           } else {
+               if (posiciones[actualMarker].Tipo == 2) entregas += posiciones[actualMarker].Count;
+               if (posiciones[actualMarker].Tipo == 3) incidencias += posiciones[actualMarker].Count;
+
+               var d = new Date(posiciones[actualMarker].Fecha);
+               var t = d.getHours() * 60 + d.getMinutes();
+               $("#slider-range").slider("value", t);
+               slideTime();
+
+               var texto = ""; //"<h3>" + posiciones[actualMarker].Fecha + "</h3>";
+               texto += "<br>Entregadas: " + entregas;
+               texto += "<br>Incidencias: " + incidencias;
+
+               $("#resumen_movimiento").html(texto);
+
+
+
+
+               //map.setCenter(markers[actualMarker].position);
+               markers[actualMarker++].setMap(map);
+               if (actualMarker > 2) if (posiciones[actualMarker - 3].Tipo == 1) markers[actualMarker - 3].setMap();
+               if (posiciones[actualMarker].Tipo != 1) markers[actualMarker].setAnimation(google.maps.Animation.DROP);
+               
+           }
+
+       }
+
+       function animacion() {
+           if ($("#run").text() == "Animar") {
+               $("#run").text("Parar");
+               $("#pausar").show();
+           } else {
+               $("#run").text("Animar");
+               $("#pausar").css('display', 'none');
+               if (pausado==true) actualizaMapa();
+           }
+
+
+           pausado == false;
+           if (animando == true) {
+               animando = false;
+           }
+           else {
+               for (var i = 0; i < markers.length; i++) {
+                   markers[i].setMap();
+               }
+               actualMarker = 0;
+               entregas = 0;
+               incidencias = 0;
+               animando = true;
+
+
+
+               interval = window.setInterval(animaSiguiente, $("#slider-velocidad").slider("values", 0));
+           }
+       }
+
+
+       function initialize() {
+           $("#pausar").css('display', 'none');
+           $("#pausar").click(pausa);
+           $("#run").click(animacion);
+           $("#actualiza").click(actualizaDatos);
+           $("#slider-range").slider({
+               //range: true,
+               min: 0,
+               max: 1439,
+               //values: [540, 1020],
+               value: 540,
+               slide: onSlide
+           });
+           slideTime();
+
+           $("#slider-velocidad").slider({
+               min: 1,
+               max: 500,
+               value: 150,
+               slide: onSlideVelocidad
+           });
+
+
+           $("#datepicker").datepicker({ minDate: "-3M", maxDate: new Date() });
+           $("#datepicker").datepicker($.datepicker.regional["es"]);
+           $("#datepicker").datepicker("setDate", new Date());
+
+           google.maps.visualRefresh = true;
+           var Barcelona = new google.maps.LatLng(41.44016, 2.12923833333333);
+
+           var asmMapStyle = [
+               {
+                    stylers: [
+                        { "hue": "#ff0900" },
+                        { "gamma": 0.92 }
+                    ]
+                },{
+                }
+           ]
+
+           var asmMapOptions = { name: 'Colores ASM' };
+           var asmMapType = new google.maps.StyledMapType(asmMapStyle, asmMapOptions);
+
+           var mapOptions = {
+               zoom: 12,
+               center: Barcelona,
+               //mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP,
+               mapTypeControlOptions: {
+                   mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'asmmap']
+               }
+           };
+
+           map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+           map.mapTypes.set('asmmap', asmMapType);
+           //map.setMapTypeId('asmmap');
+           actualizaDatos();
+
+
+@*
+           var rutaCoordenadas = [];
+
+           @foreach (var item in Model)
+           {
+               <text>
+               lt = '@(item.latitud)'.replace(",", ".");
+               ln = '@(item.longitud)'.replace(",", ".");
+            
+           posicionesMapa.push({
+                   lat: lt,
+                   lon: ln,
+                   fecha: '@item.fpda.ToString()',
+                   codexp: '@item.codexp',
+                   tipo: '@item.tipo'
+               });
+           if ('@item.tipo' == '1') rutaCoordenadas.push(new google.maps.LatLng(lt, ln));
+               </text>
+           }
+
+
+           for (var i = 0; i < posicionesMapa.length; i++) {
+               //i === 2: arr[2] === 'chau';
+
+               if (posicionesMapa[i].tipo == 1) title = '[' + i + '] ' + posicionesMapa[i].fecha;
+               if (posicionesMapa[i].tipo == 2) title = 'ENTREGA  - ' + posicionesMapa[i].codexp + ' - ' + posicionesMapa[i].fecha;
+               if (posicionesMapa[i].tipo == 3) title = 'INCIDENCIA  - ' + posicionesMapa[i].codexp + ' - ' + posicionesMapa[i].fecha;
+
+               var marker = new google.maps.Marker({
+                   'position': new google.maps.LatLng(posicionesMapa[i].lat, posicionesMapa[i].lon),
+                   'map': map,
+                   'title': title
+
+               });
+
+               //icono = "http://maps.google.com/mapfiles/kml/pal3/icon61.png";
+               //if (posicionesMapa[i].tipo == '2') icono = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png";
+               //if (posicionesMapa[i].tipo == '3') icono = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png";
+
+               //icono = "/Images/truck.png";
+               //if (posicionesMapa[i].tipo == '2') icono = "/Images/entregas/number_1.png";
+               //if (posicionesMapa[i].tipo == '3') icono = "/Images/incidencias/number_1.png";
+
+               marker.setIcon(posicionesMapa[i].icono);
+
+               markers.push(marker);
+
+               //var infowindow = new google.maps.InfoWindow({
+               //    content: "<div class='infoDiv'><h2>" +
+               //    data[i].codexp + "</h2>" + "<div><h4>Hora: " +
+               //    data[i].fecha + "</h4></div></div>"
+               //});
+
+               //google.maps.event.addListener(marker, 'click', function () {
+               //    infowindow.open(map, marker);
+               //});
+
+               ruta = new google.maps.Polyline({
+                   path: rutaCoordenadas,
+                   geodesic: true,
+                   strokeColor: '#FF00FF',
+                   strokeOpacity: 0.4,
+                   strokeWeight: 2
+               });
+
+               //ruta.setMap(map);
+
+
+           }*@
+
+
+@*               var marker = new google.maps.Marker({
+                   'position': new google.maps.LatLng(lat, lon),
+                   'map': map,
+                   'title': "@item.fpda.ToString()"
+               });
+
+               icono = "http://maps.google.com/mapfiles/kml/pal3/icon61.png";
+               if ("@(item.tipo)" == "2") icono = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png";
+               if ("@(item.tipo)" == "3") icono = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png";
+
+               marker.setIcon(icono)
+
+               var infowindow = new google.maps.InfoWindow({
+                   content: "<div class='infoDiv'><h2>" +
+                   "@item.codexp" + "</h2>" + "<div><h4>Hora: " +
+                   "@item.fpda.ToString()" + "</h4></div></div>"
+               });
+
+               google.maps.event.addListener(marker, 'click', function () {
+                   infowindow.open(map, marker);
+               });
+
+           }
+
+           </text>
+           
+       }*@
+
+
+
+  //         var data = [
+  //{
+  //    "Id": 1, "PlaceName": "Liverpool Museum",
+  //    "OpeningHours": "9-5, M-F", "GeoLong": "53.410146",
+  //    "GeoLat": "-2.979919"
+  //},
+  //{
+  //    "Id": 2, "PlaceName": "Merseyside Maritime Museum ",
+  //    "OpeningHours": "9-1,2-5, M-F", "GeoLong":
+  //    "53.401217", "GeoLat": "-2.993052"
+  //},
+  //{
+  //    "Id": 3, "PlaceName": "Walker Art Gallery",
+  //    "OpeningHours": "9-7, M-F", "GeoLong":
+  //    "53.409839", "GeoLat": "-2.979447"
+  //},
+  //{
+  //    "Id": 4, "PlaceName": "National Conservation Centre",
+  //    "OpeningHours": "10-6, M-F", "GeoLong":
+  //    "53.407511", "GeoLat": "-2.984683"
+  //}
+  //         ];
+
+  //         $.each(data, function (i, item) {
+  //             var marker = new google.maps.Marker({
+  //                 'position': new google.maps.LatLng(item.GeoLong, item.GeoLat),
+  //                 'map': map,
+  //                 'title': item.PlaceName
+  //             });
+
+  //             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+
+  //             var infowindow = new google.maps.InfoWindow({
+  //                 content: "<div class='infoDiv'><h2>" +
+  //                   item.PlaceName + "</h2>" + "<div><h4>Opening hours: " +
+  //                   item.OpeningHours + "</h4></div></div>"
+  //             });
+
+
+  //             google.maps.event.addListener(marker, 'click', function () {
+  //                 infowindow.open(map, marker);
+  //             });
+  //         })
+       }
+   </script>
+</section>}
+
+<div class="inside block  filter-block">
+    <h1 class="single-title" >Ejemplo Google Map</h1>
+    <div style="width:100%; height:60px">
+		<div style="float:left; margin-right:20px; margin-top:10px">
+			Fecha
+			<input type="text" id="datepicker" >
+		</div>
+
+		<div style="float:left; margin-right:20px; margin-top:10px;">
+            Repartidor
+           <select id="repartidor" style="width:300px">
+               <option value="80-101">ANDRES PRODUCCIÓN DIGUIM [80-101]</option>
+               <option value="80-238">CRISTOBAL GARCIA MARTINEZ [80-238]</option>
+               <option value="80-259">JOSE - APOYO [80-259]</option>
+           </select>
+        </div>
+
+        <div style="float:right; margin-right:4px">
+            <button id="actualiza" >Actualizar</button>
+            <button id="run" >Animar</button>
+            <button id="pausar" >II</button>
+        </div>
+        
+    </div>
+    <div style="width:100%; height:450px">
+        <div id="map_canvas" style="width:60%; height:100%; float:left"></div>
+        <div style="width:35%; height:100%; float:right; ">
+            <div id="slider-range"></div>
+            <div id="ftick" style="margin-bottom:10px"></div>
+            <div id="slider-velocidad"></div>
+            <div id="velocidad" style="margin-bottom:10px">Rápido</div>
+
+            <div id="resumen_ruta" ></div>
+            <div id="resumen_movimiento" ></div>
+
+        </div>
+    </div>
+</div>

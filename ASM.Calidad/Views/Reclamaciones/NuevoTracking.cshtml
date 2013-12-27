@@ -1,0 +1,79 @@
+﻿@model ASM.BD.Models.clTrackingReclamacion
+
+@{
+    ViewBag.Title = "NuevoTracking";
+}
+
+<h2 class="single-title" id="titulo">Nuevo Seguimiento</h2>
+
+<section id="loginForm">
+    <div class="inside block">
+        
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model=> model.idReclamacion)
+        
+        string displayImportes = (Model.tipoTracking == 3) ? "inline" : "none";
+           
+        <div class="editor-field">
+            @Html.LabelFor(model => model.ImportePenalizacion, new { style = "display:" + displayImportes + ";" })
+
+            @Html.TextBoxFor(model=> model.ImportePenalizacion, new { style = "display:" + displayImportes + ";" })
+            @Html.ValidationMessageFor(model => model.ImportePenalizacion)
+        </div>
+        <div class="editor-field">
+            @Html.LabelFor(model => model.ImporteIndemnizacion, new { style = "display:" + displayImportes + ";" })
+
+            @Html.TextBoxFor(model=> model.ImporteIndemnizacion, new { style = "display:" + displayImportes + ";" })
+            @Html.ValidationMessageFor(model => model.ImporteIndemnizacion)
+        </div>
+        <div class="editor-field">
+            @Html.LabelFor(model => model.InvertirCargos, new { style = "display:" + displayImportes + ";" })
+
+            @Html.CheckBoxFor(model=> model.InvertirCargos, new { style = "display:" + displayImportes + ";" })
+            @Html.ValidationMessageFor(model => model.InvertirCargos)
+        </div>
+
+                
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.observaciones, 10,5, new { @style = "width: 250px" })
+            @Html.ValidationMessageFor(model => model.observaciones)
+        </div>
+
+        <p>
+            <input type="submit" value="Aceptar" />
+        </p>
+        
+        <div>
+            @Html.ActionLink("Anular", "Index")
+        </div>
+    }
+</div>
+</section>
+
+<section class="social" id="socialLoginForm">
+    <div id="helpBlock" class="inside block help-block ">
+        <h2 id="textoAyuda"></h2>
+    </div>
+</section>
+
+<script>
+    jQuery(function () {
+
+        $("document").ready(function () {
+            if ("@Model.tipoTracking.Equals(3)" == "True") {
+                $("#textoAyuda").html("Acepta para validar la reclamación. <br/ > Se generará penalización.");
+                $("#titulo").html("Validación de reclamacion");
+            }
+            if ("@Model.tipoTracking.Equals(4)" == "True") {
+                $("#textoAyuda").html("Acepta para rechazar la reclamación. <br/ > No se generará ninguna penalización.");
+                $("#titulo").html("Rechazar reclamacion");
+            }
+        });
+    });
+    
+</script>

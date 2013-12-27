@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WASMCOMModelStoreContainer" CdmEntityContainer="WASMCOMEntities">
+    <EntitySetMapping Name="clReclamaciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.clReclamaciones">
+        <MappingFragment StoreEntitySet="clReclamaciones">
+          <ScalarProperty Name="invertirCargos" ColumnName="invertirCargos" />
+          <ScalarProperty Name="aceptada" ColumnName="aceptada" />
+          <ScalarProperty Name="cerrada" ColumnName="cerrada" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+          <ScalarProperty Name="codplazaReclama" ColumnName="codplazaReclama" />
+          <ScalarProperty Name="codplazaReclamada" ColumnName="codplazaReclamada" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codrecogida" ColumnName="codrecogida" />
+          <ScalarProperty Name="importePenalizacion" ColumnName="importePenalizacion" />
+          <ScalarProperty Name="importeIndemnizacion" ColumnName="importeIndemnizacion" />
+          <ScalarProperty Name="codplazaPenalizada" ColumnName="codplazaPenalizada" />
+          <ScalarProperty Name="codplazaIndemnizada" ColumnName="codplazaIndemnizada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTiposReclamacion">
+      <EntityTypeMapping TypeName="WASMCOMModel.clTiposReclamacion">
+        <MappingFragment StoreEntitySet="clTiposReclamacion">
+          <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTiposTrackingReclamacion">
+      <EntityTypeMapping TypeName="WASMCOMModel.clTiposTrackingReclamacion">
+        <MappingFragment StoreEntitySet="clTiposTrackingReclamacion">
+          <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTrackingReclamacion">
+      <EntityTypeMapping TypeName="WASMCOMModel.clTrackingReclamacion">
+        <MappingFragment StoreEntitySet="clTrackingReclamacion">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="codplaza_ano" ColumnName="codplaza_ano" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tplazas">
+      <EntityTypeMapping TypeName="WASMCOMModel.tplazas">
+        <MappingFragment StoreEntitySet="tplazas">
+          <ScalarProperty Name="tipoplaza" ColumnName="tipoplaza" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="plaza" ColumnName="plaza" />
+          <ScalarProperty Name="nemonico" ColumnName="nemonico" />
+          <ScalarProperty Name="codcli_red" ColumnName="codcli_red" />
+          <ScalarProperty Name="codprov_red" ColumnName="codprov_red" />
+          <ScalarProperty Name="codplaza_old" ColumnName="codplaza_old" />
+          <ScalarProperty Name="plz_internacional" ColumnName="plz_internacional" />
+          <ScalarProperty Name="operativa" ColumnName="operativa" />
+          <ScalarProperty Name="reparto" ColumnName="reparto" />
+          <ScalarProperty Name="codprovincia" ColumnName="codprovincia" />
+          <ScalarProperty Name="codregion" ColumnName="codregion" />
+          <ScalarProperty Name="bpack" ColumnName="bpack" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="codzona" ColumnName="codzona" />
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="CpNave" ColumnName="CpNave" />
+          <ScalarProperty Name="NombreWEB" ColumnName="NombreWEB" />
+          <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Cp" ColumnName="Cp" />
+          <ScalarProperty Name="Gerente" ColumnName="Gerente" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="MailWeb" ColumnName="MailWeb" />
+          <ScalarProperty Name="MailComercial" ColumnName="MailComercial" />
+          <ScalarProperty Name="MailOperativo" ColumnName="MailOperativo" />
+          <ScalarProperty Name="hoficina" ColumnName="hoficina" />
+          <ScalarProperty Name="visibleWeb" ColumnName="visibleWeb" />
+          <ScalarProperty Name="Software" ColumnName="Software" />
+          <ScalarProperty Name="FSoftWare" ColumnName="FSoftWare" />
+          <ScalarProperty Name="codPunto" ColumnName="codPunto" />
+          <ScalarProperty Name="logistica" ColumnName="logistica" />
+          <ScalarProperty Name="DireccionWeb" ColumnName="DireccionWeb" />
+          <ScalarProperty Name="codIsla" ColumnName="codIsla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="texp_codbar_cli">
+      <EntityTypeMapping TypeName="WASMCOMModel.texp_codbar_cli">
+        <MappingFragment StoreEntitySet="texp_codbar_cli">
+          <ScalarProperty Name="codbarras_retorno" ColumnName="codbarras_retorno" />
+          <ScalarProperty Name="codbar_ENV" ColumnName="codbar_ENV" />
+          <ScalarProperty Name="UidExp" ColumnName="UidExp" />
+          <ScalarProperty Name="AlbAgrupacionDst" ColumnName="AlbAgrupacionDst" />
+          <ScalarProperty Name="AlbAgrupacion" ColumnName="AlbAgrupacion" />
+          <ScalarProperty Name="codbar" ColumnName="codbar" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="texpdetalle">
+      <EntityTypeMapping TypeName="WASMCOMModel.texpdetalle">
+        <MappingFragment StoreEntitySet="texpdetalle">
+          <ScalarProperty Name="UsuarioAnota" ColumnName="UsuarioAnota" />
+          <ScalarProperty Name="codprov" ColumnName="codprov" />
+          <ScalarProperty Name="codplaza_prv" ColumnName="codplaza_prv" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codcli_fac" ColumnName="codcli_fac" />
+          <ScalarProperty Name="ultimo" ColumnName="ultimo" />
+          <ScalarProperty Name="kgsvol_prv" ColumnName="kgsvol_prv" />
+          <ScalarProperty Name="kgsvol_cli" ColumnName="kgsvol_cli" />
+          <ScalarProperty Name="kgsvol_cli_ini" ColumnName="kgsvol_cli_ini" />
+          <ScalarProperty Name="kgsvol_cli_red" ColumnName="kgsvol_cli_red" />
+          <ScalarProperty Name="kgsvol_cli_red_ini" ColumnName="kgsvol_cli_red_ini" />
+          <ScalarProperty Name="kgsvol_prv_red_dst" ColumnName="kgsvol_prv_red_dst" />
+          <ScalarProperty Name="kgsvol_prv_red_org" ColumnName="kgsvol_prv_red_org" />
+          <ScalarProperty Name="bultos" ColumnName="bultos" />
+          <ScalarProperty Name="bultos_ini" ColumnName="bultos_ini" />
+          <ScalarProperty Name="kgs" ColumnName="kgs" />
+          <ScalarProperty Name="vol" ColumnName="vol" />
+          <ScalarProperty Name="nexp" ColumnName="nexp" />
+          <ScalarProperty Name="codprov_red_dst" ColumnName="codprov_red_dst" />
+          <ScalarProperty Name="codprov_red_org" ColumnName="codprov_red_org" />
+          <ScalarProperty Name="codcli_red_pag" ColumnName="codcli_red_pag" />
+          <ScalarProperty Name="codcli_may" ColumnName="codcli_may" />
+          <ScalarProperty Name="codcli" ColumnName="codcli" />
+          <ScalarProperty Name="codplaza_cli" ColumnName="codplaza_cli" />
+          <ScalarProperty Name="codmotivo" ColumnName="codmotivo" />
+          <ScalarProperty Name="codplaza_pag" ColumnName="codplaza_pag" />
+          <ScalarProperty Name="codplaza_dst" ColumnName="codplaza_dst" />
+          <ScalarProperty Name="codplaza_ano" ColumnName="codplaza_ano" />
+          <ScalarProperty Name="sec" ColumnName="sec" />
+          <ScalarProperty Name="f_anota" ColumnName="f_anota" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TExpDetalle2">
+      <EntityTypeMapping TypeName="WASMCOMModel.TExpDetalle2">
+        <MappingFragment StoreEntitySet="TExpDetalle2">
+          <ScalarProperty Name="gestdes" ColumnName="gestdes" />
+          <ScalarProperty Name="gestori" ColumnName="gestori" />
+          <ScalarProperty Name="dninom" ColumnName="dninom" />
+          <ScalarProperty Name="FPEntrega2" ColumnName="FPEntrega2" />
+          <ScalarProperty Name="est_movil" ColumnName="est_movil" />
+          <ScalarProperty Name="anulable" ColumnName="anulable" />
+          <ScalarProperty Name="CodDestinatario" ColumnName="CodDestinatario" />
+          <ScalarProperty Name="email_remite" ColumnName="email_remite" />
+          <ScalarProperty Name="fecha_mail" ColumnName="fecha_mail" />
+          <ScalarProperty Name="est_mail" ColumnName="est_mail" />
+          <ScalarProperty Name="dmail_dst" ColumnName="dmail_dst" />
+          <ScalarProperty Name="movil_dst" ColumnName="movil_dst" />
+          <ScalarProperty Name="att_dst" ColumnName="att_dst" />
+          <ScalarProperty Name="FPEntrega" ColumnName="FPEntrega" />
+          <ScalarProperty Name="pers_cnt" ColumnName="pers_cnt" />
+          <ScalarProperty Name="tfno_cnt" ColumnName="tfno_cnt" />
+          <ScalarProperty Name="retorno" ColumnName="retorno" />
+          <ScalarProperty Name="AlbaranCliente" ColumnName="AlbaranCliente" />
+          <ScalarProperty Name="ultimo" ColumnName="ultimo" />
+          <ScalarProperty Name="f_anota" ColumnName="f_anota" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="Codplaza_org" ColumnName="Codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="texpediciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.texpediciones">
+        <MappingFragment StoreEntitySet="texpediciones">
+          <ScalarProperty Name="codprovincia_dst" ColumnName="codprovincia_dst" />
+          <ScalarProperty Name="codpais_dst" ColumnName="codpais_dst" />
+          <ScalarProperty Name="codprovincia_org" ColumnName="codprovincia_org" />
+          <ScalarProperty Name="codpais_org" ColumnName="codpais_org" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="horario" ColumnName="horario" />
+          <ScalarProperty Name="codplaza_fac" ColumnName="codplaza_fac" />
+          <ScalarProperty Name="codcli_fac" ColumnName="codcli_fac" />
+          <ScalarProperty Name="cerrado_punteo" ColumnName="cerrado_punteo" />
+          <ScalarProperty Name="provisional" ColumnName="provisional" />
+          <ScalarProperty Name="factura_cli" ColumnName="factura_cli" />
+          <ScalarProperty Name="facturared_prv" ColumnName="facturared_prv" />
+          <ScalarProperty Name="facturared_cli" ColumnName="facturared_cli" />
+          <ScalarProperty Name="valorDecl" ColumnName="valorDecl" />
+          <ScalarProperty Name="reembolso" ColumnName="reembolso" />
+          <ScalarProperty Name="sabado" ColumnName="sabado" />
+          <ScalarProperty Name="tipo_portes" ColumnName="tipo_portes" />
+          <ScalarProperty Name="nif_dst" ColumnName="nif_dst" />
+          <ScalarProperty Name="tfno_dst" ColumnName="tfno_dst" />
+          <ScalarProperty Name="cp_dst" ColumnName="cp_dst" />
+          <ScalarProperty Name="localidad_dst" ColumnName="localidad_dst" />
+          <ScalarProperty Name="codlocalidad_dst" ColumnName="codlocalidad_dst" />
+          <ScalarProperty Name="calle_dst" ColumnName="calle_dst" />
+          <ScalarProperty Name="departamento_dst" ColumnName="departamento_dst" />
+          <ScalarProperty Name="nombre_dst" ColumnName="nombre_dst" />
+          <ScalarProperty Name="nif_org" ColumnName="nif_org" />
+          <ScalarProperty Name="tfno_org" ColumnName="tfno_org" />
+          <ScalarProperty Name="cp_org" ColumnName="cp_org" />
+          <ScalarProperty Name="localidad_org" ColumnName="localidad_org" />
+          <ScalarProperty Name="codlocalidad_org" ColumnName="codlocalidad_org" />
+          <ScalarProperty Name="calle_org" ColumnName="calle_org" />
+          <ScalarProperty Name="departamento_org" ColumnName="departamento_org" />
+          <ScalarProperty Name="nombre_org" ColumnName="nombre_org" />
+          <ScalarProperty Name="codtipodst" ColumnName="codtipodst" />
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="codtipo_envio" ColumnName="codtipo_envio" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expediciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.expediciones">
+        <MappingFragment StoreEntitySet="expediciones">
+          <ScalarProperty Name="codprov" ColumnName="codprov" />
+          <ScalarProperty Name="f_anota" ColumnName="f_anota" />
+          <ScalarProperty Name="sec" ColumnName="sec" />
+          <ScalarProperty Name="codplaza_ano" ColumnName="codplaza_ano" />
+          <ScalarProperty Name="codplaza_dst" ColumnName="codplaza_dst" />
+          <ScalarProperty Name="codplaza_pag" ColumnName="codplaza_pag" />
+          <ScalarProperty Name="codmotivo" ColumnName="codmotivo" />
+          <ScalarProperty Name="codplaza_cli" ColumnName="codplaza_cli" />
+          <ScalarProperty Name="codcli" ColumnName="codcli" />
+          <ScalarProperty Name="codcli_may" ColumnName="codcli_may" />
+          <ScalarProperty Name="codcli_red_pag" ColumnName="codcli_red_pag" />
+          <ScalarProperty Name="codprov_red_org" ColumnName="codprov_red_org" />
+          <ScalarProperty Name="codprov_red_dst" ColumnName="codprov_red_dst" />
+          <ScalarProperty Name="nexp" ColumnName="nexp" />
+          <ScalarProperty Name="vol" ColumnName="vol" />
+          <ScalarProperty Name="kgs" ColumnName="kgs" />
+          <ScalarProperty Name="bultos_ini" ColumnName="bultos_ini" />
+          <ScalarProperty Name="bultos" ColumnName="bultos" />
+          <ScalarProperty Name="kgsvol_prv_red_org" ColumnName="kgsvol_prv_red_org" />
+          <ScalarProperty Name="kgsvol_prv_red_dst" ColumnName="kgsvol_prv_red_dst" />
+          <ScalarProperty Name="kgsvol_cli_red_ini" ColumnName="kgsvol_cli_red_ini" />
+          <ScalarProperty Name="kgsvol_cli_red" ColumnName="kgsvol_cli_red" />
+          <ScalarProperty Name="kgsvol_cli_ini" ColumnName="kgsvol_cli_ini" />
+          <ScalarProperty Name="kgsvol_cli" ColumnName="kgsvol_cli" />
+          <ScalarProperty Name="kgsvol_prv" ColumnName="kgsvol_prv" />
+          <ScalarProperty Name="codplaza_prv" ColumnName="codplaza_prv" />
+          <ScalarProperty Name="codprovincia_dst" ColumnName="codprovincia_dst" />
+          <ScalarProperty Name="codpais_dst" ColumnName="codpais_dst" />
+          <ScalarProperty Name="codprovincia_org" ColumnName="codprovincia_org" />
+          <ScalarProperty Name="codpais_org" ColumnName="codpais_org" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="horario" ColumnName="horario" />
+          <ScalarProperty Name="cerrado_punteo" ColumnName="cerrado_punteo" />
+          <ScalarProperty Name="provisional" ColumnName="provisional" />
+          <ScalarProperty Name="valorDecl" ColumnName="valorDecl" />
+          <ScalarProperty Name="reembolso" ColumnName="reembolso" />
+          <ScalarProperty Name="sabado" ColumnName="sabado" />
+          <ScalarProperty Name="tipo_portes" ColumnName="tipo_portes" />
+          <ScalarProperty Name="nif_dst" ColumnName="nif_dst" />
+          <ScalarProperty Name="tfno_dst" ColumnName="tfno_dst" />
+          <ScalarProperty Name="cp_dst" ColumnName="cp_dst" />
+          <ScalarProperty Name="localidad_dst" ColumnName="localidad_dst" />
+          <ScalarProperty Name="codlocalidad_dst" ColumnName="codlocalidad_dst" />
+          <ScalarProperty Name="calle_dst" ColumnName="calle_dst" />
+          <ScalarProperty Name="departamento_dst" ColumnName="departamento_dst" />
+          <ScalarProperty Name="nombre_dst" ColumnName="nombre_dst" />
+          <ScalarProperty Name="nif_org" ColumnName="nif_org" />
+          <ScalarProperty Name="tfno_org" ColumnName="tfno_org" />
+          <ScalarProperty Name="cp_org" ColumnName="cp_org" />
+          <ScalarProperty Name="localidad_org" ColumnName="localidad_org" />
+          <ScalarProperty Name="codlocalidad_org" ColumnName="codlocalidad_org" />
+          <ScalarProperty Name="calle_org" ColumnName="calle_org" />
+          <ScalarProperty Name="departamento_org" ColumnName="departamento_org" />
+          <ScalarProperty Name="nombre_org" ColumnName="nombre_org" />
+          <ScalarProperty Name="codtipodst" ColumnName="codtipodst" />
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="codtipo_envio" ColumnName="codtipo_envio" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpedicionesResumen">
+      <EntityTypeMapping TypeName="WASMCOMModel.ExpedicionesResumen">
+        <MappingFragment StoreEntitySet="ExpedicionesResumen">
+          <ScalarProperty Name="PathPod" ColumnName="PathPod" />
+          <ScalarProperty Name="Debidos" ColumnName="Debidos" />
+          <ScalarProperty Name="Incidencia" ColumnName="Incidencia" />
+          <ScalarProperty Name="servicio" ColumnName="servicio" />
+          <ScalarProperty Name="Horario" ColumnName="Horario" />
+          <ScalarProperty Name="EstadoFinal" ColumnName="EstadoFinal" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codCalidad" ColumnName="codCalidad" />
+          <ScalarProperty Name="Unidades" ColumnName="Unidades" />
+          <ScalarProperty Name="codbar" ColumnName="codbar" />
+          <ScalarProperty Name="Refcli" ColumnName="Refcli" />
+          <ScalarProperty Name="Albaran" ColumnName="Albaran" />
+          <ScalarProperty Name="informacion" ColumnName="informacion" />
+          <ScalarProperty Name="codestado" ColumnName="codestado" />
+          <ScalarProperty Name="dninom" ColumnName="dninom" />
+          <ScalarProperty Name="est_movil" ColumnName="est_movil" />
+          <ScalarProperty Name="email_remite" ColumnName="email_remite" />
+          <ScalarProperty Name="fecha_mail" ColumnName="fecha_mail" />
+          <ScalarProperty Name="est_mail" ColumnName="est_mail" />
+          <ScalarProperty Name="dmail_dst" ColumnName="dmail_dst" />
+          <ScalarProperty Name="movil_dst" ColumnName="movil_dst" />
+          <ScalarProperty Name="att_dst" ColumnName="att_dst" />
+          <ScalarProperty Name="FPEntrega" ColumnName="FPEntrega" />
+          <ScalarProperty Name="pers_cnt" ColumnName="pers_cnt" />
+          <ScalarProperty Name="tfno_cnt" ColumnName="tfno_cnt" />
+          <ScalarProperty Name="retorno" ColumnName="retorno" />
+          <ScalarProperty Name="AlbaranCliente" ColumnName="AlbaranCliente" />
+          <ScalarProperty Name="bultos" ColumnName="bultos" />
+          <ScalarProperty Name="kgs" ColumnName="kgs" />
+          <ScalarProperty Name="vol" ColumnName="vol" />
+          <ScalarProperty Name="nexp" ColumnName="nexp" />
+          <ScalarProperty Name="codcli" ColumnName="codcli" />
+          <ScalarProperty Name="codplaza_cli" ColumnName="codplaza_cli" />
+          <ScalarProperty Name="codplaza_pag" ColumnName="codplaza_pag" />
+          <ScalarProperty Name="codplaza_dst" ColumnName="codplaza_dst" />
+          <ScalarProperty Name="codprovincia_dst" ColumnName="codprovincia_dst" />
+          <ScalarProperty Name="codpais_dst" ColumnName="codpais_dst" />
+          <ScalarProperty Name="codprovincia_org" ColumnName="codprovincia_org" />
+          <ScalarProperty Name="codpais_org" ColumnName="codpais_org" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="codhorario" ColumnName="codhorario" />
+          <ScalarProperty Name="valorDecl" ColumnName="valorDecl" />
+          <ScalarProperty Name="sabado" ColumnName="sabado" />
+          <ScalarProperty Name="tipo_portes" ColumnName="tipo_portes" />
+          <ScalarProperty Name="tfno_dst" ColumnName="tfno_dst" />
+          <ScalarProperty Name="cp_dst" ColumnName="cp_dst" />
+          <ScalarProperty Name="localidad_dst" ColumnName="localidad_dst" />
+          <ScalarProperty Name="codlocalidad_dst" ColumnName="codlocalidad_dst" />
+          <ScalarProperty Name="calle_dst" ColumnName="calle_dst" />
+          <ScalarProperty Name="departamento_dst" ColumnName="departamento_dst" />
+          <ScalarProperty Name="nombre_dst" ColumnName="nombre_dst" />
+          <ScalarProperty Name="departamento_org" ColumnName="departamento_org" />
+          <ScalarProperty Name="nombre_org" ColumnName="nombre_org" />
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="Expedicion" ColumnName="Expedicion" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="texpestado">
+      <EntityTypeMapping TypeName="WASMCOMModel.texpestado">
+        <MappingFragment StoreEntitySet="texpestado">
+          <ScalarProperty Name="UsuarioAnota" ColumnName="UsuarioAnota" />
+          <ScalarProperty Name="cambiapor" ColumnName="cambiapor" />
+          <ScalarProperty Name="bultos" ColumnName="bultos" />
+          <ScalarProperty Name="fecha_inc" ColumnName="fecha_inc" />
+          <ScalarProperty Name="codincidencia" ColumnName="codincidencia" />
+          <ScalarProperty Name="informacion" ColumnName="informacion" />
+          <ScalarProperty Name="parcial" ColumnName="parcial" />
+          <ScalarProperty Name="culpable" ColumnName="culpable" />
+          <ScalarProperty Name="ultimo" ColumnName="ultimo" />
+          <ScalarProperty Name="codusuario_ano" ColumnName="codusuario_ano" />
+          <ScalarProperty Name="codplaza_ano" ColumnName="codplaza_ano" />
+          <ScalarProperty Name="codestado" ColumnName="codestado" />
+          <ScalarProperty Name="sec" ColumnName="sec" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tslrEstados">
+      <EntityTypeMapping TypeName="WASMCOMModel.tslrEstados">
+        <MappingFragment StoreEntitySet="tslrEstados">
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CodPlaza_ano" ColumnName="CodPlaza_ano" />
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+          <ScalarProperty Name="f_estado" ColumnName="f_estado" />
+          <ScalarProperty Name="Ultimo" ColumnName="Ultimo" />
+          <ScalarProperty Name="f_tick" ColumnName="f_tick" />
+          <ScalarProperty Name="CodRecogida" ColumnName="CodRecogida" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tslrExpediciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.tslrExpediciones">
+        <MappingFragment StoreEntitySet="tslrExpediciones">
+          <ScalarProperty Name="sec_dst" ColumnName="sec_dst" />
+          <ScalarProperty Name="f_tick" ColumnName="f_tick" />
+          <ScalarProperty Name="CodRecogida" ColumnName="CodRecogida" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="Codplaza_Org" ColumnName="Codplaza_Org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tslrRecogidas">
+      <EntityTypeMapping TypeName="WASMCOMModel.tslrRecogidas">
+        <MappingFragment StoreEntitySet="tslrRecogidas">
+          <ScalarProperty Name="gestori" ColumnName="gestori" />
+          <ScalarProperty Name="dninom" ColumnName="dninom" />
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Reem" ColumnName="Reem" />
+          <ScalarProperty Name="PD" ColumnName="PD" />
+          <ScalarProperty Name="dac" ColumnName="dac" />
+          <ScalarProperty Name="est_mail" ColumnName="est_mail" />
+          <ScalarProperty Name="dmailRec" ColumnName="dmailRec" />
+          <ScalarProperty Name="movilRec" ColumnName="movilRec" />
+          <ScalarProperty Name="Pre_conf" ColumnName="Pre_conf" />
+          <ScalarProperty Name="CodFija" ColumnName="CodFija" />
+          <ScalarProperty Name="via" ColumnName="via" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="Klms" ColumnName="Klms" />
+          <ScalarProperty Name="Ayudante" ColumnName="Ayudante" />
+          <ScalarProperty Name="transPDA" ColumnName="transPDA" />
+          <ScalarProperty Name="codprovincia_org" ColumnName="codprovincia_org" />
+          <ScalarProperty Name="codpais_org" ColumnName="codpais_org" />
+          <ScalarProperty Name="CodSolicitud_ant" ColumnName="CodSolicitud_ant" />
+          <ScalarProperty Name="ObsRec" ColumnName="ObsRec" />
+          <ScalarProperty Name="vehiculo" ColumnName="vehiculo" />
+          <ScalarProperty Name="DptoRec" ColumnName="DptoRec" />
+          <ScalarProperty Name="TfnoRec" ColumnName="TfnoRec" />
+          <ScalarProperty Name="ContacRec" ColumnName="ContacRec" />
+          <ScalarProperty Name="cpRec" ColumnName="cpRec" />
+          <ScalarProperty Name="PoblRec" ColumnName="PoblRec" />
+          <ScalarProperty Name="DirRec" ColumnName="DirRec" />
+          <ScalarProperty Name="NombRec" ColumnName="NombRec" />
+          <ScalarProperty Name="NombSol" ColumnName="NombSol" />
+          <ScalarProperty Name="CodcliRed" ColumnName="CodcliRed" />
+          <ScalarProperty Name="Codcli" ColumnName="Codcli" />
+          <ScalarProperty Name="HHasta2" ColumnName="HHasta2" />
+          <ScalarProperty Name="HDesde2" ColumnName="HDesde2" />
+          <ScalarProperty Name="HHasta1" ColumnName="HHasta1" />
+          <ScalarProperty Name="HDesde1" ColumnName="HDesde1" />
+          <ScalarProperty Name="FRecogida" ColumnName="FRecogida" />
+          <ScalarProperty Name="FSolicitud" ColumnName="FSolicitud" />
+          <ScalarProperty Name="CodPlaza_org" ColumnName="CodPlaza_org" />
+          <ScalarProperty Name="CodPlaza_sol" ColumnName="CodPlaza_sol" />
+          <ScalarProperty Name="CodRecogida" ColumnName="CodRecogida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tslrReferencias">
+      <EntityTypeMapping TypeName="WASMCOMModel.tslrReferencias">
+        <MappingFragment StoreEntitySet="tslrReferencias">
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="CodRecogida" ColumnName="CodRecogida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tslrSeguimiento">
+      <EntityTypeMapping TypeName="WASMCOMModel.tslrSeguimiento">
+        <MappingFragment StoreEntitySet="tslrSeguimiento">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="CodPlaza_ano" ColumnName="CodPlaza_ano" />
+          <ScalarProperty Name="ultimo" ColumnName="ultimo" />
+          <ScalarProperty Name="f_tick" ColumnName="f_tick" />
+          <ScalarProperty Name="CodRecogida" ColumnName="CodRecogida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="treferencias">
+      <EntityTypeMapping TypeName="WASMCOMModel.treferencias">
+        <MappingFragment StoreEntitySet="treferencias">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="sec" ColumnName="sec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tclientes">
+      <EntityTypeMapping TypeName="WASMCOMModel.tclientes">
+        <MappingFragment StoreEntitySet="tclientes">
+          <ScalarProperty Name="riegfecha" ColumnName="riegfecha" />
+          <ScalarProperty Name="coddiapago" ColumnName="coddiapago" />
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="dninom" ColumnName="dninom" />
+          <ScalarProperty Name="codcli_red" ColumnName="codcli_red" />
+          <ScalarProperty Name="rieg" ColumnName="rieg" />
+          <ScalarProperty Name="tise" ColumnName="tise" />
+          <ScalarProperty Name="dtmf" ColumnName="dtmf" />
+          <ScalarProperty Name="faco" ColumnName="faco" />
+          <ScalarProperty Name="copu" ColumnName="copu" />
+          <ScalarProperty Name="attf" ColumnName="attf" />
+          <ScalarProperty Name="cfse" ColumnName="cfse" />
+          <ScalarProperty Name="lial" ColumnName="lial" />
+          <ScalarProperty Name="inmo" ColumnName="inmo" />
+          <ScalarProperty Name="mis2" ColumnName="mis2" />
+          <ScalarProperty Name="mis1" ColumnName="mis1" />
+          <ScalarProperty Name="sem2" ColumnName="sem2" />
+          <ScalarProperty Name="sem1" ColumnName="sem1" />
+          <ScalarProperty Name="mist" ColumnName="mist" />
+          <ScalarProperty Name="setr" ColumnName="setr" />
+          <ScalarProperty Name="conf" ColumnName="conf" />
+          <ScalarProperty Name="rpmo" ColumnName="rpmo" />
+          <ScalarProperty Name="reca" ColumnName="reca" />
+          <ScalarProperty Name="iniv" ColumnName="iniv" />
+          <ScalarProperty Name="indp" ColumnName="indp" />
+          <ScalarProperty Name="mocc" ColumnName="mocc" />
+          <ScalarProperty Name="fecc" ColumnName="fecc" />
+          <ScalarProperty Name="inrl" ColumnName="inrl" />
+          <ScalarProperty Name="dtme" ColumnName="dtme" />
+          <ScalarProperty Name="dest" ColumnName="dest" />
+          <ScalarProperty Name="copr" ColumnName="copr" />
+          <ScalarProperty Name="ctar" ColumnName="ctar" />
+          <ScalarProperty Name="dict" ColumnName="dict" />
+          <ScalarProperty Name="coag" ColumnName="coag" />
+          <ScalarProperty Name="coba" ColumnName="coba" />
+          <ScalarProperty Name="d2re" ColumnName="d2re" />
+          <ScalarProperty Name="d1re" ColumnName="d1re" />
+          <ScalarProperty Name="flre" ColumnName="flre" />
+          <ScalarProperty Name="fpre" ColumnName="fpre" />
+          <ScalarProperty Name="segu" ColumnName="segu" />
+          <ScalarProperty Name="indi" ColumnName="indi" />
+          <ScalarProperty Name="cman" ColumnName="cman" />
+          <ScalarProperty Name="sect" ColumnName="sect" />
+          <ScalarProperty Name="geog" ColumnName="geog" />
+          <ScalarProperty Name="dele" ColumnName="dele" />
+          <ScalarProperty Name="zon2" ColumnName="zon2" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="incr" ColumnName="incr" />
+          <ScalarProperty Name="fmax" ColumnName="fmax" />
+          <ScalarProperty Name="dima" ColumnName="dima" />
+          <ScalarProperty Name="cfar" ColumnName="cfar" />
+          <ScalarProperty Name="faar" ColumnName="faar" />
+          <ScalarProperty Name="tipocliv" ColumnName="tipocliv" />
+          <ScalarProperty Name="tipocli" ColumnName="tipocli" />
+          <ScalarProperty Name="dtocuota" ColumnName="dtocuota" />
+          <ScalarProperty Name="tipocuot" ColumnName="tipocuot" />
+          <ScalarProperty Name="codcomer" ColumnName="codcomer" />
+          <ScalarProperty Name="f_contr" ColumnName="f_contr" />
+          <ScalarProperty Name="coanual" ColumnName="coanual" />
+          <ScalarProperty Name="ccfact" ColumnName="ccfact" />
+          <ScalarProperty Name="inab" ColumnName="inab" />
+          <ScalarProperty Name="vcto" ColumnName="vcto" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="dirbanco" ColumnName="dirbanco" />
+          <ScalarProperty Name="agencia" ColumnName="agencia" />
+          <ScalarProperty Name="banco" ColumnName="banco" />
+          <ScalarProperty Name="descuen" ColumnName="descuen" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="codpago" ColumnName="codpago" />
+          <ScalarProperty Name="cif" ColumnName="cif" />
+          <ScalarProperty Name="tarifa" ColumnName="tarifa" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="tlfno2" ColumnName="tlfno2" />
+          <ScalarProperty Name="tlfno" ColumnName="tlfno" />
+          <ScalarProperty Name="falta" ColumnName="falta" />
+          <ScalarProperty Name="provin" ColumnName="provin" />
+          <ScalarProperty Name="poblac" ColumnName="poblac" />
+          <ScalarProperty Name="codpos" ColumnName="codpos" />
+          <ScalarProperty Name="depto" ColumnName="depto" />
+          <ScalarProperty Name="direc2" ColumnName="direc2" />
+          <ScalarProperty Name="direc1" ColumnName="direc1" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codplaza_sit" ColumnName="codplaza_sit" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="codcli" ColumnName="codcli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tclientes_red">
+      <EntityTypeMapping TypeName="WASMCOMModel.tclientes_red">
+        <MappingFragment StoreEntitySet="tclientes_red">
+          <ScalarProperty Name="modofact" ColumnName="modofact" />
+          <ScalarProperty Name="mailfact" ColumnName="mailfact" />
+          <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="coddiaPago" ColumnName="coddiaPago" />
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="rieg" ColumnName="rieg" />
+          <ScalarProperty Name="tise" ColumnName="tise" />
+          <ScalarProperty Name="dtmf" ColumnName="dtmf" />
+          <ScalarProperty Name="faco" ColumnName="faco" />
+          <ScalarProperty Name="copu" ColumnName="copu" />
+          <ScalarProperty Name="attf" ColumnName="attf" />
+          <ScalarProperty Name="cfse" ColumnName="cfse" />
+          <ScalarProperty Name="lial" ColumnName="lial" />
+          <ScalarProperty Name="inmo" ColumnName="inmo" />
+          <ScalarProperty Name="mis2" ColumnName="mis2" />
+          <ScalarProperty Name="mis1" ColumnName="mis1" />
+          <ScalarProperty Name="sem2" ColumnName="sem2" />
+          <ScalarProperty Name="sem1" ColumnName="sem1" />
+          <ScalarProperty Name="mist" ColumnName="mist" />
+          <ScalarProperty Name="setr" ColumnName="setr" />
+          <ScalarProperty Name="conf" ColumnName="conf" />
+          <ScalarProperty Name="rpmo" ColumnName="rpmo" />
+          <ScalarProperty Name="reca" ColumnName="reca" />
+          <ScalarProperty Name="iniv" ColumnName="iniv" />
+          <ScalarProperty Name="indp" ColumnName="indp" />
+          <ScalarProperty Name="mocc" ColumnName="mocc" />
+          <ScalarProperty Name="fecc" ColumnName="fecc" />
+          <ScalarProperty Name="inrl" ColumnName="inrl" />
+          <ScalarProperty Name="dtme" ColumnName="dtme" />
+          <ScalarProperty Name="dest" ColumnName="dest" />
+          <ScalarProperty Name="copr" ColumnName="copr" />
+          <ScalarProperty Name="ctar" ColumnName="ctar" />
+          <ScalarProperty Name="dict" ColumnName="dict" />
+          <ScalarProperty Name="coag" ColumnName="coag" />
+          <ScalarProperty Name="coba" ColumnName="coba" />
+          <ScalarProperty Name="d2re" ColumnName="d2re" />
+          <ScalarProperty Name="d1re" ColumnName="d1re" />
+          <ScalarProperty Name="flre" ColumnName="flre" />
+          <ScalarProperty Name="fpre" ColumnName="fpre" />
+          <ScalarProperty Name="segu" ColumnName="segu" />
+          <ScalarProperty Name="indi" ColumnName="indi" />
+          <ScalarProperty Name="cman" ColumnName="cman" />
+          <ScalarProperty Name="sect" ColumnName="sect" />
+          <ScalarProperty Name="geog" ColumnName="geog" />
+          <ScalarProperty Name="dele" ColumnName="dele" />
+          <ScalarProperty Name="zon2" ColumnName="zon2" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="incr" ColumnName="incr" />
+          <ScalarProperty Name="fmax" ColumnName="fmax" />
+          <ScalarProperty Name="dima" ColumnName="dima" />
+          <ScalarProperty Name="cfar" ColumnName="cfar" />
+          <ScalarProperty Name="faar" ColumnName="faar" />
+          <ScalarProperty Name="tipocliv" ColumnName="tipocliv" />
+          <ScalarProperty Name="tipocli" ColumnName="tipocli" />
+          <ScalarProperty Name="dtocuota" ColumnName="dtocuota" />
+          <ScalarProperty Name="tipocuot" ColumnName="tipocuot" />
+          <ScalarProperty Name="codcomer" ColumnName="codcomer" />
+          <ScalarProperty Name="f_contr" ColumnName="f_contr" />
+          <ScalarProperty Name="coanual" ColumnName="coanual" />
+          <ScalarProperty Name="ccfact" ColumnName="ccfact" />
+          <ScalarProperty Name="inab" ColumnName="inab" />
+          <ScalarProperty Name="vcto" ColumnName="vcto" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="dirbanco" ColumnName="dirbanco" />
+          <ScalarProperty Name="agencia" ColumnName="agencia" />
+          <ScalarProperty Name="banco" ColumnName="banco" />
+          <ScalarProperty Name="descuen" ColumnName="descuen" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="codpago" ColumnName="codpago" />
+          <ScalarProperty Name="cif" ColumnName="cif" />
+          <ScalarProperty Name="tarifa" ColumnName="tarifa" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="tlfno2" ColumnName="tlfno2" />
+          <ScalarProperty Name="tlfno" ColumnName="tlfno" />
+          <ScalarProperty Name="falta" ColumnName="falta" />
+          <ScalarProperty Name="provin" ColumnName="provin" />
+          <ScalarProperty Name="poblac" ColumnName="poblac" />
+          <ScalarProperty Name="codpos" ColumnName="codpos" />
+          <ScalarProperty Name="depto" ColumnName="depto" />
+          <ScalarProperty Name="direc2" ColumnName="direc2" />
+          <ScalarProperty Name="direc1" ColumnName="direc1" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="codcli" ColumnName="codcli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="stpExpInsertaEstado" FunctionName="WASMCOMModel.Store.stpExpInsertaEstado" />
+    <EntitySetMapping Name="pnlBonificaciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.pnlBonificaciones">
+        <MappingFragment StoreEntitySet="pnlBonificaciones">
+          <ScalarProperty Name="codprov" ColumnName="codprov" />
+          <ScalarProperty Name="codplazaprov" ColumnName="codplazaprov" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="tipoBonificacion" ColumnName="tipoBonificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="codconcepto" ColumnName="codconcepto" />
+          <ScalarProperty Name="codtipo" ColumnName="codtipo" />
+          <ScalarProperty Name="FPEntrega" ColumnName="FPEntrega" />
+          <ScalarProperty Name="fechaBonifica" ColumnName="fechaBonifica" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pnlExpediciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.pnlExpediciones">
+        <MappingFragment StoreEntitySet="pnlExpediciones">
+          <ScalarProperty Name="codprov" ColumnName="codprov" />
+          <ScalarProperty Name="codplazaprov" ColumnName="codplazaprov" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="tipoPenalizacion" ColumnName="tipoPenalizacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="codconcepto" ColumnName="codconcepto" />
+          <ScalarProperty Name="codtipo" ColumnName="codtipo" />
+          <ScalarProperty Name="FPEntrega" ColumnName="FPEntrega" />
+          <ScalarProperty Name="fechaPenaliza" ColumnName="fechaPenaliza" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pnlSlRecogidas">
+      <EntityTypeMapping TypeName="WASMCOMModel.pnlSlRecogidas">
+        <MappingFragment StoreEntitySet="pnlSlRecogidas">
+          <ScalarProperty Name="codprov" ColumnName="codprov" />
+          <ScalarProperty Name="codplazaprov" ColumnName="codplazaprov" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="tipoPenalizacion" ColumnName="tipoPenalizacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="codconcepto" ColumnName="codconcepto" />
+          <ScalarProperty Name="codtipo" ColumnName="codtipo" />
+          <ScalarProperty Name="FRecogida" ColumnName="FRecogida" />
+          <ScalarProperty Name="fechaPenaliza" ColumnName="fechaPenaliza" />
+          <ScalarProperty Name="codRecogida" ColumnName="codRecogida" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pnlTipos">
+      <EntityTypeMapping TypeName="WASMCOMModel.pnlTipos">
+        <MappingFragment StoreEntitySet="pnlTipos">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="codtipo" ColumnName="codtipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPdaPosiciones">
+      <EntityTypeMapping TypeName="WASMCOMModel.tPdaPosiciones">
+        <MappingFragment StoreEntitySet="tPdaPosiciones">
+          <ScalarProperty Name="fgps" ColumnName="fgps" />
+          <ScalarProperty Name="fstatus" ColumnName="fstatus" />
+          <ScalarProperty Name="idorg" ColumnName="idorg" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="distancia" ColumnName="distancia" />
+          <ScalarProperty Name="boundNELng" ColumnName="boundNELng" />
+          <ScalarProperty Name="boundNELat" ColumnName="boundNELat" />
+          <ScalarProperty Name="boundSWLng" ColumnName="boundSWLng" />
+          <ScalarProperty Name="boundSWLat" ColumnName="boundSWLat" />
+          <ScalarProperty Name="polyLine" ColumnName="polyLine" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fabd" ColumnName="fabd" />
+          <ScalarProperty Name="fpda" ColumnName="fpda" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+          <ScalarProperty Name="latitud" ColumnName="latitud" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="codrepartidor" ColumnName="codrepartidor" />
+          <ScalarProperty Name="codplaza_rep" ColumnName="codplaza_rep" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webContactos">
+      <EntityTypeMapping TypeName="WASMCOMModel.webContactos">
+        <MappingFragment StoreEntitySet="webContactos">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="texto" ColumnName="texto" />
+          <ScalarProperty Name="peticion" ColumnName="peticion" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webContactosTracking">
+      <EntityTypeMapping TypeName="WASMCOMModel.webContactosTracking">
+        <MappingFragment StoreEntitySet="webContactosTracking">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="codplaza_ano" ColumnName="codplaza_ano" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="texto" ColumnName="texto" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="idContacto" ColumnName="idContacto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trepartidores">
+      <EntityTypeMapping TypeName="WASMCOMModel.trepartidores">
+        <MappingFragment StoreEntitySet="trepartidores">
+          <ScalarProperty Name="repartePuntoDia" ColumnName="repartePuntoDia" />
+          <ScalarProperty Name="codCola" ColumnName="codCola" />
+          <ScalarProperty Name="fechabaja" ColumnName="fechabaja" />
+          <ScalarProperty Name="codtipoprov" ColumnName="codtipoprov" />
+          <ScalarProperty Name="numlocalizador" ColumnName="numlocalizador" />
+          <ScalarProperty Name="codvehiculo" ColumnName="codvehiculo" />
+          <ScalarProperty Name="cif" ColumnName="cif" />
+          <ScalarProperty Name="codtarifa" ColumnName="codtarifa" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="tlfno" ColumnName="tlfno" />
+          <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
+          <ScalarProperty Name="provincia" ColumnName="provincia" />
+          <ScalarProperty Name="localidad" ColumnName="localidad" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="repartidor" ColumnName="repartidor" />
+          <ScalarProperty Name="codrepartidor" ColumnName="codrepartidor" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tReparto">
+      <EntityTypeMapping TypeName="WASMCOMModel.tReparto">
+        <MappingFragment StoreEntitySet="tReparto">
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="ppago" ColumnName="ppago" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="orden" ColumnName="orden" />
+          <ScalarProperty Name="codrepartidor" ColumnName="codrepartidor" />
+          <ScalarProperty Name="fecha_asignacion" ColumnName="fecha_asignacion" />
+          <ScalarProperty Name="fecha_liquidacion" ColumnName="fecha_liquidacion" />
+          <ScalarProperty Name="liquidacion" ColumnName="liquidacion" />
+          <ScalarProperty Name="escaneo" ColumnName="escaneo" />
+          <ScalarProperty Name="kgs" ColumnName="kgs" />
+          <ScalarProperty Name="bultos" ColumnName="bultos" />
+          <ScalarProperty Name="debidos" ColumnName="debidos" />
+          <ScalarProperty Name="reembolso" ColumnName="reembolso" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cp_dst" ColumnName="cp_dst" />
+          <ScalarProperty Name="nombre_dst" ColumnName="nombre_dst" />
+          <ScalarProperty Name="localidad_dst" ColumnName="localidad_dst" />
+          <ScalarProperty Name="calle_dst" ColumnName="calle_dst" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="hojaMan" ColumnName="hojaMan" />
+          <ScalarProperty Name="hojaAut" ColumnName="hojaAut" />
+          <ScalarProperty Name="hoja" ColumnName="hoja" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codplaza_org" ColumnName="codplaza_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tRepartoHojas">
+      <EntityTypeMapping TypeName="WASMCOMModel.tRepartoHojas">
+        <MappingFragment StoreEntitySet="tRepartoHojas">
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="codplaza_rep" ColumnName="codplaza_rep" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="fecha_cierre" ColumnName="fecha_cierre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nenvios" ColumnName="nenvios" />
+          <ScalarProperty Name="fecha_liquidacion" ColumnName="fecha_liquidacion" />
+          <ScalarProperty Name="codrepartidor" ColumnName="codrepartidor" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hoja" ColumnName="hoja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="geoPlazas">
+      <EntityTypeMapping TypeName="WASMCOMModel.geoPlazas">
+        <MappingFragment StoreEntitySet="geoPlazas">
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="ftick" ColumnName="ftick" />
+          <ScalarProperty Name="contesta" ColumnName="contesta" />
+          <ScalarProperty Name="accuracy" ColumnName="accuracy" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="codgeoplaza" ColumnName="codgeoplaza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

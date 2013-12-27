@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Pagina principal";
+}
+
+@if (!Request.IsAuthenticated)
+{
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Aplicaciones ASM</h1>
+            </hgroup>
+            <p>
+                Para tener acceso a las aplicaciones ASM, debes conectarte con el usuario y contraseña proporcionados por sistemas.
+            </p>
+        </div>
+    </section>
+}
+    
+    @RenderPage("~/Views/Account/Login.cshtml");
+}
+else
+{
+    ASM.BD.Models.Seguridad sec = new ASM.BD.Models.Seguridad();
+    string[] numeros = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    int i = 0;
+<text>
+<section id="loginForm">
+    <div class="inside block">
+        <ol id="menu-menu" class="nav round">
+            @foreach (ASM.BD.Models.MenuASM m  in sec.MiMenu())
+            {
+                <li class="@numeros[++i]"><h2>@Html.ActionLink(m.Nombre,m.ActionName, m.ControllerName)</h2></li>
+            }
+        </ol> 
+    </div>
+    </section>
+
+<section class="social" id="socialLoginForm">
+    <div class="inside block help-block">
+        <h2>Usa el menú para entrar en los módulos a los que tienes acceso.</h2>
+    </div>
+</section>
+</text>
+}
+@*<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+        enables a clean separation of concerns and that gives you full control over markup
+        for enjoyable, agile development. ASP.NET MVC includes many features that enable
+        fast, TDD-friendly development for creating sophisticated applications that use
+        the latest web standards.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Add NuGet packages and jump-start your coding</h5>
+        NuGet makes it easy to install and update free libraries and tools.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Find Web Hosting</h5>
+        You can easily find a web hosting company that offers the right mix of features
+        and price for your applications.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+</ol>*@

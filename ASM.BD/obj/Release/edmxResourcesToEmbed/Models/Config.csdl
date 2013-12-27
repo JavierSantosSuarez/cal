@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConfigModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ConfigEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cnfCuentas" EntityType="ConfigModel.cnfCuentas" />
+    <EntitySet Name="cnfEmpresasxCuenta" EntityType="ConfigModel.cnfEmpresasxCuenta" />
+    <EntitySet Name="cnfModulos" EntityType="ConfigModel.cnfModulos" />
+    <EntitySet Name="cnfModulosxCuenta" EntityType="ConfigModel.cnfModulosxCuenta" />
+    <EntitySet Name="cnfPermisos" EntityType="ConfigModel.cnfPermisos" />
+    <EntitySet Name="cnfPermisosxCuenta" EntityType="ConfigModel.cnfPermisosxCuenta" />
+    <EntitySet Name="cnfPermisosxModulo" EntityType="ConfigModel.cnfPermisosxModulo" />
+    <EntitySet Name="cnfPlazasxCuenta" EntityType="ConfigModel.cnfPlazasxCuenta" />
+    <EntitySet Name="cnfRestricciones" EntityType="ConfigModel.cnfRestricciones" />
+    <EntitySet Name="cnfRestriccionesxCuenta" EntityType="ConfigModel.cnfRestriccionesxCuenta" />
+    <EntitySet Name="cnfTiposCliente" EntityType="ConfigModel.cnfTiposCliente" />
+    <EntitySet Name="cnfTiposPlaza" EntityType="ConfigModel.cnfTiposPlaza" />
+    <EntitySet Name="cnfTiposRed" EntityType="ConfigModel.cnfTiposRed" />
+    <FunctionImport Name="secActivaCuenta">
+      <Parameter Name="cuenta" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="secDesactivaMe" />
+    <EntitySet Name="cnfConfiguracion" EntityType="ConfigModel.cnfConfiguracion" />
+  </EntityContainer>
+  <EntityType Name="cnfCuentas">
+    <Key>
+      <PropertyRef Name="codCuenta" />
+    </Key>
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="cuenta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="codPlaza" Type="Int16" Nullable="false" />
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="password" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="perfilSonido" Type="Int16" />
+    <Property Name="fechaCadPass" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="cnfEmpresasxCuenta">
+    <Key>
+      <PropertyRef Name="codEmpresaxCuenta" />
+    </Key>
+    <Property Name="codEmpresaxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codEmpresa" Type="Int16" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="fechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="cnfModulos">
+    <Key>
+      <PropertyRef Name="codModulo" />
+    </Key>
+    <Property Name="codModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="pathCitrix" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codModuloPadre" Type="Int32" />
+    <Property Name="orden" Type="Int16" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nombreMenu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Version" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfModulosxCuenta">
+    <Key>
+      <PropertyRef Name="codModuloxCuenta" />
+    </Key>
+    <Property Name="codModuloxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codModulo" Type="Int32" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="FechaAlta" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="cnfPermisos">
+    <Key>
+      <PropertyRef Name="codPermiso" />
+    </Key>
+    <Property Name="codPermiso" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfPermisosxCuenta">
+    <Key>
+      <PropertyRef Name="codPermisoxCuenta" />
+    </Key>
+    <Property Name="codPermisoxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codPermiso" Type="Int16" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="cnfPermisosxModulo">
+    <Key>
+      <PropertyRef Name="codPermiso" />
+      <PropertyRef Name="codModulo" />
+    </Key>
+    <Property Name="codPermiso" Type="Int16" Nullable="false" />
+    <Property Name="permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="codModulo" Type="Int32" Nullable="false" />
+    <Property Name="modulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="nombreMenu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfPlazasxCuenta">
+    <Key>
+      <PropertyRef Name="codPlazaxCuenta" />
+    </Key>
+    <Property Name="codPlazaxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codPlaza" Type="Int16" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="codTipoPlaza" Type="Byte" Nullable="false" />
+    <Property Name="fechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="cnfRestricciones">
+    <Key>
+      <PropertyRef Name="codRestriccion" />
+    </Key>
+    <Property Name="codRestriccion" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="restriccion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfRestriccionesxCuenta">
+    <Key>
+      <PropertyRef Name="codRestriccionxCuenta" />
+    </Key>
+    <Property Name="codRestriccionxCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codRestriccion" Type="Int16" Nullable="false" />
+    <Property Name="codCuenta" Type="Guid" Nullable="false" />
+    <Property Name="codCuentaDirecta" Type="Guid" Nullable="false" />
+    <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="cnfTiposCliente">
+    <Key>
+      <PropertyRef Name="codTipoCliente" />
+    </Key>
+    <Property Name="codTipoCliente" Type="Byte" Nullable="false" />
+    <Property Name="tipoCliente" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfTiposPlaza">
+    <Key>
+      <PropertyRef Name="codTipoPlaza" />
+    </Key>
+    <Property Name="codTipoPlaza" Type="Byte" Nullable="false" />
+    <Property Name="tipoPlaza" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfTiposRed">
+    <Key>
+      <PropertyRef Name="codTipoRed" />
+    </Key>
+    <Property Name="codTipoRed" Type="Byte" Nullable="false" />
+    <Property Name="tipoRed" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cnfConfiguracion">
+    <Key>
+      <PropertyRef Name="codConfig" />
+    </Key>
+    <Property Type="Int32" Name="codConfig" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="codCuenta" />
+    <Property Type="Int16" Name="codplaza" />
+    <Property Type="Int16" Name="codEmpresa" />
+    <Property Type="String" Name="seccion" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="unidad" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="valor" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,18 @@
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.pdb
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.csprojResolveAssemblyReference.cache
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.dll
+C:\docs\prg\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.dll
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.pdb
+C:\Users\jss\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.pdb
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.dll
+C:\Users\Daniel\Google Drive\Programacion\mvc\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\bin\Debug\ASM.Library.pdb
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.dll
+C:\Users\Daniel\Documents\Visual Studio 2012\Projects\ASM.Calidad\ASM.Library\obj\Debug\ASM.Library.pdb

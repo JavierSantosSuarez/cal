@@ -1,0 +1,86 @@
+﻿@model ASM.BD.Models.expediciones
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="inside block" >
+
+    @Html.LabelFor(m=> m.fecha)
+    @Html.TextBoxFor(m=> m.fecha)
+
+
+
+    @Html.LabelFor(m=> m.codexp)
+    @Html.TextBoxFor(m=> m.codexp, new { @style = "margin-left:5px; width:120px; float:left; display:inline;" })
+
+    @Html.LabelFor(m=> m.codservicio)
+    @Html.TextBoxFor(m=> m.codservicio, new { @style = "margin-left:5px; width:120px; display:inline;" })
+
+
+    @Html.LabelFor(m=> m.nombre_org, new { @style = "grid-column: 1; grid-row: 1" })
+    @Html.TextBoxFor(m=> m.nombre_org, new { @style = "grid-column: 1; grid-row: 1" })
+    
+    @Html.LabelFor(m=> m.nif_org, new { @style = "grid-column: 1; grid-row: 2" })
+    @Html.TextBoxFor(m=> m.nif_org, new { @style = "grid-column: 1; grid-row: 2" })
+    @Html.LabelFor(m=> m.departamento_org, new { @style = "grid-column: 2; grid-row: 2" })
+    @Html.TextBoxFor(m=> m.departamento_org, new { @style = "grid-column: 2; grid-row: 2" })
+    
+    <div>
+    @Html.LabelFor(m => m.calle_org)
+    @Html.TextBoxFor(m=> m.calle_org, new { @style = "width:600px"})
+    
+    @Html.LabelFor(m=> m.localidad_org)
+    @Html.TextBoxFor(m=> m.localidad_org, new { @style = "width:300px; float:left "})
+    
+        </div>
+
+    @Html.LabelFor(m=> m.cp_org)
+    @Html.TextBoxFor(m=> m.cp_org)
+    @Html.LabelFor(m=> m.codpais_org)
+    @Html.TextBoxFor(m=> m.codpais_org)
+
+    @Html.LabelFor(m=> m.tfno_org)
+    @Html.TextBoxFor(m=> m.tfno_org)
+
+
+    
+
+    @Html.LabelFor(m=> m.nombre_dst)
+    @Html.TextBoxFor(m=> m.nombre_dst)
+    
+    @Html.LabelFor(m=> m.nif_dst)
+    @Html.TextBoxFor(m=> m.nif_dst)
+    @Html.LabelFor(m=> m.departamento_dst)
+    @Html.TextBoxFor(m=> m.departamento_dst)
+    
+    @Html.LabelFor(m=> m.calle_dst)
+    @Html.TextBoxFor(m=> m.calle_dst)
+    
+    @Html.LabelFor(m=> m.localidad_dst)
+    @Html.TextBoxFor(m=> m.localidad_dst)
+    
+    @Html.LabelFor(m=> m.cp_dst)
+    @Html.TextBoxFor(m=> m.cp_dst)
+    @Html.LabelFor(m=> m.codpais_dst)
+    @Html.TextBoxFor(m=> m.codpais_dst)
+
+    @Html.LabelFor(m=> m.tfno_dst)
+    @Html.TextBoxFor(m=> m.tfno_dst)
+
+
+
+
+    @Html.LabelFor(m=> m.bultos)
+    @Html.TextBoxFor(m=> m.bultos)
+    @Html.LabelFor(m=> m.kgs)
+    @Html.TextBoxFor(m=> m.kgs)
+    @Html.LabelFor(m=> m.vol)
+    @Html.TextBoxFor(m=> m.vol)
+
+
+
+</div>

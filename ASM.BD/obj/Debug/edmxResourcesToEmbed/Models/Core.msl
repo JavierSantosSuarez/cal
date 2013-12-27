@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WASMCOMModelStoreContainer" CdmEntityContainer="CoreEntities">
+    <EntitySetMapping Name="tHorarios">
+      <EntityTypeMapping TypeName="WASMCOMModel.tHorarios">
+        <MappingFragment StoreEntitySet="tHorarios">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="CodigoOld" ColumnName="CodigoOld" />
+          <ScalarProperty Name="CodigoCom" ColumnName="CodigoCom" />
+          <ScalarProperty Name="Descrip" ColumnName="Descrip" />
+          <ScalarProperty Name="f_baja" ColumnName="f_baja" />
+          <ScalarProperty Name="Alternativo" ColumnName="Alternativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tplazas">
+      <EntityTypeMapping TypeName="WASMCOMModel.tplazas">
+        <MappingFragment StoreEntitySet="tplazas">
+          <ScalarProperty Name="codplaza" ColumnName="codplaza" />
+          <ScalarProperty Name="plaza" ColumnName="plaza" />
+          <ScalarProperty Name="nemonico" ColumnName="nemonico" />
+          <ScalarProperty Name="codcli_red" ColumnName="codcli_red" />
+          <ScalarProperty Name="codprov_red" ColumnName="codprov_red" />
+          <ScalarProperty Name="codplaza_old" ColumnName="codplaza_old" />
+          <ScalarProperty Name="plz_internacional" ColumnName="plz_internacional" />
+          <ScalarProperty Name="operativa" ColumnName="operativa" />
+          <ScalarProperty Name="reparto" ColumnName="reparto" />
+          <ScalarProperty Name="codprovincia" ColumnName="codprovincia" />
+          <ScalarProperty Name="codregion" ColumnName="codregion" />
+          <ScalarProperty Name="bpack" ColumnName="bpack" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="codzona" ColumnName="codzona" />
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="CpNave" ColumnName="CpNave" />
+          <ScalarProperty Name="NombreWEB" ColumnName="NombreWEB" />
+          <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Cp" ColumnName="Cp" />
+          <ScalarProperty Name="Gerente" ColumnName="Gerente" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="MailWeb" ColumnName="MailWeb" />
+          <ScalarProperty Name="MailComercial" ColumnName="MailComercial" />
+          <ScalarProperty Name="MailOperativo" ColumnName="MailOperativo" />
+          <ScalarProperty Name="hoficina" ColumnName="hoficina" />
+          <ScalarProperty Name="visibleWeb" ColumnName="visibleWeb" />
+          <ScalarProperty Name="Software" ColumnName="Software" />
+          <ScalarProperty Name="FSoftWare" ColumnName="FSoftWare" />
+          <ScalarProperty Name="codPunto" ColumnName="codPunto" />
+          <ScalarProperty Name="logistica" ColumnName="logistica" />
+          <ScalarProperty Name="DireccionWeb" ColumnName="DireccionWeb" />
+          <ScalarProperty Name="codIsla" ColumnName="codIsla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tservicios">
+      <EntityTypeMapping TypeName="WASMCOMModel.tservicios">
+        <MappingFragment StoreEntitySet="tservicios">
+          <ScalarProperty Name="codservicio" ColumnName="codservicio" />
+          <ScalarProperty Name="servicio" ColumnName="servicio" />
+          <ScalarProperty Name="cubicaje" ColumnName="cubicaje" />
+          <ScalarProperty Name="codtipo_envio" ColumnName="codtipo_envio" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="orden" ColumnName="orden" />
+          <ScalarProperty Name="abreviatura" ColumnName="abreviatura" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+          <ScalarProperty Name="SYSASM" ColumnName="SYSASM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

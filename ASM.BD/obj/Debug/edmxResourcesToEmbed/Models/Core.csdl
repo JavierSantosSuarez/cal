@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WASMCOMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tHorarios" EntityType="WASMCOMModel.tHorarios" />
+    <EntitySet Name="tplazas" EntityType="WASMCOMModel.tplazas" />
+    <EntitySet Name="tservicios" EntityType="WASMCOMModel.tservicios" />
+  </EntityContainer>
+  <EntityType Name="tHorarios">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="CodigoOld" />
+    </Key>
+    <Property Name="codigo" Type="Int16" Nullable="false" />
+    <Property Name="CodigoOld" Type="Double" Nullable="false" />
+    <Property Name="CodigoCom" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Descrip" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="f_baja" Type="DateTime" Precision="0" />
+    <Property Name="Alternativo" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tplazas">
+    <Key>
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Name="codplaza" Type="Int16" Nullable="false" />
+    <Property Name="plaza" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="nemonico" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="codcli_red" Type="Int32" Nullable="false" />
+    <Property Name="codprov_red" Type="Int32" Nullable="false" />
+    <Property Name="codplaza_old" Type="Int16" />
+    <Property Name="plz_internacional" Type="Int16" Nullable="false" />
+    <Property Name="operativa" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="reparto" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="codprovincia" Type="Int16" Nullable="false" />
+    <Property Name="codregion" Type="Int16" Nullable="false" />
+    <Property Name="bpack" Type="Int16" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codzona" Type="Int16" />
+    <Property Name="codpais" Type="Int16" />
+    <Property Name="CpNave" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="NombreWEB" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="NombreComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Poblacion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Provincia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Cp" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Gerente" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Responsable" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailComercial" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MailOperativo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="hoficina" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="visibleWeb" Type="Int16" Nullable="false" />
+    <Property Name="Software" Type="Int16" Nullable="false" />
+    <Property Name="FSoftWare" Type="DateTime" Precision="0" />
+    <Property Name="codPunto" Type="Int64" />
+    <Property Name="logistica" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="DireccionWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="codIsla" Type="Int16" />
+  </EntityType>
+  <EntityType Name="tservicios">
+    <Key>
+      <PropertyRef Name="codservicio" />
+    </Key>
+    <Property Name="codservicio" Type="Int16" Nullable="false" />
+    <Property Name="servicio" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="cubicaje" Type="Int16" Nullable="false" />
+    <Property Name="codtipo_envio" Type="Byte" />
+    <Property Name="tipo" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="orden" Type="Int16" />
+    <Property Name="abreviatura" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Calidad" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SYSASM" Type="Int16" Nullable="false" />
+  </EntityType>
+</Schema>

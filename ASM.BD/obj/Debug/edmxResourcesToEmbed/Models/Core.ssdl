@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WASMCOMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="WASMCOMModelStoreContainer">
+    <EntitySet Name="tHorarios" EntityType="WASMCOMModel.Store.tHorarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tplazas" EntityType="WASMCOMModel.Store.tplazas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tservicios" EntityType="WASMCOMModel.Store.tservicios" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tHorarios">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="CodigoOld" />
+    </Key>
+    <Property Name="codigo" Type="smallint" Nullable="false" />
+    <Property Name="CodigoOld" Type="float" Nullable="false" />
+    <Property Name="CodigoCom" Type="char" MaxLength="1" />
+    <Property Name="Descrip" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="f_baja" Type="smalldatetime" />
+    <Property Name="Alternativo" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tplazas">
+    <Key>
+      <PropertyRef Name="codplaza" />
+    </Key>
+    <Property Name="codplaza" Type="smallint" Nullable="false" />
+    <Property Name="plaza" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="nemonico" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="codcli_red" Type="int" Nullable="false" />
+    <Property Name="codprov_red" Type="int" Nullable="false" />
+    <Property Name="codplaza_old" Type="smallint" />
+    <Property Name="plz_internacional" Type="smallint" Nullable="false" />
+    <Property Name="operativa" Type="char" MaxLength="1" />
+    <Property Name="reparto" Type="char" MaxLength="1" />
+    <Property Name="codprovincia" Type="smallint" Nullable="false" />
+    <Property Name="codregion" Type="smallint" Nullable="false" />
+    <Property Name="bpack" Type="smallint" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="255" />
+    <Property Name="codzona" Type="smallint" />
+    <Property Name="codpais" Type="smallint" />
+    <Property Name="CpNave" Type="varchar" MaxLength="25" />
+    <Property Name="NombreWEB" Type="varchar" MaxLength="255" />
+    <Property Name="NombreComercial" Type="varchar" MaxLength="255" />
+    <Property Name="Direccion" Type="varchar" MaxLength="255" />
+    <Property Name="Poblacion" Type="varchar" MaxLength="255" />
+    <Property Name="Provincia" Type="varchar" MaxLength="255" />
+    <Property Name="Cp" Type="varchar" MaxLength="25" />
+    <Property Name="Gerente" Type="varchar" MaxLength="255" />
+    <Property Name="Responsable" Type="varchar" MaxLength="255" />
+    <Property Name="Telefono" Type="varchar" MaxLength="255" />
+    <Property Name="Fax" Type="varchar" MaxLength="255" />
+    <Property Name="MailWeb" Type="varchar" MaxLength="255" />
+    <Property Name="MailComercial" Type="varchar" MaxLength="255" />
+    <Property Name="MailOperativo" Type="varchar" MaxLength="255" />
+    <Property Name="hoficina" Type="varchar" MaxLength="255" />
+    <Property Name="visibleWeb" Type="smallint" Nullable="false" />
+    <Property Name="Software" Type="smallint" Nullable="false" />
+    <Property Name="FSoftWare" Type="smalldatetime" />
+    <Property Name="codPunto" Type="bigint" />
+    <Property Name="logistica" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="DireccionWeb" Type="varchar" MaxLength="255" />
+    <Property Name="codIsla" Type="smallint" />
+  </EntityType>
+  <EntityType Name="tservicios">
+    <Key>
+      <PropertyRef Name="codservicio" />
+    </Key>
+    <Property Name="codservicio" Type="smallint" Nullable="false" />
+    <Property Name="servicio" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="cubicaje" Type="smallint" Nullable="false" />
+    <Property Name="codtipo_envio" Type="tinyint" />
+    <Property Name="tipo" Type="char" MaxLength="2" />
+    <Property Name="orden" Type="smallint" />
+    <Property Name="abreviatura" Type="varchar" MaxLength="15" />
+    <Property Name="Calidad" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="SYSASM" Type="smallint" Nullable="false" />
+  </EntityType>
+</Schema>

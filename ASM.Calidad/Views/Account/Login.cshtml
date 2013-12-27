@@ -1,0 +1,57 @@
+﻿@model ASM.Calidad.Models.LoginModel
+
+@{
+    ViewBag.Title = "Conectar con ASM";
+}
+
+<hgroup class="single-title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+    <div class="inside block">
+<h2>Introduce el usuario proporcionado por sistemas.</h2>
+
+        @*@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {*@
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+@*            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>*@
+        </ol>
+        <input type="submit" value="Log in" />
+    </fieldset>@*
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p>*@
+}
+        </div>
+
+</section>
+
+<section class="social" id="socialLoginForm">
+    <div class="inside block help-block">
+        <h2>Puedes usar el mismo usuario y contraseña del entorno windows wasmcom (Z).</h2>
+    </div>
+</section>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

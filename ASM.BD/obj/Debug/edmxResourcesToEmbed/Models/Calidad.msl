@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CalidadModelStoreContainer" CdmEntityContainer="CalidadEntities">
+    <EntitySetMapping Name="clReclamaciones">
+      <EntityTypeMapping TypeName="CalidadModel.clReclamaciones">
+        <MappingFragment StoreEntitySet="clReclamaciones">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+          <ScalarProperty Name="codplazaReclama" ColumnName="codplazaReclama" />
+          <ScalarProperty Name="codplazaReclamada" ColumnName="codplazaReclamada" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+          <ScalarProperty Name="codexp" ColumnName="codexp" />
+          <ScalarProperty Name="codrecogida" ColumnName="codrecogida" />
+          <ScalarProperty Name="importePenalizacion" ColumnName="importePenalizacion" />
+          <ScalarProperty Name="importeIndemnizacion" ColumnName="importeIndemnizacion" />
+          <ScalarProperty Name="codplazaPenalizada" ColumnName="codplazaPenalizada" />
+          <ScalarProperty Name="codplazaIndemnizada" ColumnName="codplazaIndemnizada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTiposReclamacion">
+      <EntityTypeMapping TypeName="CalidadModel.clTiposReclamacion">
+        <MappingFragment StoreEntitySet="clTiposReclamacion">
+          <ScalarProperty Name="tipoReclamacion" ColumnName="tipoReclamacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTiposTrackingReclamacion">
+      <EntityTypeMapping TypeName="CalidadModel.clTiposTrackingReclamacion">
+        <MappingFragment StoreEntitySet="clTiposTrackingReclamacion">
+          <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clTrackingReclamacion">
+      <EntityTypeMapping TypeName="CalidadModel.clTrackingReclamacion">
+        <MappingFragment StoreEntitySet="clTrackingReclamacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipoTracking" ColumnName="tipoTracking" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
