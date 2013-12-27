@@ -14,7 +14,7 @@ namespace ASM.Calidad.Models
     {
         public UsersContext()
             : base("DefaultConnection")
-        {
+        {  
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
