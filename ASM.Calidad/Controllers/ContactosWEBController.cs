@@ -16,6 +16,7 @@ namespace ASM.Calidad.Controllers
         public ActionResult Index()
         {
             return View();
+            // prueba de jss
         }
 
         public ActionResult NuevoTracking(Int64 id, byte tipo)
