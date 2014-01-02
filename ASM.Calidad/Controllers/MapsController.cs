@@ -54,7 +54,7 @@ namespace ASM.Calidad.Controllers
                 cpLon = Convert.ToString(infoPlaza.lon).Replace(",", ".");
             }
             */
-            string oldlt = "";
+            string oldlt = ""; 
             string oldln = "";
             string oldtp = "";
             DateTime minHora = DateTime.MaxValue;
