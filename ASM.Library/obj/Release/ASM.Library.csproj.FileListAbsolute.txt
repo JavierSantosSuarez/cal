@@ -17,3 +17,8 @@ C:\docs\prg\git\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
 C:\docs\prg\git\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.csprojResolveAssemblyReference.cache
 C:\docs\prg\git\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
 C:\docs\prg\git\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb
+C:\Programacion\git4\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.dll
+C:\Programacion\git4\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
+C:\Programacion\git4\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.csprojResolveAssemblyReference.cache
+C:\Programacion\git4\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
+C:\Programacion\git4\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb
