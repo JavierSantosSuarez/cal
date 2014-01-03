@@ -43,17 +43,17 @@ namespace ASM.Calidad.Controllers
             List<GMap.HojaRepartidor> hojas = GMap.HojaRepartidor.BuscaPorFecha(codplaza, codrepartidor, f);
             List<tPdaPosiciones> posiciones = GMap.GetRutaRepartidor(codplaza, codrepartidor, f);
 
-            //List<geoPlazas> infoPlazas = GMap.GetCodPlazaLatLon(codplaza);
+            List<geoPlazas> infoPlazas = GMap.GetCodPlazaLatLon(codplaza);
 
             string cpLat = "";
             string cpLon = "";
-            /*
+            
             foreach (geoPlazas infoPlaza in infoPlazas)
             {
                 cpLat = Convert.ToString(infoPlaza.lat).Replace(",", ".");
                 cpLon = Convert.ToString(infoPlaza.lon).Replace(",", ".");
             }
-            */
+            
             string oldlt = ""; 
             string oldln = "";
             string oldtp = "";
