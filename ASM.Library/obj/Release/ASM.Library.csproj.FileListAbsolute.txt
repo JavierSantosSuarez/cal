@@ -27,3 +27,7 @@ C:\Programacion\ASM.Calidad\ASM.Library\bin\Release\ASM.Library.pdb
 C:\Programacion\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.csprojResolveAssemblyReference.cache
 C:\Programacion\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.dll
 C:\Programacion\ASM.Calidad\ASM.Library\obj\Release\ASM.Library.pdb
+C:\Users\jss\Source\Repos\cal\ASM.Library\bin\Release\ASM.Library.dll
+C:\Users\jss\Source\Repos\cal\ASM.Library\bin\Release\ASM.Library.pdb
+C:\Users\jss\Source\Repos\cal\ASM.Library\obj\Release\ASM.Library.dll
+C:\Users\jss\Source\Repos\cal\ASM.Library\obj\Release\ASM.Library.pdb

@@ -726,6 +726,9 @@
     <EntitySetMapping Name="tPdaPosiciones">
       <EntityTypeMapping TypeName="WASMCOMModel.tPdaPosiciones">
         <MappingFragment StoreEntitySet="tPdaPosiciones">
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="direccionDestino" ColumnName="direccionDestino" />
+          <ScalarProperty Name="direccionOrigen" ColumnName="direccionOrigen" />
           <ScalarProperty Name="fgps" ColumnName="fgps" />
           <ScalarProperty Name="fstatus" ColumnName="fstatus" />
           <ScalarProperty Name="idorg" ColumnName="idorg" />

@@ -35,5 +35,8 @@ namespace ASM.BD.Models
         public Nullable<long> idorg { get; set; }
         public Nullable<System.DateTime> fstatus { get; set; }
         public Nullable<System.DateTime> fgps { get; set; }
+        public string direccionOrigen { get; set; }
+        public string direccionDestino { get; set; }
+        public string cp { get; set; }
     }
 }

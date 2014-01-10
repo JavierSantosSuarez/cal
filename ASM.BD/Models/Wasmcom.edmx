@@ -4,169 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WASMCOMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="WASMCOMModelStoreContainer">
-          <EntitySet Name="clReclamaciones" EntityType="WASMCOMModel.Store.clReclamaciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="clTiposReclamacion" EntityType="WASMCOMModel.Store.clTiposReclamacion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="clTiposTrackingReclamacion" EntityType="WASMCOMModel.Store.clTiposTrackingReclamacion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="clTrackingReclamacion" EntityType="WASMCOMModel.Store.clTrackingReclamacion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="geoPlazas" EntityType="WASMCOMModel.Store.geoPlazas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="pnlBonificaciones" EntityType="WASMCOMModel.Store.pnlBonificaciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="pnlExpediciones" EntityType="WASMCOMModel.Store.pnlExpediciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="pnlSlRecogidas" EntityType="WASMCOMModel.Store.pnlSlRecogidas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="pnlTipos" EntityType="WASMCOMModel.Store.pnlTipos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tclientes" EntityType="WASMCOMModel.Store.tclientes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tclientes_red" EntityType="WASMCOMModel.Store.tclientes_red" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="texp_codbar_cli" EntityType="WASMCOMModel.Store.texp_codbar_cli" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="texpdetalle" EntityType="WASMCOMModel.Store.texpdetalle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TExpDetalle2" EntityType="WASMCOMModel.Store.TExpDetalle2" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="texpediciones" EntityType="WASMCOMModel.Store.texpediciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="texpestado" EntityType="WASMCOMModel.Store.texpestado" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tPdaPosiciones" EntityType="WASMCOMModel.Store.tPdaPosiciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tplazas" EntityType="WASMCOMModel.Store.tplazas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="treferencias" EntityType="WASMCOMModel.Store.treferencias" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="trepartidores" EntityType="WASMCOMModel.Store.trepartidores" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tReparto" EntityType="WASMCOMModel.Store.tReparto" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tRepartoHojas" EntityType="WASMCOMModel.Store.tRepartoHojas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tslrEstados" EntityType="WASMCOMModel.Store.tslrEstados" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tslrExpediciones" EntityType="WASMCOMModel.Store.tslrExpediciones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tslrRecogidas" EntityType="WASMCOMModel.Store.tslrRecogidas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tslrReferencias" EntityType="WASMCOMModel.Store.tslrReferencias" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tslrSeguimiento" EntityType="WASMCOMModel.Store.tslrSeguimiento" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="webContactos" EntityType="WASMCOMModel.Store.webContactos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="webContactosTracking" EntityType="WASMCOMModel.Store.webContactosTracking" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="expediciones" EntityType="WASMCOMModel.Store.expediciones" store:Type="Views" store:Schema="dbo" store:Name="expediciones">
-            <DefiningQuery>SELECT 
-      [expediciones].[codplaza_org] AS [codplaza_org], 
-      [expediciones].[codexp] AS [codexp], 
-      [expediciones].[fecha] AS [fecha], 
-      [expediciones].[codtipo_envio] AS [codtipo_envio], 
-      [expediciones].[codservicio] AS [codservicio], 
-      [expediciones].[codtipodst] AS [codtipodst], 
-      [expediciones].[nombre_org] AS [nombre_org], 
-      [expediciones].[departamento_org] AS [departamento_org], 
-      [expediciones].[calle_org] AS [calle_org], 
-      [expediciones].[codlocalidad_org] AS [codlocalidad_org], 
-      [expediciones].[localidad_org] AS [localidad_org], 
-      [expediciones].[cp_org] AS [cp_org], 
-      [expediciones].[tfno_org] AS [tfno_org], 
-      [expediciones].[nif_org] AS [nif_org], 
-      [expediciones].[nombre_dst] AS [nombre_dst], 
-      [expediciones].[departamento_dst] AS [departamento_dst], 
-      [expediciones].[calle_dst] AS [calle_dst], 
-      [expediciones].[codlocalidad_dst] AS [codlocalidad_dst], 
-      [expediciones].[localidad_dst] AS [localidad_dst], 
-      [expediciones].[cp_dst] AS [cp_dst], 
-      [expediciones].[tfno_dst] AS [tfno_dst], 
-      [expediciones].[nif_dst] AS [nif_dst], 
-      [expediciones].[tipo_portes] AS [tipo_portes], 
-      [expediciones].[sabado] AS [sabado], 
-      [expediciones].[reembolso] AS [reembolso], 
-      [expediciones].[valorDecl] AS [valorDecl], 
-      [expediciones].[provisional] AS [provisional], 
-      [expediciones].[cerrado_punteo] AS [cerrado_punteo], 
-      [expediciones].[horario] AS [horario], 
-      [expediciones].[borrado] AS [borrado], 
-      [expediciones].[codpais_org] AS [codpais_org], 
-      [expediciones].[codprovincia_org] AS [codprovincia_org], 
-      [expediciones].[codpais_dst] AS [codpais_dst], 
-      [expediciones].[codprovincia_dst] AS [codprovincia_dst], 
-      [expediciones].[codplaza_prv] AS [codplaza_prv], 
-      [expediciones].[kgsvol_prv] AS [kgsvol_prv], 
-      [expediciones].[kgsvol_cli] AS [kgsvol_cli], 
-      [expediciones].[kgsvol_cli_ini] AS [kgsvol_cli_ini], 
-      [expediciones].[kgsvol_cli_red] AS [kgsvol_cli_red], 
-      [expediciones].[kgsvol_cli_red_ini] AS [kgsvol_cli_red_ini], 
-      [expediciones].[kgsvol_prv_red_dst] AS [kgsvol_prv_red_dst], 
-      [expediciones].[kgsvol_prv_red_org] AS [kgsvol_prv_red_org], 
-      [expediciones].[bultos] AS [bultos], 
-      [expediciones].[bultos_ini] AS [bultos_ini], 
-      [expediciones].[kgs] AS [kgs], 
-      [expediciones].[vol] AS [vol], 
-      [expediciones].[nexp] AS [nexp], 
-      [expediciones].[codprov_red_dst] AS [codprov_red_dst], 
-      [expediciones].[codprov_red_org] AS [codprov_red_org], 
-      [expediciones].[codcli_red_pag] AS [codcli_red_pag], 
-      [expediciones].[codcli_may] AS [codcli_may], 
-      [expediciones].[codcli] AS [codcli], 
-      [expediciones].[codplaza_cli] AS [codplaza_cli], 
-      [expediciones].[codmotivo] AS [codmotivo], 
-      [expediciones].[codplaza_pag] AS [codplaza_pag], 
-      [expediciones].[codplaza_dst] AS [codplaza_dst], 
-      [expediciones].[codplaza_ano] AS [codplaza_ano], 
-      [expediciones].[sec] AS [sec], 
-      [expediciones].[f_anota] AS [f_anota], 
-      [expediciones].[codprov] AS [codprov]
-      FROM [dbo].[expediciones] AS [expediciones]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ExpedicionesResumen" EntityType="WASMCOMModel.Store.ExpedicionesResumen" store:Type="Views" store:Schema="dbo" store:Name="ExpedicionesResumen">
-            <DefiningQuery>SELECT 
-      [ExpedicionesResumen].[codplaza_org] AS [codplaza_org], 
-      [ExpedicionesResumen].[codexp] AS [codexp], 
-      [ExpedicionesResumen].[Expedicion] AS [Expedicion], 
-      [ExpedicionesResumen].[fecha] AS [fecha], 
-      [ExpedicionesResumen].[codservicio] AS [codservicio], 
-      [ExpedicionesResumen].[nombre_org] AS [nombre_org], 
-      [ExpedicionesResumen].[departamento_org] AS [departamento_org], 
-      [ExpedicionesResumen].[nombre_dst] AS [nombre_dst], 
-      [ExpedicionesResumen].[departamento_dst] AS [departamento_dst], 
-      [ExpedicionesResumen].[calle_dst] AS [calle_dst], 
-      [ExpedicionesResumen].[codlocalidad_dst] AS [codlocalidad_dst], 
-      [ExpedicionesResumen].[localidad_dst] AS [localidad_dst], 
-      [ExpedicionesResumen].[cp_dst] AS [cp_dst], 
-      [ExpedicionesResumen].[tfno_dst] AS [tfno_dst], 
-      [ExpedicionesResumen].[tipo_portes] AS [tipo_portes], 
-      [ExpedicionesResumen].[sabado] AS [sabado], 
-      [ExpedicionesResumen].[valorDecl] AS [valorDecl], 
-      [ExpedicionesResumen].[codhorario] AS [codhorario], 
-      [ExpedicionesResumen].[borrado] AS [borrado], 
-      [ExpedicionesResumen].[codpais_org] AS [codpais_org], 
-      [ExpedicionesResumen].[codprovincia_org] AS [codprovincia_org], 
-      [ExpedicionesResumen].[codpais_dst] AS [codpais_dst], 
-      [ExpedicionesResumen].[codprovincia_dst] AS [codprovincia_dst], 
-      [ExpedicionesResumen].[codplaza_dst] AS [codplaza_dst], 
-      [ExpedicionesResumen].[codplaza_pag] AS [codplaza_pag], 
-      [ExpedicionesResumen].[codplaza_cli] AS [codplaza_cli], 
-      [ExpedicionesResumen].[codcli] AS [codcli], 
-      [ExpedicionesResumen].[nexp] AS [nexp], 
-      [ExpedicionesResumen].[vol] AS [vol], 
-      [ExpedicionesResumen].[kgs] AS [kgs], 
-      [ExpedicionesResumen].[bultos] AS [bultos], 
-      [ExpedicionesResumen].[AlbaranCliente] AS [AlbaranCliente], 
-      [ExpedicionesResumen].[retorno] AS [retorno], 
-      [ExpedicionesResumen].[tfno_cnt] AS [tfno_cnt], 
-      [ExpedicionesResumen].[pers_cnt] AS [pers_cnt], 
-      [ExpedicionesResumen].[FPEntrega] AS [FPEntrega], 
-      [ExpedicionesResumen].[att_dst] AS [att_dst], 
-      [ExpedicionesResumen].[movil_dst] AS [movil_dst], 
-      [ExpedicionesResumen].[dmail_dst] AS [dmail_dst], 
-      [ExpedicionesResumen].[est_mail] AS [est_mail], 
-      [ExpedicionesResumen].[fecha_mail] AS [fecha_mail], 
-      [ExpedicionesResumen].[email_remite] AS [email_remite], 
-      [ExpedicionesResumen].[est_movil] AS [est_movil], 
-      [ExpedicionesResumen].[dninom] AS [dninom], 
-      [ExpedicionesResumen].[codestado] AS [codestado], 
-      [ExpedicionesResumen].[informacion] AS [informacion], 
-      [ExpedicionesResumen].[Albaran] AS [Albaran], 
-      [ExpedicionesResumen].[Refcli] AS [Refcli], 
-      [ExpedicionesResumen].[codbar] AS [codbar], 
-      [ExpedicionesResumen].[Unidades] AS [Unidades], 
-      [ExpedicionesResumen].[codCalidad] AS [codCalidad], 
-      [ExpedicionesResumen].[estado] AS [estado], 
-      [ExpedicionesResumen].[EstadoFinal] AS [EstadoFinal], 
-      [ExpedicionesResumen].[Horario] AS [Horario], 
-      [ExpedicionesResumen].[servicio] AS [servicio], 
-      [ExpedicionesResumen].[Incidencia] AS [Incidencia], 
-      [ExpedicionesResumen].[Debidos] AS [Debidos], 
-      [ExpedicionesResumen].[PathPod] AS [PathPod]
-      FROM [dbo].[ExpedicionesResumen] AS [ExpedicionesResumen]</DefiningQuery>
-          </EntitySet>
-        </EntityContainer>
+    <Schema Namespace="WASMCOMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="clReclamaciones">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipoReclamacion" Type="tinyint" />
           <Property Name="codplazaReclama" Type="smallint" />
           <Property Name="codplazaReclamada" Type="smallint" />
@@ -187,20 +30,20 @@
             <PropertyRef Name="tipoReclamacion" />
           </Key>
           <Property Name="tipoReclamacion" Type="tinyint" Nullable="false" />
-          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="clTiposTrackingReclamacion">
           <Key>
             <PropertyRef Name="tipoTracking" />
           </Key>
           <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
-          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="clTrackingReclamacion">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idReclamacion" Type="bigint" Nullable="false" />
           <Property Name="fecha" Type="datetime" Nullable="false" />
           <Property Name="tipoTracking" Type="tinyint" Nullable="false" />
@@ -212,7 +55,7 @@
           <Key>
             <PropertyRef Name="codgeoplaza" />
           </Key>
-          <Property Name="codgeoplaza" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codgeoplaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codplaza" Type="smallint" Nullable="false" />
           <Property Name="lon" Type="real" />
           <Property Name="lat" Type="real" />
@@ -226,7 +69,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaBonifica" Type="datetime" Nullable="false" />
           <Property Name="FPEntrega" Type="smalldatetime" />
           <Property Name="codtipo" Type="tinyint" Nullable="false" />
@@ -242,7 +85,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codplaza_org" Type="smallint" Nullable="false" />
           <Property Name="codexp" Type="int" Nullable="false" />
           <Property Name="fechaPenaliza" Type="datetime" Nullable="false" />
@@ -260,7 +103,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codRecogida" Type="bigint" Nullable="false" />
           <Property Name="fechaPenaliza" Type="datetime" Nullable="false" />
           <Property Name="FRecogida" Type="smalldatetime" />
@@ -278,7 +121,7 @@
             <PropertyRef Name="codtipo" />
           </Key>
           <Property Name="codtipo" Type="tinyint" Nullable="false" />
-          <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tclientes">
           <Key>
@@ -471,7 +314,7 @@
           </Key>
           <Property Name="codplaza_org" Type="smallint" Nullable="false" />
           <Property Name="codexp" Type="int" Nullable="false" />
-          <Property Name="codbar" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="codbar" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="AlbAgrupacion" Type="varchar" MaxLength="25" />
           <Property Name="AlbAgrupacionDst" Type="varchar" MaxLength="25" />
           <Property Name="UidExp" Type="uniqueidentifier" Nullable="false" />
@@ -500,7 +343,7 @@
           <Property Name="codprov_red_org" Type="int" />
           <Property Name="codprov_red_dst" Type="int" />
           <Property Name="nexp" Type="smallint" Nullable="false" />
-          <Property Name="vol" Type="decimal" Nullable="false" Precision="6" Scale="3" />
+          <Property Name="vol" Type="decimal" Precision="6" Scale="3" Nullable="false" />
           <Property Name="kgs" Type="decimal" Precision="6" Scale="1" />
           <Property Name="bultos_ini" Type="smallint" Nullable="false" />
           <Property Name="bultos" Type="smallint" Nullable="false" />
@@ -527,9 +370,9 @@
           <Property Name="Codplaza_org" Type="smallint" Nullable="false" />
           <Property Name="codexp" Type="int" Nullable="false" />
           <Property Name="f_anota" Type="datetime" Nullable="false" />
-          <Property Name="ultimo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ultimo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="AlbaranCliente" Type="bit" Nullable="false" />
-          <Property Name="retorno" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="retorno" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="tfno_cnt" Type="varchar" MaxLength="25" />
           <Property Name="pers_cnt" Type="varchar" MaxLength="255" />
           <Property Name="FPEntrega" Type="datetime" />
@@ -606,7 +449,7 @@
           <Property Name="codestado" Type="smallint" Nullable="false" />
           <Property Name="codplaza_ano" Type="smallint" Nullable="false" />
           <Property Name="codusuario_ano" Type="int" Nullable="false" />
-          <Property Name="ultimo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ultimo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="culpable" Type="char" MaxLength="1" />
           <Property Name="parcial" Type="char" MaxLength="1" />
           <Property Name="informacion" Type="varchar" MaxLength="35" />
@@ -620,7 +463,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codplaza_rep" Type="bigint" />
           <Property Name="codrepartidor" Type="bigint" />
           <Property Name="tipo" Type="smallint" />
@@ -641,14 +484,17 @@
           <Property Name="duracion" Type="float" />
           <Property Name="idorg" Type="bigint" />
           <Property Name="fstatus" Type="datetime" />
+          <Property Name="direccionOrigen" Type="varchar(max)" />
+          <Property Name="direccionDestino" Type="varchar(max)" />
+          <Property Name="cp" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="tplazas">
           <Key>
             <PropertyRef Name="codplaza" />
           </Key>
           <Property Name="codplaza" Type="smallint" Nullable="false" />
-          <Property Name="plaza" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="nemonico" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="plaza" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nemonico" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="codcli_red" Type="int" Nullable="false" />
           <Property Name="codprov_red" Type="int" Nullable="false" />
           <Property Name="codplaza_old" Type="smallint" />
@@ -680,7 +526,7 @@
           <Property Name="Software" Type="smallint" Nullable="false" />
           <Property Name="FSoftWare" Type="smalldatetime" />
           <Property Name="codPunto" Type="bigint" />
-          <Property Name="logistica" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="logistica" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="DireccionWeb" Type="varchar" MaxLength="255" />
           <Property Name="codIsla" Type="smallint" />
           <Property Name="tipoplaza" Type="smallint" />
@@ -692,11 +538,11 @@
             <PropertyRef Name="codexp" />
             <PropertyRef Name="tipo" />
           </Key>
-          <Property Name="sec" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="sec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="referencia" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="codplaza_org" Type="smallint" Nullable="false" />
           <Property Name="codexp" Type="int" Nullable="false" />
-          <Property Name="tipo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="trepartidores">
           <Key>
@@ -776,10 +622,10 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodRecogida" Type="bigint" Nullable="false" />
           <Property Name="f_tick" Type="datetime" Nullable="false" />
-          <Property Name="Ultimo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Ultimo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="f_estado" Type="datetime" Nullable="false" />
           <Property Name="CodEstado" Type="smallint" Nullable="false" />
           <Property Name="CodPlaza_ano" Type="smallint" />
@@ -801,7 +647,7 @@
           <Key>
             <PropertyRef Name="CodRecogida" />
           </Key>
-          <Property Name="CodRecogida" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodRecogida" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodPlaza_sol" Type="smallint" Nullable="false" />
           <Property Name="CodPlaza_org" Type="smallint" Nullable="false" />
           <Property Name="FSolicitud" Type="datetime" Nullable="false" />
@@ -813,16 +659,16 @@
           <Property Name="Codcli" Type="int" Nullable="false" />
           <Property Name="CodcliRed" Type="int" Nullable="false" />
           <Property Name="NombSol" Type="varchar" MaxLength="255" />
-          <Property Name="NombRec" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="DirRec" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="PoblRec" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="cpRec" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="NombRec" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DirRec" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PoblRec" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cpRec" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="ContacRec" Type="varchar" MaxLength="255" />
           <Property Name="TfnoRec" Type="varchar" MaxLength="10" />
           <Property Name="DptoRec" Type="varchar" MaxLength="255" />
           <Property Name="vehiculo" Type="smallint" />
           <Property Name="ObsRec" Type="varchar" MaxLength="255" />
-          <Property Name="CodSolicitud_ant" Type="decimal" Nullable="false" Precision="10" />
+          <Property Name="CodSolicitud_ant" Type="decimal" Precision="10" Scale="0" Nullable="false" />
           <Property Name="codpais_org" Type="smallint" />
           <Property Name="codprovincia_org" Type="smallint" />
           <Property Name="transPDA" Type="bit" Nullable="false" />
@@ -849,8 +695,8 @@
             <PropertyRef Name="referencia" />
           </Key>
           <Property Name="CodRecogida" Type="bigint" Nullable="false" />
-          <Property Name="tipo" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="referencia" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="tslrSeguimiento">
           <Key>
@@ -859,7 +705,7 @@
           </Key>
           <Property Name="CodRecogida" Type="bigint" Nullable="false" />
           <Property Name="f_tick" Type="datetime" Nullable="false" />
-          <Property Name="ultimo" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ultimo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="CodPlaza_ano" Type="smallint" />
           <Property Name="observacion" Type="varchar" MaxLength="100" />
           <Property Name="CodUsuario" Type="uniqueidentifier" />
@@ -868,7 +714,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha" Type="datetime" Nullable="false" />
           <Property Name="empresa" Type="varchar" MaxLength="250" />
           <Property Name="contacto" Type="varchar" MaxLength="250" />
@@ -886,7 +732,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idContacto" Type="bigint" Nullable="false" />
           <Property Name="tipo" Type="smallint" Nullable="false" />
           <Property Name="texto" Type="varchar(max)" />
@@ -894,9 +740,8 @@
           <Property Name="codplaza_ano" Type="smallint" />
           <Property Name="usuario" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Se encontraron errores durante la generación:
-      advertencia 6002: La tabla o vista 'WASMCOM.dbo.expediciones' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
-      -->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WASMCOM.dbo.expediciones' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="expediciones">
           <Key>
             <PropertyRef Name="codplaza_org" />
@@ -960,7 +805,7 @@
           <Property Name="bultos" Type="smallint" Nullable="false" />
           <Property Name="bultos_ini" Type="smallint" Nullable="false" />
           <Property Name="kgs" Type="decimal" Precision="6" Scale="1" />
-          <Property Name="vol" Type="decimal" Nullable="false" Precision="6" Scale="3" />
+          <Property Name="vol" Type="decimal" Precision="6" Scale="3" Nullable="false" />
           <Property Name="nexp" Type="smallint" Nullable="false" />
           <Property Name="codprov_red_dst" Type="int" />
           <Property Name="codprov_red_org" Type="int" />
@@ -976,9 +821,8 @@
           <Property Name="f_anota" Type="datetime" Nullable="false" />
           <Property Name="codprov" Type="int" />
         </EntityType>
-        <!--Se encontraron errores durante la generación:
-      advertencia 6002: La tabla o vista 'WASMCOM.dbo.ExpedicionesResumen' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
-      -->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WASMCOM.dbo.ExpedicionesResumen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ExpedicionesResumen">
           <Key>
             <PropertyRef Name="codplaza_org" />
@@ -1024,7 +868,7 @@
           <Property Name="codplaza_cli" Type="smallint" />
           <Property Name="codcli" Type="int" />
           <Property Name="nexp" Type="smallint" Nullable="false" />
-          <Property Name="vol" Type="decimal" Nullable="false" Precision="6" Scale="3" />
+          <Property Name="vol" Type="decimal" Precision="6" Scale="3" Nullable="false" />
           <Property Name="kgs" Type="decimal" Precision="6" Scale="1" />
           <Property Name="bultos" Type="smallint" Nullable="false" />
           <Property Name="AlbaranCliente" Type="bit" />
@@ -1047,10 +891,10 @@
           <Property Name="codbar" Type="varchar" MaxLength="25" />
           <Property Name="Unidades" Type="float" />
           <Property Name="codCalidad" Type="bigint" />
-          <Property Name="estado" Type="varchar" Nullable="false" MaxLength="35" />
-          <Property Name="EstadoFinal" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="Horario" Type="varchar" Nullable="false" MaxLength="40" />
-          <Property Name="servicio" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="estado" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="EstadoFinal" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Horario" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="servicio" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Incidencia" Type="varchar" MaxLength="138" />
           <Property Name="Debidos" Type="float" />
           <Property Name="PathPod" Type="varchar" MaxLength="6000" />
@@ -1072,6 +916,163 @@
           <Parameter Name="checkDev" Type="bit" Mode="In" />
           <Parameter Name="sobreescribeUltimo" Type="bit" Mode="In" />
         </Function>
+        <EntityContainer Name="WASMCOMModelStoreContainer">
+          <EntitySet Name="clReclamaciones" EntityType="Self.clReclamaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clTiposReclamacion" EntityType="Self.clTiposReclamacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clTiposTrackingReclamacion" EntityType="Self.clTiposTrackingReclamacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clTrackingReclamacion" EntityType="Self.clTrackingReclamacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="geoPlazas" EntityType="Self.geoPlazas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pnlBonificaciones" EntityType="Self.pnlBonificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pnlExpediciones" EntityType="Self.pnlExpediciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pnlSlRecogidas" EntityType="Self.pnlSlRecogidas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pnlTipos" EntityType="Self.pnlTipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tclientes" EntityType="Self.tclientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tclientes_red" EntityType="Self.tclientes_red" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="texp_codbar_cli" EntityType="Self.texp_codbar_cli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="texpdetalle" EntityType="Self.texpdetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TExpDetalle2" EntityType="Self.TExpDetalle2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="texpediciones" EntityType="Self.texpediciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="texpestado" EntityType="Self.texpestado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tPdaPosiciones" EntityType="Self.tPdaPosiciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tplazas" EntityType="Self.tplazas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="treferencias" EntityType="Self.treferencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trepartidores" EntityType="Self.trepartidores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tReparto" EntityType="Self.tReparto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tRepartoHojas" EntityType="Self.tRepartoHojas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tslrEstados" EntityType="Self.tslrEstados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tslrExpediciones" EntityType="Self.tslrExpediciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tslrRecogidas" EntityType="Self.tslrRecogidas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tslrReferencias" EntityType="Self.tslrReferencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tslrSeguimiento" EntityType="Self.tslrSeguimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webContactos" EntityType="Self.webContactos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webContactosTracking" EntityType="Self.webContactosTracking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="expediciones" EntityType="Self.expediciones" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[expediciones].[codplaza_org] AS [codplaza_org], 
+[expediciones].[codexp] AS [codexp], 
+[expediciones].[fecha] AS [fecha], 
+[expediciones].[codtipo_envio] AS [codtipo_envio], 
+[expediciones].[codservicio] AS [codservicio], 
+[expediciones].[codtipodst] AS [codtipodst], 
+[expediciones].[nombre_org] AS [nombre_org], 
+[expediciones].[departamento_org] AS [departamento_org], 
+[expediciones].[calle_org] AS [calle_org], 
+[expediciones].[codlocalidad_org] AS [codlocalidad_org], 
+[expediciones].[localidad_org] AS [localidad_org], 
+[expediciones].[cp_org] AS [cp_org], 
+[expediciones].[tfno_org] AS [tfno_org], 
+[expediciones].[nif_org] AS [nif_org], 
+[expediciones].[nombre_dst] AS [nombre_dst], 
+[expediciones].[departamento_dst] AS [departamento_dst], 
+[expediciones].[calle_dst] AS [calle_dst], 
+[expediciones].[codlocalidad_dst] AS [codlocalidad_dst], 
+[expediciones].[localidad_dst] AS [localidad_dst], 
+[expediciones].[cp_dst] AS [cp_dst], 
+[expediciones].[tfno_dst] AS [tfno_dst], 
+[expediciones].[nif_dst] AS [nif_dst], 
+[expediciones].[tipo_portes] AS [tipo_portes], 
+[expediciones].[sabado] AS [sabado], 
+[expediciones].[reembolso] AS [reembolso], 
+[expediciones].[valorDecl] AS [valorDecl], 
+[expediciones].[provisional] AS [provisional], 
+[expediciones].[cerrado_punteo] AS [cerrado_punteo], 
+[expediciones].[horario] AS [horario], 
+[expediciones].[borrado] AS [borrado], 
+[expediciones].[codpais_org] AS [codpais_org], 
+[expediciones].[codprovincia_org] AS [codprovincia_org], 
+[expediciones].[codpais_dst] AS [codpais_dst], 
+[expediciones].[codprovincia_dst] AS [codprovincia_dst], 
+[expediciones].[codplaza_prv] AS [codplaza_prv], 
+[expediciones].[kgsvol_prv] AS [kgsvol_prv], 
+[expediciones].[kgsvol_cli] AS [kgsvol_cli], 
+[expediciones].[kgsvol_cli_ini] AS [kgsvol_cli_ini], 
+[expediciones].[kgsvol_cli_red] AS [kgsvol_cli_red], 
+[expediciones].[kgsvol_cli_red_ini] AS [kgsvol_cli_red_ini], 
+[expediciones].[kgsvol_prv_red_dst] AS [kgsvol_prv_red_dst], 
+[expediciones].[kgsvol_prv_red_org] AS [kgsvol_prv_red_org], 
+[expediciones].[bultos] AS [bultos], 
+[expediciones].[bultos_ini] AS [bultos_ini], 
+[expediciones].[kgs] AS [kgs], 
+[expediciones].[vol] AS [vol], 
+[expediciones].[nexp] AS [nexp], 
+[expediciones].[codprov_red_dst] AS [codprov_red_dst], 
+[expediciones].[codprov_red_org] AS [codprov_red_org], 
+[expediciones].[codcli_red_pag] AS [codcli_red_pag], 
+[expediciones].[codcli_may] AS [codcli_may], 
+[expediciones].[codcli] AS [codcli], 
+[expediciones].[codplaza_cli] AS [codplaza_cli], 
+[expediciones].[codmotivo] AS [codmotivo], 
+[expediciones].[codplaza_pag] AS [codplaza_pag], 
+[expediciones].[codplaza_dst] AS [codplaza_dst], 
+[expediciones].[codplaza_ano] AS [codplaza_ano], 
+[expediciones].[sec] AS [sec], 
+[expediciones].[f_anota] AS [f_anota], 
+[expediciones].[codprov] AS [codprov]
+FROM [dbo].[expediciones] AS [expediciones]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ExpedicionesResumen" EntityType="Self.ExpedicionesResumen" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ExpedicionesResumen].[codplaza_org] AS [codplaza_org], 
+[ExpedicionesResumen].[codexp] AS [codexp], 
+[ExpedicionesResumen].[Expedicion] AS [Expedicion], 
+[ExpedicionesResumen].[fecha] AS [fecha], 
+[ExpedicionesResumen].[codservicio] AS [codservicio], 
+[ExpedicionesResumen].[nombre_org] AS [nombre_org], 
+[ExpedicionesResumen].[departamento_org] AS [departamento_org], 
+[ExpedicionesResumen].[nombre_dst] AS [nombre_dst], 
+[ExpedicionesResumen].[departamento_dst] AS [departamento_dst], 
+[ExpedicionesResumen].[calle_dst] AS [calle_dst], 
+[ExpedicionesResumen].[codlocalidad_dst] AS [codlocalidad_dst], 
+[ExpedicionesResumen].[localidad_dst] AS [localidad_dst], 
+[ExpedicionesResumen].[cp_dst] AS [cp_dst], 
+[ExpedicionesResumen].[tfno_dst] AS [tfno_dst], 
+[ExpedicionesResumen].[tipo_portes] AS [tipo_portes], 
+[ExpedicionesResumen].[sabado] AS [sabado], 
+[ExpedicionesResumen].[valorDecl] AS [valorDecl], 
+[ExpedicionesResumen].[codhorario] AS [codhorario], 
+[ExpedicionesResumen].[borrado] AS [borrado], 
+[ExpedicionesResumen].[codpais_org] AS [codpais_org], 
+[ExpedicionesResumen].[codprovincia_org] AS [codprovincia_org], 
+[ExpedicionesResumen].[codpais_dst] AS [codpais_dst], 
+[ExpedicionesResumen].[codprovincia_dst] AS [codprovincia_dst], 
+[ExpedicionesResumen].[codplaza_dst] AS [codplaza_dst], 
+[ExpedicionesResumen].[codplaza_pag] AS [codplaza_pag], 
+[ExpedicionesResumen].[codplaza_cli] AS [codplaza_cli], 
+[ExpedicionesResumen].[codcli] AS [codcli], 
+[ExpedicionesResumen].[nexp] AS [nexp], 
+[ExpedicionesResumen].[vol] AS [vol], 
+[ExpedicionesResumen].[kgs] AS [kgs], 
+[ExpedicionesResumen].[bultos] AS [bultos], 
+[ExpedicionesResumen].[AlbaranCliente] AS [AlbaranCliente], 
+[ExpedicionesResumen].[retorno] AS [retorno], 
+[ExpedicionesResumen].[tfno_cnt] AS [tfno_cnt], 
+[ExpedicionesResumen].[pers_cnt] AS [pers_cnt], 
+[ExpedicionesResumen].[FPEntrega] AS [FPEntrega], 
+[ExpedicionesResumen].[att_dst] AS [att_dst], 
+[ExpedicionesResumen].[movil_dst] AS [movil_dst], 
+[ExpedicionesResumen].[dmail_dst] AS [dmail_dst], 
+[ExpedicionesResumen].[est_mail] AS [est_mail], 
+[ExpedicionesResumen].[fecha_mail] AS [fecha_mail], 
+[ExpedicionesResumen].[email_remite] AS [email_remite], 
+[ExpedicionesResumen].[est_movil] AS [est_movil], 
+[ExpedicionesResumen].[dninom] AS [dninom], 
+[ExpedicionesResumen].[codestado] AS [codestado], 
+[ExpedicionesResumen].[informacion] AS [informacion], 
+[ExpedicionesResumen].[Albaran] AS [Albaran], 
+[ExpedicionesResumen].[Refcli] AS [Refcli], 
+[ExpedicionesResumen].[codbar] AS [codbar], 
+[ExpedicionesResumen].[Unidades] AS [Unidades], 
+[ExpedicionesResumen].[codCalidad] AS [codCalidad], 
+[ExpedicionesResumen].[estado] AS [estado], 
+[ExpedicionesResumen].[EstadoFinal] AS [EstadoFinal], 
+[ExpedicionesResumen].[Horario] AS [Horario], 
+[ExpedicionesResumen].[servicio] AS [servicio], 
+[ExpedicionesResumen].[Incidencia] AS [Incidencia], 
+[ExpedicionesResumen].[Debidos] AS [Debidos], 
+[ExpedicionesResumen].[PathPod] AS [PathPod]
+FROM [dbo].[ExpedicionesResumen] AS [ExpedicionesResumen]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1894,6 +1895,9 @@
           <Property Type="Int64" Name="idorg" />
           <Property Type="DateTime" Name="fstatus" Precision="3" />
           <Property Type="DateTime" Name="fgps" Precision="3" />
+          <Property Name="direccionOrigen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="direccionDestino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="webContactos">
           <Key>
@@ -2744,6 +2748,9 @@
           <EntitySetMapping Name="tPdaPosiciones">
             <EntityTypeMapping TypeName="WASMCOMModel.tPdaPosiciones">
               <MappingFragment StoreEntitySet="tPdaPosiciones">
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="direccionDestino" ColumnName="direccionDestino" />
+                <ScalarProperty Name="direccionOrigen" ColumnName="direccionOrigen" />
                 <ScalarProperty Name="fgps" ColumnName="fgps" />
                 <ScalarProperty Name="fstatus" ColumnName="fstatus" />
                 <ScalarProperty Name="idorg" ColumnName="idorg" />
@@ -2904,6 +2911,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

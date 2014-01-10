@@ -13,7 +13,7 @@ namespace ASM.Calidad.Controllers
         //
         // GET: /Maps/
 
-        string GOOGLE_API_KEY = "AIzaSyCQEpHQRd8FtlvDJUDtSXBRWhlNWaZxz6w";
+        //string GOOGLE_API_KEY = "AIzaSyCQEpHQRd8FtlvDJUDtSXBRWhlNWaZxz6w";
 
         private class TPosiciones
         {
@@ -62,8 +62,20 @@ namespace ASM.Calidad.Controllers
 
             List<TPosiciones> ps = new List<TPosiciones>();
             TPosiciones p = new TPosiciones();
+
+            List<string> cps = new List<string>();
+
             foreach (tPdaPosiciones posicion in posiciones)
             {
+                if (!string.IsNullOrEmpty(posicion.cp))
+                {
+                    if (!cps.Exists(c=> c == posicion.cp))
+                    {
+                        cps.Add(posicion.cp);
+                    }
+                }
+                
+
                 if (posicion.fpda > maxHora) maxHora = Convert.ToDateTime(posicion.fpda);
                 if (posicion.fpda < minHora) minHora = Convert.ToDateTime(posicion.fpda);
 
@@ -122,7 +134,8 @@ namespace ASM.Calidad.Controllers
                 minHora = minHora.Hour * 60 + minHora.Minute,
                 hojas = hojas,
                 codPlazaLat = cpLat,
-                codPlazaLon = cpLon
+                codPlazaLon = cpLon,
+                cps = cps
             };
 
             return Json(result, JsonRequestBehavior.AllowGet);
