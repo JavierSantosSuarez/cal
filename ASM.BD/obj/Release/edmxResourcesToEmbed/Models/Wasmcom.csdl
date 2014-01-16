@@ -818,6 +818,9 @@
     <Property Type="Int64" Name="idorg" />
     <Property Type="DateTime" Name="fstatus" Precision="3" />
     <Property Type="DateTime" Name="fgps" Precision="3" />
+    <Property Name="direccionOrigen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="direccionDestino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="webContactos">
     <Key>

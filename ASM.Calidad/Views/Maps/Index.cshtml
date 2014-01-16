@@ -20,6 +20,8 @@
        var posiciones = [];
        var hojas = [];
        var polylines = [];
+       var cps = [];
+       var cpsoverlays = [];
 
        //dani
        var codPlazaLat = "";
@@ -105,6 +107,9 @@
                    posiciones = data.posiciones;
                    hojas = data.hojas;
 
+                   cps.length = 0;
+                   cps = data.cps;
+
                    codPlazaLat = data.codPlazaLat.toString();
                    codPlazaLon = data.codPlazaLon.toString();
 
@@ -141,6 +146,15 @@
 
            for (var i = 0; i < polylines.length; i++) polylines[i].setMap();
            polylines.length = 0;
+
+           for (var i = 0; i < cpsoverlays.length; i++) cpsoverlays[i].setMap();
+           cpsoverlays.length = cps.length;
+
+           for (var i = 0; i < cps.length; i++) {
+               cpsoverlays[i] = new google.maps.KmlLayer('http://www.asmred.com/extranet/public/kml/cps/' + cps[i] + '.kml');
+               cpsoverlays[i].setMap(map);
+           }
+
 
            for (var i = 0; i < posiciones.length; i++) {
                if (posiciones[i].Tipo == 1) title = '[' + i + '] ' + posiciones[i].Fecha;
